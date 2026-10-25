@@ -178,7 +178,7 @@ WAYLAND_DISPLAY= DISPLAY=:0 wine explorer /desktop=SBSC,1100x700 SBSC.exe
 
 ## Проверка релиза
 
-GitHub attestation:
+GitHub attestation, нужен gh 2.60 или новее:
 
 ```bash
 gh attestation verify SBSC.exe --repo NakishN/SBSC
@@ -210,6 +210,23 @@ sha256sum -c SHA256SUMS.txt
 - Code Signing сертификат.
 
 VirusTotal Reanalyze не заменяет обращение к вендору.
+
+Куда отправить false positive:
+
+- Microsoft: https://www.microsoft.com/en-us/wdsi/filesubmission
+- Bkav: https://www.bkav.com/contact
+- CrowdStrike: https://www.crowdstrike.com/contact-us/
+- Cynet: https://www.cynet.com/contact-us/
+- Elastic: https://www.elastic.co/contact
+
+Текст обращения:
+
+```text
+This file is an open-source Minecraft cheat scanner. The detection is a false positive.
+Source: https://github.com/NakishN/SBSC
+Release: https://github.com/NakishN/SBSC/releases/tag/v1.0.0
+Please whitelist the file or update the signature.
+```
 
 ## Сборка
 
