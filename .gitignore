@@ -1,0 +1,25 @@
+# Local release build
+/dist/
+/SBSC
+/sbsc
+/mccheatscan
+/*-data/
+
+# Downloaded build dependencies
+/assets/tools/*
+!/assets/tools/.gitkeep
+
+# Local test corpus
+/corpus/
+
+# Local logs and screenshots
+*.log
+*.xwd
+*.png
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Scripts are intentionally not part of the source tree
+*.sh

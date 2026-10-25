@@ -1,0 +1,2863 @@
+{
+ "version": 2,
+ "modules": [
+  {
+   "id": "aimassist",
+   "name": "AimAssist",
+   "category": "combat",
+   "aliases": [
+    "aimassist"
+   ],
+   "severity": 5,
+   "weight": 15,
+   "name_ru": "AimAssist (помощь в прицеливании)",
+   "qol": false,
+   "description": "Обнаружен модуль AimAssist — типичный признак чит-клиента (combat)."
+  },
+  {
+   "id": "aimbot",
+   "name": "Aimbot",
+   "category": "combat",
+   "aliases": [
+    "aimbot"
+   ],
+   "severity": 5,
+   "weight": 18,
+   "name_ru": "Aimbot (автонаведение)",
+   "qol": false,
+   "description": "Обнаружен модуль Aimbot — типичный признак чит-клиента (combat)."
+  },
+  {
+   "id": "anchoraura",
+   "name": "AnchorAura",
+   "category": "combat",
+   "aliases": [
+    "anchoraura"
+   ],
+   "severity": 5,
+   "weight": 16,
+   "name_ru": "AnchorAura (аура якорей)",
+   "qol": false,
+   "description": "Обнаружен модуль AnchorAura — типичный признак чит-клиента (combat)."
+  },
+  {
+   "id": "antiaim",
+   "name": "AntiAim",
+   "category": "combat",
+   "aliases": [
+    "antiaim"
+   ],
+   "severity": 5,
+   "weight": 15,
+   "name_ru": "AntiAim (анти-прицеливание)",
+   "qol": false,
+   "description": "Обнаружен модуль AntiAim — типичный признак чит-клиента (combat)."
+  },
+  {
+   "id": "antianvil",
+   "name": "AntiAnvil",
+   "category": "combat",
+   "aliases": [
+    "antianvil"
+   ],
+   "severity": 4,
+   "weight": 9,
+   "name_ru": "AntiAnvil",
+   "qol": false,
+   "description": "Обнаружен модуль AntiAnvil — типичный признак чит-клиента (combat)."
+  },
+  {
+   "id": "antibot",
+   "name": "AntiBot",
+   "category": "combat",
+   "aliases": [
+    "antibot",
+    "antobots"
+   ],
+   "severity": 4,
+   "weight": 10,
+   "name_ru": "AntiBot (игнор ботов)",
+   "qol": false,
+   "description": "Обнаружен модуль AntiBot — типичный признак чит-клиента (combat)."
+  },
+  {
+   "id": "antiknockback",
+   "name": "AntiKnockback",
+   "category": "combat",
+   "aliases": [
+    "antiknockback",
+    "antivelocity"
+   ],
+   "severity": 5,
+   "weight": 16,
+   "name_ru": "AntiKnockback (анти-отбрасывание)",
+   "qol": false,
+   "description": "Обнаружен модуль AntiKnockback — типичный признак чит-клиента (combat)."
+  },
+  {
+   "id": "arrowdodge",
+   "name": "ArrowDodge",
+   "category": "combat",
+   "aliases": [
+    "arrowdodge"
+   ],
+   "severity": 5,
+   "weight": 12,
+   "name_ru": "ArrowDodge (уклонение от стрел)",
+   "qol": false,
+   "description": "Обнаружен модуль ArrowDodge — типичный признак чит-клиента (combat)."
+  },
+  {
+   "id": "autoarmor",
+   "name": "AutoArmor",
+   "category": "combat",
+   "aliases": [
+    "autoarmor"
+   ],
+   "severity": 5,
+   "weight": 13,
+   "name_ru": "AutoArmor (авто-броня)",
+   "qol": false,
+   "description": "Обнаружен модуль AutoArmor — типичный признак чит-клиента (combat)."
+  },
+  {
+   "id": "autoblock",
+   "name": "AutoBlock",
+   "category": "combat",
+   "aliases": [
+    "autoblock"
+   ],
+   "severity": 4,
+   "weight": 10,
+   "name_ru": "AutoBlock (авто-блок)",
+   "qol": false,
+   "description": "Обнаружен модуль AutoBlock — типичный признак чит-клиента (combat)."
+  },
+  {
+   "id": "autobow",
+   "name": "AutoBow",
+   "category": "combat",
+   "aliases": [
+    "autobow"
+   ],
+   "severity": 5,
+   "weight": 13,
+   "name_ru": "AutoBow (авто-лук)",
+   "qol": false,
+   "description": "Обнаружен модуль AutoBow — типичный признак чит-клиента (combat)."
+  },
+  {
+   "id": "autoclicker",
+   "name": "AutoClicker",
+   "category": "combat",
+   "aliases": [
+    "autoclicker",
+    "clicker"
+   ],
+   "severity": 5,
+   "weight": 16,
+   "name_ru": "AutoClicker (автокликер)",
+   "qol": false,
+   "description": "Обнаружен модуль AutoClicker — типичный признак чит-клиента (combat)."
+  },
+  {
+   "id": "autocrystal",
+   "name": "AutoCrystal",
+   "category": "combat",
+   "aliases": [
+    "autocrystal"
+   ],
+   "severity": 5,
+   "weight": 18,
+   "name_ru": "AutoCrystal (авто-кристаллы)",
+   "qol": false,
+   "description": "Обнаружен модуль AutoCrystal — типичный признак чит-клиента (combat)."
+  },
+  {
+   "id": "autodisconnect",
+   "name": "AutoDisconnect",
+   "category": "combat",
+   "aliases": [
+    "autodisconnect"
+   ],
+   "severity": 4,
+   "weight": 9,
+   "name_ru": "AutoDisconnect (авто-выход)",
+   "qol": false,
+   "description": "Обнаружен модуль AutoDisconnect — типичный признак чит-клиента (combat)."
+  },
+  {
+   "id": "autododge",
+   "name": "AutoDodge",
+   "category": "combat",
+   "aliases": [
+    "autododge"
+   ],
+   "severity": 5,
+   "weight": 13,
+   "name_ru": "AutoDodge (авто-уклонение)",
+   "qol": false,
+   "description": "Обнаружен модуль AutoDodge — типичный признак чит-клиента (combat)."
+  },
+  {
+   "id": "autolog",
+   "name": "AutoLog",
+   "category": "combat",
+   "aliases": [
+    "autolog"
+   ],
+   "severity": 4,
+   "weight": 9,
+   "name_ru": "AutoLog (авто-выход)",
+   "qol": false,
+   "description": "Обнаружен модуль AutoLog — типичный признак чит-клиента (combat)."
+  },
+  {
+   "id": "autoprojectile",
+   "name": "AutoProjectile",
+   "category": "combat",
+   "aliases": [
+    "autoprojectile"
+   ],
+   "severity": 5,
+   "weight": 13,
+   "name_ru": "AutoProjectile",
+   "qol": false,
+   "description": "Обнаружен модуль AutoProjectile — типичный признак чит-клиента (combat)."
+  },
+  {
+   "id": "autorod",
+   "name": "AutoRod",
+   "category": "combat",
+   "aliases": [
+    "autorod"
+   ],
+   "severity": 5,
+   "weight": 12,
+   "name_ru": "AutoRod (авто-удочка)",
+   "qol": false,
+   "description": "Обнаружен модуль AutoRod — типичный признак чит-клиента (combat)."
+  },
+  {
+   "id": "autoshoot",
+   "name": "AutoShoot",
+   "category": "combat",
+   "aliases": [
+    "autoshoot"
+   ],
+   "severity": 5,
+   "weight": 13,
+   "name_ru": "AutoShoot",
+   "qol": false,
+   "description": "Обнаружен модуль AutoShoot — типичный признак чит-клиента (combat)."
+  },
+  {
+   "id": "autotrap",
+   "name": "AutoTrap",
+   "category": "combat",
+   "aliases": [
+    "autotrap",
+    "trap"
+   ],
+   "severity": 5,
+   "weight": 16,
+   "name_ru": "AutoTrap (авто-ловушка)",
+   "qol": false,
+   "description": "Обнаружен модуль AutoTrap — типичный признак чит-клиента (combat)."
+  },
+  {
+   "id": "autoweb",
+   "name": "AutoWeb",
+   "category": "combat",
+   "aliases": [
+    "autoweb"
+   ],
+   "severity": 5,
+   "weight": 13,
+   "name_ru": "AutoWeb (авто-паутина)",
+   "qol": false,
+   "description": "Обнаружен модуль AutoWeb — типичный признак чит-клиента (combat)."
+  },
+  {
+   "id": "backtrack",
+   "name": "Backtrack",
+   "category": "combat",
+   "aliases": [
+    "backtrack"
+   ],
+   "severity": 5,
+   "weight": 16,
+   "name_ru": "Backtrack (откат позиций)",
+   "qol": false,
+   "description": "Обнаружен модуль Backtrack — типичный признак чит-клиента (combat)."
+  },
+  {
+   "id": "bedaura",
+   "name": "BedAura",
+   "category": "combat",
+   "aliases": [
+    "bedaura"
+   ],
+   "severity": 5,
+   "weight": 16,
+   "name_ru": "BedAura (аура кроватей)",
+   "qol": false,
+   "description": "Обнаружен модуль BedAura — типичный признак чит-клиента (combat)."
+  },
+  {
+   "id": "bowaimbot",
+   "name": "BowAimbot",
+   "category": "combat",
+   "aliases": [
+    "bowaimbot"
+   ],
+   "severity": 5,
+   "weight": 16,
+   "name_ru": "BowAimbot (автонаведение лука)",
+   "qol": false,
+   "description": "Обнаружен модуль BowAimbot — типичный признак чит-клиента (combat)."
+  },
+  {
+   "id": "bowspam",
+   "name": "BowSpam",
+   "category": "combat",
+   "aliases": [
+    "bowspam"
+   ],
+   "severity": 4,
+   "weight": 9,
+   "name_ru": "BowSpam (спам из лука)",
+   "qol": false,
+   "description": "Обнаружен модуль BowSpam — типичный признак чит-клиента (combat)."
+  },
+  {
+   "id": "burrow",
+   "name": "Burrow",
+   "category": "combat",
+   "aliases": [
+    "burrow"
+   ],
+   "severity": 5,
+   "weight": 15,
+   "name_ru": "Burrow (закапывание)",
+   "qol": false,
+   "description": "Обнаружен модуль Burrow — типичный признак чит-клиента (combat)."
+  },
+  {
+   "id": "chestaura",
+   "name": "ChestAura",
+   "category": "combat",
+   "aliases": [
+    "chestaura"
+   ],
+   "severity": 5,
+   "weight": 13,
+   "name_ru": "ChestAura (аура сундуков)",
+   "qol": false,
+   "description": "Обнаружен модуль ChestAura — типичный признак чит-клиента (combat)."
+  },
+  {
+   "id": "clickaura",
+   "name": "ClickAura",
+   "category": "combat",
+   "aliases": [
+    "clickaura"
+   ],
+   "severity": 5,
+   "weight": 15,
+   "name_ru": "ClickAura (аура по клику)",
+   "qol": false,
+   "description": "Обнаружен модуль ClickAura — типичный признак чит-клиента (combat)."
+  },
+  {
+   "id": "criticals",
+   "name": "Criticals",
+   "category": "combat",
+   "aliases": [
+    "critical",
+    "criticals"
+   ],
+   "severity": 5,
+   "weight": 14,
+   "name_ru": "Criticals (критические удары)",
+   "qol": false,
+   "description": "Обнаружен модуль Criticals — типичный признак чит-клиента (combat)."
+  },
+  {
+   "id": "crystalaura",
+   "name": "CrystalAura",
+   "category": "combat",
+   "aliases": [
+    "crystalaura"
+   ],
+   "severity": 5,
+   "weight": 18,
+   "name_ru": "CrystalAura (аура кристаллов)",
+   "qol": false,
+   "description": "Обнаружен модуль CrystalAura — типичный признак чит-клиента (combat)."
+  },
+  {
+   "id": "fakelag",
+   "name": "FakeLag",
+   "category": "combat",
+   "aliases": [
+    "fakelag",
+    "lag"
+   ],
+   "severity": 5,
+   "weight": 14,
+   "name_ru": "FakeLag (фейковые лаги)",
+   "qol": false,
+   "description": "Обнаружен модуль FakeLag — типичный признак чит-клиента (combat)."
+  },
+  {
+   "id": "fightbot",
+   "name": "FightBot",
+   "category": "combat",
+   "aliases": [
+    "fightbot"
+   ],
+   "severity": 5,
+   "weight": 15,
+   "name_ru": "FightBot (авто-бой)",
+   "qol": false,
+   "description": "Обнаружен модуль FightBot — типичный признак чит-клиента (combat)."
+  },
+  {
+   "id": "hitbox",
+   "name": "HitBox",
+   "category": "combat",
+   "aliases": [
+    "hitbox",
+    "hitboxexpand"
+   ],
+   "severity": 5,
+   "weight": 18,
+   "name_ru": "HitBox (расширение хитбоксов)",
+   "qol": false,
+   "description": "Обнаружен модуль HitBox — типичный признак чит-клиента (combat)."
+  },
+  {
+   "id": "hitselect",
+   "name": "HitSelect",
+   "category": "combat",
+   "aliases": [
+    "hitselect"
+   ],
+   "severity": 5,
+   "weight": 12,
+   "name_ru": "HitSelect",
+   "qol": false,
+   "description": "Обнаружен модуль HitSelect — типичный признак чит-клиента (combat)."
+  },
+  {
+   "id": "infiniteaura",
+   "name": "InfiniteAura",
+   "category": "combat",
+   "aliases": [
+    "infiniteaura"
+   ],
+   "severity": 5,
+   "weight": 16,
+   "name_ru": "InfiniteAura",
+   "qol": false,
+   "description": "Обнаружен модуль InfiniteAura — типичный признак чит-клиента (combat)."
+  },
+  {
+   "id": "keepsprint",
+   "name": "KeepSprint",
+   "category": "combat",
+   "aliases": [
+    "keepsprint"
+   ],
+   "severity": 4,
+   "weight": 9,
+   "name_ru": "KeepSprint (спринт при ударе)",
+   "qol": false,
+   "description": "Обнаружен модуль KeepSprint — типичный признак чит-клиента (combat)."
+  },
+  {
+   "id": "killaura",
+   "name": "KillAura",
+   "category": "combat",
+   "aliases": [
+    "killaura",
+    "killaurka",
+    "legitaura"
+   ],
+   "severity": 5,
+   "weight": 18,
+   "name_ru": "KillAura (аура убийства)",
+   "qol": false,
+   "description": "Обнаружен модуль KillAura — типичный признак чит-клиента (combat)."
+  },
+  {
+   "id": "multiaura",
+   "name": "MultiAura",
+   "category": "combat",
+   "aliases": [
+    "multiaura"
+   ],
+   "severity": 5,
+   "weight": 16,
+   "name_ru": "MultiAura (аура по нескольким целям)",
+   "qol": false,
+   "description": "Обнаружен модуль MultiAura — типичный признак чит-клиента (combat)."
+  },
+  {
+   "id": "multitask",
+   "name": "Multitask",
+   "category": "combat",
+   "aliases": [
+    "multitask"
+   ],
+   "severity": 4,
+   "weight": 9,
+   "name_ru": "Multitask (несколько действий)",
+   "qol": false,
+   "description": "Обнаружен модуль Multitask — типичный признак чит-клиента (combat)."
+  },
+  {
+   "id": "offhand",
+   "name": "Offhand",
+   "category": "combat",
+   "aliases": [
+    "offhand"
+   ],
+   "severity": 4,
+   "weight": 10,
+   "name_ru": "Offhand (авто-вторая рука)",
+   "qol": false,
+   "description": "Обнаружен модуль Offhand — типичный признак чит-клиента (combat)."
+  },
+  {
+   "id": "projectileaimbot",
+   "name": "ProjectileAimbot",
+   "category": "combat",
+   "aliases": [
+    "projectileaimbot"
+   ],
+   "severity": 5,
+   "weight": 14,
+   "name_ru": "ProjectileAimbot",
+   "qol": false,
+   "description": "Обнаружен модуль ProjectileAimbot — типичный признак чит-клиента (combat)."
+  },
+  {
+   "id": "quiver",
+   "name": "Quiver",
+   "category": "combat",
+   "aliases": [
+    "quiver"
+   ],
+   "severity": 4,
+   "weight": 9,
+   "name_ru": "Quiver (авто-стрелы)",
+   "qol": false,
+   "description": "Обнаружен модуль Quiver — типичный признак чит-клиента (combat)."
+  },
+  {
+   "id": "selftrap",
+   "name": "SelfTrap",
+   "category": "combat",
+   "aliases": [
+    "selftrap"
+   ],
+   "severity": 5,
+   "weight": 14,
+   "name_ru": "SelfTrap (самоловушка)",
+   "qol": false,
+   "description": "Обнаружен модуль SelfTrap — типичный признак чит-клиента (combat)."
+  },
+  {
+   "id": "selfweb",
+   "name": "SelfWeb",
+   "category": "combat",
+   "aliases": [
+    "selfweb"
+   ],
+   "severity": 5,
+   "weight": 13,
+   "name_ru": "SelfWeb (паутина на себя)",
+   "qol": false,
+   "description": "Обнаружен модуль SelfWeb — типичный признак чит-клиента (combat)."
+  },
+  {
+   "id": "silentaim",
+   "name": "SilentAim",
+   "category": "combat",
+   "aliases": [
+    "silentaim",
+    "silentaura"
+   ],
+   "severity": 5,
+   "weight": 18,
+   "name_ru": "SilentAim (скрытое автонаведение)",
+   "qol": false,
+   "description": "Обнаружен модуль SilentAim — типичный признак чит-клиента (combat)."
+  },
+  {
+   "id": "spinbot",
+   "name": "SpinBot",
+   "category": "combat",
+   "aliases": [
+    "spinbot"
+   ],
+   "severity": 5,
+   "weight": 15,
+   "name_ru": "SpinBot (вращение)",
+   "qol": false,
+   "description": "Обнаружен модуль SpinBot — типичный признак чит-клиента (combat)."
+  },
+  {
+   "id": "superknockback",
+   "name": "SuperKnockback",
+   "category": "combat",
+   "aliases": [
+    "superknockback"
+   ],
+   "severity": 5,
+   "weight": 14,
+   "name_ru": "SuperKnockback",
+   "qol": false,
+   "description": "Обнаружен модуль SuperKnockback — типичный признак чит-клиента (combat)."
+  },
+  {
+   "id": "surround",
+   "name": "Surround",
+   "category": "combat",
+   "aliases": [
+    "surround"
+   ],
+   "severity": 5,
+   "weight": 16,
+   "name_ru": "Surround (обсидиан вокруг)",
+   "qol": false,
+   "description": "Обнаружен модуль Surround — типичный признак чит-клиента (combat)."
+  },
+  {
+   "id": "swordblock",
+   "name": "SwordBlock",
+   "category": "combat",
+   "aliases": [
+    "swordblock"
+   ],
+   "severity": 4,
+   "weight": 9,
+   "name_ru": "SwordBlock (блок мечом)",
+   "qol": false,
+   "description": "Обнаружен модуль SwordBlock — типичный признак чит-клиента (combat)."
+  },
+  {
+   "id": "targetlock",
+   "name": "TargetLock",
+   "category": "combat",
+   "aliases": [
+    "targetlock"
+   ],
+   "severity": 5,
+   "weight": 14,
+   "name_ru": "TargetLock (захват цели)",
+   "qol": false,
+   "description": "Обнаружен модуль TargetLock — типичный признак чит-клиента (combat)."
+  },
+  {
+   "id": "targetstrafe",
+   "name": "TargetStrafe",
+   "category": "combat",
+   "aliases": [
+    "targetstrafe"
+   ],
+   "severity": 5,
+   "weight": 14,
+   "name_ru": "TargetStrafe (кружение вокруг цели)",
+   "qol": false,
+   "description": "Обнаружен модуль TargetStrafe — типичный признак чит-клиента (combat)."
+  },
+  {
+   "id": "tickbase",
+   "name": "TickBase",
+   "category": "combat",
+   "aliases": [
+    "tickbase"
+   ],
+   "severity": 5,
+   "weight": 14,
+   "name_ru": "TickBase (манипуляция тиками)",
+   "qol": false,
+   "description": "Обнаружен модуль TickBase — типичный признак чит-клиента (combat)."
+  },
+  {
+   "id": "timerange",
+   "name": "TimerRange",
+   "category": "combat",
+   "aliases": [
+    "timerange"
+   ],
+   "severity": 5,
+   "weight": 14,
+   "name_ru": "TimerRange",
+   "qol": false,
+   "description": "Обнаружен модуль TimerRange — типичный признак чит-клиента (combat)."
+  },
+  {
+   "id": "tpauras",
+   "name": "TPAura",
+   "category": "combat",
+   "aliases": [
+    "tpauras"
+   ],
+   "severity": 5,
+   "weight": 16,
+   "name_ru": "TPAura (телепорт-аура)",
+   "qol": false,
+   "description": "Обнаружен модуль TPAura — типичный признак чит-клиента (combat)."
+  },
+  {
+   "id": "triggerbot",
+   "name": "TriggerBot",
+   "category": "combat",
+   "aliases": [
+    "trigger",
+    "triggerbot"
+   ],
+   "severity": 5,
+   "weight": 16,
+   "name_ru": "TriggerBot (авто-удар при наведении)",
+   "qol": false,
+   "description": "Обнаружен модуль TriggerBot — типичный признак чит-клиента (combat)."
+  },
+  {
+   "id": "velocity",
+   "name": "Velocity",
+   "category": "combat",
+   "aliases": [
+    "knockback",
+    "velocity"
+   ],
+   "severity": 5,
+   "weight": 16,
+   "name_ru": "Velocity (анти-отбрасывание)",
+   "qol": false,
+   "description": "Обнаружен модуль Velocity — типичный признак чит-клиента (combat)."
+  },
+  {
+   "id": "backdoor",
+   "name": "Backdoor",
+   "category": "exploit",
+   "aliases": [
+    "backdoor"
+   ],
+   "severity": 5,
+   "weight": 20,
+   "name_ru": "Backdoor",
+   "qol": false,
+   "description": "Обнаружен модуль Backdoor — типичный признак чит-клиента (exploit)."
+  },
+  {
+   "id": "clicktp",
+   "name": "ClickTP",
+   "category": "exploit",
+   "aliases": [
+    "clicktp"
+   ],
+   "severity": 5,
+   "weight": 14,
+   "name_ru": "ClickTP (телепорт по клику)",
+   "qol": false,
+   "description": "Обнаружен модуль ClickTP — типичный признак чит-клиента (exploit)."
+  },
+  {
+   "id": "clip",
+   "name": "Clip",
+   "category": "exploit",
+   "aliases": [
+    "clip"
+   ],
+   "severity": 5,
+   "weight": 13,
+   "name_ru": "Clip (клип сквозь блоки)",
+   "qol": false,
+   "description": "Обнаружен модуль Clip — типичный признак чит-клиента (exploit)."
+  },
+  {
+   "id": "coordtp",
+   "name": "CoordTP",
+   "category": "exploit",
+   "aliases": [
+    "coordtp"
+   ],
+   "severity": 5,
+   "weight": 14,
+   "name_ru": "CoordTP (телепорт по координатам)",
+   "qol": false,
+   "description": "Обнаружен модуль CoordTP — типичный признак чит-клиента (exploit)."
+  },
+  {
+   "id": "crashchest",
+   "name": "CrashChest",
+   "category": "exploit",
+   "aliases": [
+    "crashchest"
+   ],
+   "severity": 5,
+   "weight": 16,
+   "name_ru": "CrashChest",
+   "qol": false,
+   "description": "Обнаружен модуль CrashChest — типичный признак чит-клиента (exploit)."
+  },
+  {
+   "id": "crashexploit",
+   "name": "CrashExploit",
+   "category": "exploit",
+   "aliases": [
+    "crashexploit"
+   ],
+   "severity": 5,
+   "weight": 18,
+   "name_ru": "CrashExploit",
+   "qol": false,
+   "description": "Обнаружен модуль CrashExploit — типичный признак чит-клиента (exploit)."
+  },
+  {
+   "id": "forceop",
+   "name": "ForceOp",
+   "category": "exploit",
+   "aliases": [
+    "forceop"
+   ],
+   "severity": 5,
+   "weight": 18,
+   "name_ru": "ForceOp",
+   "qol": false,
+   "description": "Обнаружен модуль ForceOp — типичный признак чит-клиента (exploit)."
+  },
+  {
+   "id": "ghosthand",
+   "name": "GhostHand",
+   "category": "exploit",
+   "aliases": [
+    "ghosthand"
+   ],
+   "severity": 5,
+   "weight": 11,
+   "name_ru": "GhostHand",
+   "qol": false,
+   "description": "Обнаружен модуль GhostHand — типичный признак чит-клиента (exploit)."
+  },
+  {
+   "id": "itemteleport",
+   "name": "ItemTeleport",
+   "category": "exploit",
+   "aliases": [
+    "itemteleport"
+   ],
+   "severity": 5,
+   "weight": 13,
+   "name_ru": "ItemTeleport",
+   "qol": false,
+   "description": "Обнаружен модуль ItemTeleport — типичный признак чит-клиента (exploit)."
+  },
+  {
+   "id": "liquidinteract",
+   "name": "LiquidInteract",
+   "category": "exploit",
+   "aliases": [
+    "liquidinteract"
+   ],
+   "severity": 4,
+   "weight": 9,
+   "name_ru": "LiquidInteract",
+   "qol": false,
+   "description": "Обнаружен модуль LiquidInteract — типичный признак чит-клиента (exploit)."
+  },
+  {
+   "id": "packetfly",
+   "name": "PacketFly",
+   "category": "exploit",
+   "aliases": [
+    "packetfly"
+   ],
+   "severity": 5,
+   "weight": 18,
+   "name_ru": "PacketFly (полёт пакетами)",
+   "qol": false,
+   "description": "Обнаружен модуль PacketFly — типичный признак чит-клиента (exploit)."
+  },
+  {
+   "id": "phase",
+   "name": "Phase",
+   "category": "exploit",
+   "aliases": [
+    "phase"
+   ],
+   "severity": 5,
+   "weight": 16,
+   "name_ru": "Phase (проход сквозь блоки)",
+   "qol": false,
+   "description": "Обнаружен модуль Phase — типичный признак чит-клиента (exploit)."
+  },
+  {
+   "id": "reach",
+   "name": "Reach",
+   "category": "exploit",
+   "aliases": [
+    "reach"
+   ],
+   "severity": 5,
+   "weight": 16,
+   "name_ru": "Reach (дистанция)",
+   "qol": false,
+   "description": "Обнаружен модуль Reach — типичный признак чит-клиента (exploit)."
+  },
+  {
+   "id": "servercrasher",
+   "name": "ServerCrasher",
+   "category": "exploit",
+   "aliases": [
+    "crash",
+    "servercrasher"
+   ],
+   "severity": 5,
+   "weight": 18,
+   "name_ru": "ServerCrasher",
+   "qol": false,
+   "description": "Обнаружен модуль ServerCrasher — типичный признак чит-клиента (exploit)."
+  },
+  {
+   "id": "teleport",
+   "name": "Teleport",
+   "category": "exploit",
+   "aliases": [
+    "teleport",
+    "tp"
+   ],
+   "severity": 5,
+   "weight": 12,
+   "name_ru": "Teleport (телепорт)",
+   "qol": false,
+   "description": "Обнаружен модуль Teleport — типичный признак чит-клиента (exploit)."
+  },
+  {
+   "id": "vclip",
+   "name": "VClip",
+   "category": "exploit",
+   "aliases": [
+    "vclip"
+   ],
+   "severity": 5,
+   "weight": 13,
+   "name_ru": "VClip (вертикальный клип)",
+   "qol": false,
+   "description": "Обнаружен модуль VClip — типичный признак чит-клиента (exploit)."
+  },
+  {
+   "id": "anticheat",
+   "name": "AntiCheat",
+   "category": "misc",
+   "aliases": [
+    "anticheat"
+   ],
+   "severity": 4,
+   "weight": 5,
+   "name_ru": "AntiCheat",
+   "qol": true,
+   "description": "Модуль AntiCheat — слабый/QoL-признак, сам по себе не является читом."
+  },
+  {
+   "id": "anticheatdetect",
+   "name": "AntiCheatDetect",
+   "category": "misc",
+   "aliases": [
+    "anticheatdetect"
+   ],
+   "severity": 4,
+   "weight": 8,
+   "name_ru": "AntiCheatDetect (AC scan)",
+   "qol": false,
+   "description": "Обнаружен модуль AntiCheatDetect — типичный признак чит-клиента (misc)."
+  },
+  {
+   "id": "antistaff",
+   "name": "AntiStaff",
+   "category": "misc",
+   "aliases": [
+    "antistaff"
+   ],
+   "severity": 4,
+   "weight": 7,
+   "name_ru": "AntiStaff",
+   "qol": false,
+   "description": "Обнаружен модуль AntiStaff — типичный признак чит-клиента (misc)."
+  },
+  {
+   "id": "bypass",
+   "name": "Bypass",
+   "category": "misc",
+   "aliases": [
+    "bypass"
+   ],
+   "severity": 4,
+   "weight": 5,
+   "name_ru": "Bypass",
+   "qol": true,
+   "description": "Модуль Bypass — слабый/QoL-признак, сам по себе не является читом."
+  },
+  {
+   "id": "disabler",
+   "name": "Disabler",
+   "category": "misc",
+   "aliases": [
+    "disabler"
+   ],
+   "severity": 5,
+   "weight": 16,
+   "name_ru": "Disabler (AC scan)",
+   "qol": false,
+   "description": "Обнаружен модуль Disabler — типичный признак чит-клиента (misc)."
+  },
+  {
+   "id": "flagcheck",
+   "name": "FlagCheck",
+   "category": "misc",
+   "aliases": [
+    "flagcheck"
+   ],
+   "severity": 4,
+   "weight": 8,
+   "name_ru": "FlagCheck (проверка флагов)",
+   "qol": false,
+   "description": "Обнаружен модуль FlagCheck — типичный признак чит-клиента (misc)."
+  },
+  {
+   "id": "packetcanceller",
+   "name": "PacketCanceller",
+   "category": "misc",
+   "aliases": [
+    "packetcanceller"
+   ],
+   "severity": 4,
+   "weight": 8,
+   "name_ru": "PacketCanceller",
+   "qol": false,
+   "description": "Обнаружен модуль PacketCanceller — типичный признак чит-клиента (misc)."
+  },
+  {
+   "id": "packetexploit",
+   "name": "PacketExploit",
+   "category": "misc",
+   "aliases": [
+    "packetexploit"
+   ],
+   "severity": 5,
+   "weight": 16,
+   "name_ru": "PacketExploit (эксплойт пакетов)",
+   "qol": false,
+   "description": "Обнаружен модуль PacketExploit — типичный признак чит-клиента (misc)."
+  },
+  {
+   "id": "pingfix",
+   "name": "PingFix",
+   "category": "misc",
+   "aliases": [
+    "pingfix"
+   ],
+   "severity": 4,
+   "weight": 7,
+   "name_ru": "PingFix",
+   "qol": false,
+   "description": "Обнаружен модуль PingFix — типичный признак чит-клиента (misc)."
+  },
+  {
+   "id": "pingspoof",
+   "name": "PingSpoof",
+   "category": "misc",
+   "aliases": [
+    "pingspoof"
+   ],
+   "severity": 4,
+   "weight": 7,
+   "name_ru": "PingSpoof",
+   "qol": false,
+   "description": "Обнаружен модуль PingSpoof — типичный признак чит-клиента (misc)."
+  },
+  {
+   "id": "plugindetector",
+   "name": "PluginDetector",
+   "category": "misc",
+   "aliases": [
+    "plugindetector"
+   ],
+   "severity": 4,
+   "weight": 6,
+   "name_ru": "PluginDetector",
+   "qol": false,
+   "description": "Обнаружен модуль PluginDetector — типичный признак чит-клиента (misc)."
+  },
+  {
+   "id": "plugins",
+   "name": "Plugins",
+   "category": "misc",
+   "aliases": [
+    "plugins"
+   ],
+   "severity": 4,
+   "weight": 5,
+   "name_ru": "Plugins (детект плагинов)",
+   "qol": true,
+   "description": "Модуль Plugins — слабый/QoL-признак, сам по себе не является читом."
+  },
+  {
+   "id": "spammer",
+   "name": "Spammer",
+   "category": "misc",
+   "aliases": [
+    "chatspam",
+    "spammer"
+   ],
+   "severity": 4,
+   "weight": 6,
+   "name_ru": "Spammer (спам в чат)",
+   "qol": false,
+   "description": "Обнаружен модуль Spammer — типичный признак чит-клиента (misc)."
+  },
+  {
+   "id": "staffdetector",
+   "name": "StaffDetector",
+   "category": "misc",
+   "aliases": [
+    "staffdetector"
+   ],
+   "severity": 4,
+   "weight": 7,
+   "name_ru": "StaffDetector",
+   "qol": false,
+   "description": "Обнаружен модуль StaffDetector — типичный признак чит-клиента (misc)."
+  },
+  {
+   "id": "airjump",
+   "name": "AirJump",
+   "category": "movement",
+   "aliases": [
+    "airjump"
+   ],
+   "severity": 5,
+   "weight": 12,
+   "name_ru": "AirJump (прыжки в воздухе)",
+   "qol": false,
+   "description": "Обнаружен модуль AirJump — типичный признак чит-клиента (movement)."
+  },
+  {
+   "id": "antihunger",
+   "name": "AntiHunger",
+   "category": "movement",
+   "aliases": [
+    "antihunger"
+   ],
+   "severity": 4,
+   "weight": 9,
+   "name_ru": "AntiHunger (без голода)",
+   "qol": false,
+   "description": "Обнаружен модуль AntiHunger — типичный признак чит-клиента (movement)."
+  },
+  {
+   "id": "antivoid",
+   "name": "AntiVoid",
+   "category": "movement",
+   "aliases": [
+    "antivoid"
+   ],
+   "severity": 4,
+   "weight": 7,
+   "name_ru": "AntiVoid (не падать в пустоту)",
+   "qol": false,
+   "description": "Обнаружен модуль AntiVoid — типичный признак чит-клиента (movement)."
+  },
+  {
+   "id": "blink",
+   "name": "Blink",
+   "category": "movement",
+   "aliases": [
+    "blink"
+   ],
+   "severity": 5,
+   "weight": 14,
+   "name_ru": "Blink (телепорт-лаг)",
+   "qol": false,
+   "description": "Обнаружен модуль Blink — типичный признак чит-клиента (movement)."
+  },
+  {
+   "id": "boatfly",
+   "name": "BoatFly",
+   "category": "movement",
+   "aliases": [
+    "boatfly"
+   ],
+   "severity": 5,
+   "weight": 13,
+   "name_ru": "BoatFly (полёт в лодке)",
+   "qol": false,
+   "description": "Обнаружен модуль BoatFly — типичный признак чит-клиента (movement)."
+  },
+  {
+   "id": "bunnyhop",
+   "name": "BunnyHop",
+   "category": "movement",
+   "aliases": [
+    "bunnyhop"
+   ],
+   "severity": 5,
+   "weight": 12,
+   "name_ru": "BunnyHop (прыжки)",
+   "qol": false,
+   "description": "Обнаружен модуль BunnyHop — типичный признак чит-клиента (movement)."
+  },
+  {
+   "id": "creativeflight",
+   "name": "CreativeFlight",
+   "category": "movement",
+   "aliases": [
+    "creativeflight"
+   ],
+   "severity": 5,
+   "weight": 14,
+   "name_ru": "CreativeFlight (креативный полёт)",
+   "qol": false,
+   "description": "Обнаружен модуль CreativeFlight — типичный признак чит-клиента (movement)."
+  },
+  {
+   "id": "elytrafly",
+   "name": "ElytraFly",
+   "category": "movement",
+   "aliases": [
+    "elytrafly"
+   ],
+   "severity": 5,
+   "weight": 14,
+   "name_ru": "ElytraFly (полёт на элитре)",
+   "qol": false,
+   "description": "Обнаружен модуль ElytraFly — типичный признак чит-клиента (movement)."
+  },
+  {
+   "id": "entityspeed",
+   "name": "EntitySpeed",
+   "category": "movement",
+   "aliases": [
+    "entityspeed"
+   ],
+   "severity": 5,
+   "weight": 12,
+   "name_ru": "EntitySpeed (скорость сущности)",
+   "qol": false,
+   "description": "Обнаружен модуль EntitySpeed — типичный признак чит-клиента (movement)."
+  },
+  {
+   "id": "flight",
+   "name": "Flight",
+   "category": "movement",
+   "aliases": [
+    "flight"
+   ],
+   "severity": 5,
+   "weight": 15,
+   "name_ru": "Flight (полёт)",
+   "qol": false,
+   "description": "Обнаружен модуль Flight — типичный признак чит-клиента (movement)."
+  },
+  {
+   "id": "fly",
+   "name": "Fly",
+   "category": "movement",
+   "aliases": [
+    "fly"
+   ],
+   "severity": 5,
+   "weight": 15,
+   "name_ru": "Fly (полёт)",
+   "qol": false,
+   "description": "Обнаружен модуль Fly — типичный признак чит-клиента (movement)."
+  },
+  {
+   "id": "glide",
+   "name": "Glide",
+   "category": "movement",
+   "aliases": [
+    "glide"
+   ],
+   "severity": 5,
+   "weight": 12,
+   "name_ru": "Glide (планирование)",
+   "qol": false,
+   "description": "Обнаружен модуль Glide — типичный признак чит-клиента (movement)."
+  },
+  {
+   "id": "guimove",
+   "name": "GuiMove",
+   "category": "movement",
+   "aliases": [
+    "guimove"
+   ],
+   "severity": 4,
+   "weight": 8,
+   "name_ru": "GuiMove (движение в GUI)",
+   "qol": false,
+   "description": "Обнаружен модуль GuiMove — типичный признак чит-клиента (movement)."
+  },
+  {
+   "id": "highjump",
+   "name": "HighJump",
+   "category": "movement",
+   "aliases": [
+    "highjump"
+   ],
+   "severity": 5,
+   "weight": 12,
+   "name_ru": "HighJump (высокий прыжок)",
+   "qol": false,
+   "description": "Обнаружен модуль HighJump — типичный признак чит-клиента (movement)."
+  },
+  {
+   "id": "icespeed",
+   "name": "IceSpeed",
+   "category": "movement",
+   "aliases": [
+    "icespeed"
+   ],
+   "severity": 5,
+   "weight": 11,
+   "name_ru": "IceSpeed",
+   "qol": false,
+   "description": "Обнаружен модуль IceSpeed — типичный признак чит-клиента (movement)."
+  },
+  {
+   "id": "invwalk",
+   "name": "InvWalk",
+   "category": "movement",
+   "aliases": [
+    "invwalk"
+   ],
+   "severity": 4,
+   "weight": 9,
+   "name_ru": "InvWalk (ходьба с открытым инвентарём)",
+   "qol": false,
+   "description": "Обнаружен модуль InvWalk — типичный признак чит-клиента (movement)."
+  },
+  {
+   "id": "jesus",
+   "name": "Jesus",
+   "category": "movement",
+   "aliases": [
+    "jesus"
+   ],
+   "severity": 5,
+   "weight": 14,
+   "name_ru": "Jesus (ходьба по воде)",
+   "qol": false,
+   "description": "Обнаружен модуль Jesus — типичный признак чит-клиента (movement)."
+  },
+  {
+   "id": "jetpack",
+   "name": "Jetpack",
+   "category": "movement",
+   "aliases": [
+    "jetpack"
+   ],
+   "severity": 5,
+   "weight": 12,
+   "name_ru": "Jetpack",
+   "qol": false,
+   "description": "Обнаружен модуль Jetpack — типичный признак чит-клиента (movement)."
+  },
+  {
+   "id": "longjump",
+   "name": "LongJump",
+   "category": "movement",
+   "aliases": [
+    "longjump"
+   ],
+   "severity": 5,
+   "weight": 13,
+   "name_ru": "LongJump",
+   "qol": false,
+   "description": "Обнаружен модуль LongJump — типичный признак чит-клиента (movement)."
+  },
+  {
+   "id": "noclip",
+   "name": "NoClip",
+   "category": "movement",
+   "aliases": [
+    "noclip"
+   ],
+   "severity": 5,
+   "weight": 15,
+   "name_ru": "NoClip (проход сквозь блоки)",
+   "qol": false,
+   "description": "Обнаружен модуль NoClip — типичный признак чит-клиента (movement)."
+  },
+  {
+   "id": "nofall",
+   "name": "NoFall",
+   "category": "movement",
+   "aliases": [
+    "nofall",
+    "nofalldamage"
+   ],
+   "severity": 5,
+   "weight": 14,
+   "name_ru": "NoFall (без урона от падения)",
+   "qol": false,
+   "description": "Обнаружен модуль NoFall — типичный признак чит-клиента (movement)."
+  },
+  {
+   "id": "nolevitation",
+   "name": "NoLevitation",
+   "category": "movement",
+   "aliases": [
+    "nolevitation"
+   ],
+   "severity": 4,
+   "weight": 8,
+   "name_ru": "NoLevitation",
+   "qol": false,
+   "description": "Обнаружен модуль NoLevitation — типичный признак чит-клиента (movement)."
+  },
+  {
+   "id": "nopush",
+   "name": "NoPush",
+   "category": "movement",
+   "aliases": [
+    "nopush"
+   ],
+   "severity": 4,
+   "weight": 8,
+   "name_ru": "NoPush (без отталкивания)",
+   "qol": false,
+   "description": "Обнаружен модуль NoPush — типичный признак чит-клиента (movement)."
+  },
+  {
+   "id": "norotate",
+   "name": "NoRotate",
+   "category": "movement",
+   "aliases": [
+    "norotate"
+   ],
+   "severity": 4,
+   "weight": 9,
+   "name_ru": "NoRotate (без принудительного поворота)",
+   "qol": false,
+   "description": "Обнаружен модуль NoRotate — типичный признак чит-клиента (movement)."
+  },
+  {
+   "id": "noslowdown",
+   "name": "NoSlowdown",
+   "category": "movement",
+   "aliases": [
+    "noslowdown"
+   ],
+   "severity": 4,
+   "weight": 10,
+   "name_ru": "NoSlowdown (без замедления)",
+   "qol": false,
+   "description": "Обнаружен модуль NoSlowdown — типичный признак чит-клиента (movement)."
+  },
+  {
+   "id": "noweb",
+   "name": "NoWeb",
+   "category": "movement",
+   "aliases": [
+    "noweb"
+   ],
+   "severity": 4,
+   "weight": 9,
+   "name_ru": "NoWeb (без замедления в паутине)",
+   "qol": false,
+   "description": "Обнаружен модуль NoWeb — типичный признак чит-клиента (movement)."
+  },
+  {
+   "id": "parkour",
+   "name": "Parkour",
+   "category": "movement",
+   "aliases": [
+    "parkour"
+   ],
+   "severity": 4,
+   "weight": 6,
+   "name_ru": "Parkour (авто-паркур)",
+   "qol": true,
+   "description": "Модуль Parkour — слабый/QoL-признак, сам по себе не является читом."
+  },
+  {
+   "id": "reversestep",
+   "name": "ReverseStep",
+   "category": "movement",
+   "aliases": [
+    "reversestep"
+   ],
+   "severity": 4,
+   "weight": 8,
+   "name_ru": "ReverseStep",
+   "qol": false,
+   "description": "Обнаружен модуль ReverseStep — типичный признак чит-клиента (movement)."
+  },
+  {
+   "id": "safewalk",
+   "name": "SafeWalk",
+   "category": "movement",
+   "aliases": [
+    "safewalk"
+   ],
+   "severity": 4,
+   "weight": 5,
+   "name_ru": "SafeWalk (не падать с края)",
+   "qol": true,
+   "description": "Модуль SafeWalk — слабый/QoL-признак, сам по себе не является читом."
+  },
+  {
+   "id": "snaptap",
+   "name": "SnapTap",
+   "category": "movement",
+   "aliases": [
+    "snaptap"
+   ],
+   "severity": 4,
+   "weight": 6,
+   "name_ru": "SnapTap",
+   "qol": true,
+   "description": "Модуль SnapTap — слабый/QoL-признак, сам по себе не является читом."
+  },
+  {
+   "id": "speed",
+   "name": "Speed",
+   "category": "movement",
+   "aliases": [
+    "speed"
+   ],
+   "severity": 5,
+   "weight": 13,
+   "name_ru": "Speed (ускорение)",
+   "qol": false,
+   "description": "Обнаружен модуль Speed — типичный признак чит-клиента (movement)."
+  },
+  {
+   "id": "spider",
+   "name": "Spider",
+   "category": "movement",
+   "aliases": [
+    "spider"
+   ],
+   "severity": 5,
+   "weight": 14,
+   "name_ru": "Spider (лазание по стенам)",
+   "qol": false,
+   "description": "Обнаружен модуль Spider — типичный признак чит-клиента (movement)."
+  },
+  {
+   "id": "step",
+   "name": "Step",
+   "category": "movement",
+   "aliases": [
+    "step"
+   ],
+   "severity": 5,
+   "weight": 11,
+   "name_ru": "Step (шаг вверх)",
+   "qol": false,
+   "description": "Обнаружен модуль Step — типичный признак чит-клиента (movement)."
+  },
+  {
+   "id": "strafe",
+   "name": "Strafe",
+   "category": "movement",
+   "aliases": [
+    "strafe"
+   ],
+   "severity": 4,
+   "weight": 6,
+   "name_ru": "Strafe",
+   "qol": true,
+   "description": "Модуль Strafe — слабый/QoL-признак, сам по себе не является читом."
+  },
+  {
+   "id": "timer",
+   "name": "Timer",
+   "category": "movement",
+   "aliases": [
+    "gamespeed",
+    "timer"
+   ],
+   "severity": 5,
+   "weight": 14,
+   "name_ru": "Timer (ускорение времени)",
+   "qol": false,
+   "description": "Обнаружен модуль Timer — типичный признак чит-клиента (movement)."
+  },
+  {
+   "id": "wallclimb",
+   "name": "WallClimb",
+   "category": "movement",
+   "aliases": [
+    "wallclimb"
+   ],
+   "severity": 5,
+   "weight": 13,
+   "name_ru": "WallClimb (лазание по стенам)",
+   "qol": false,
+   "description": "Обнаружен модуль WallClimb — типичный признак чит-клиента (movement)."
+  },
+  {
+   "id": "waterspeed",
+   "name": "WaterSpeed",
+   "category": "movement",
+   "aliases": [
+    "waterspeed"
+   ],
+   "severity": 5,
+   "weight": 11,
+   "name_ru": "WaterSpeed",
+   "qol": false,
+   "description": "Обнаружен модуль WaterSpeed — типичный признак чит-клиента (movement)."
+  },
+  {
+   "id": "autogap",
+   "name": "AutoGap",
+   "category": "player",
+   "aliases": [
+    "autogap"
+   ],
+   "severity": 5,
+   "weight": 10,
+   "name_ru": "AutoGap",
+   "qol": false,
+   "description": "Обнаружен модуль AutoGap — типичный признак чит-клиента (player)."
+  },
+  {
+   "id": "autogapple",
+   "name": "AutoGapple",
+   "category": "player",
+   "aliases": [
+    "autogapple"
+   ],
+   "severity": 5,
+   "weight": 10,
+   "name_ru": "AutoGapple",
+   "qol": false,
+   "description": "Обнаружен модуль AutoGapple — типичный признак чит-клиента (player)."
+  },
+  {
+   "id": "autopot",
+   "name": "AutoPot",
+   "category": "player",
+   "aliases": [
+    "autopot"
+   ],
+   "severity": 5,
+   "weight": 12,
+   "name_ru": "AutoPot",
+   "qol": false,
+   "description": "Обнаружен модуль AutoPot — типичный признак чит-клиента (player)."
+  },
+  {
+   "id": "autopotion",
+   "name": "AutoPotion",
+   "category": "player",
+   "aliases": [
+    "autopotion"
+   ],
+   "severity": 5,
+   "weight": 11,
+   "name_ru": "AutoPotion",
+   "qol": false,
+   "description": "Обнаружен модуль AutoPotion — типичный признак чит-клиента (player)."
+  },
+  {
+   "id": "autoreplenish",
+   "name": "AutoReplenish",
+   "category": "player",
+   "aliases": [
+    "autoreplenish"
+   ],
+   "severity": 4,
+   "weight": 6,
+   "name_ru": "AutoReplenish",
+   "qol": false,
+   "description": "Обнаружен модуль AutoReplenish — типичный признак чит-клиента (player)."
+  },
+  {
+   "id": "autosoup",
+   "name": "AutoSoup",
+   "category": "player",
+   "aliases": [
+    "autosoup"
+   ],
+   "severity": 4,
+   "weight": 6,
+   "name_ru": "AutoSoup",
+   "qol": false,
+   "description": "Обнаружен модуль AutoSoup — типичный признак чит-клиента (player)."
+  },
+  {
+   "id": "autototem",
+   "name": "AutoTotem",
+   "category": "player",
+   "aliases": [
+    "autototem"
+   ],
+   "severity": 5,
+   "weight": 16,
+   "name_ru": "AutoTotem",
+   "qol": false,
+   "description": "Обнаружен модуль AutoTotem — типичный признак чит-клиента (player)."
+  },
+  {
+   "id": "breakdelay",
+   "name": "BreakDelay",
+   "category": "player",
+   "aliases": [
+    "breakdelay"
+   ],
+   "severity": 4,
+   "weight": 7,
+   "name_ru": "BreakDelay",
+   "qol": false,
+   "description": "Обнаружен модуль BreakDelay — типичный признак чит-клиента (player)."
+  },
+  {
+   "id": "delayremover",
+   "name": "DelayRemover",
+   "category": "player",
+   "aliases": [
+    "delayremover"
+   ],
+   "severity": 4,
+   "weight": 7,
+   "name_ru": "DelayRemover",
+   "qol": false,
+   "description": "Обнаружен модуль DelayRemover — типичный признак чит-клиента (player)."
+  },
+  {
+   "id": "fastbow",
+   "name": "FastBow",
+   "category": "player",
+   "aliases": [
+    "fastbow"
+   ],
+   "severity": 5,
+   "weight": 10,
+   "name_ru": "FastBow",
+   "qol": false,
+   "description": "Обнаружен модуль FastBow — типичный признак чит-клиента (player)."
+  },
+  {
+   "id": "fastbreak",
+   "name": "FastBreak",
+   "category": "player",
+   "aliases": [
+    "fastbreak"
+   ],
+   "severity": 5,
+   "weight": 10,
+   "name_ru": "FastBreak",
+   "qol": false,
+   "description": "Обнаружен модуль FastBreak — типичный признак чит-клиента (player)."
+  },
+  {
+   "id": "fastexp",
+   "name": "FastExp",
+   "category": "player",
+   "aliases": [
+    "fastexp"
+   ],
+   "severity": 4,
+   "weight": 7,
+   "name_ru": "FastExp",
+   "qol": false,
+   "description": "Обнаружен модуль FastExp — типичный признак чит-клиента (player)."
+  },
+  {
+   "id": "fastprojectile",
+   "name": "FastProjectile",
+   "category": "player",
+   "aliases": [
+    "fastprojectile"
+   ],
+   "severity": 4,
+   "weight": 7,
+   "name_ru": "FastProjectile",
+   "qol": false,
+   "description": "Обнаружен модуль FastProjectile — типичный признак чит-клиента (player)."
+  },
+  {
+   "id": "fastuse",
+   "name": "FastUse",
+   "category": "player",
+   "aliases": [
+    "fastuse"
+   ],
+   "severity": 5,
+   "weight": 10,
+   "name_ru": "FastUse",
+   "qol": false,
+   "description": "Обнаружен модуль FastUse — типичный признак чит-клиента (player)."
+  },
+  {
+   "id": "godmode",
+   "name": "GodMode",
+   "category": "player",
+   "aliases": [
+    "godmode"
+   ],
+   "severity": 5,
+   "weight": 14,
+   "name_ru": "GodMode (режим бога)",
+   "qol": false,
+   "description": "Обнаружен модуль GodMode — типичный признак чит-клиента (player)."
+  },
+  {
+   "id": "keepalive",
+   "name": "KeepAlive",
+   "category": "player",
+   "aliases": [
+    "keepalive"
+   ],
+   "severity": 4,
+   "weight": 7,
+   "name_ru": "KeepAlive",
+   "qol": false,
+   "description": "Обнаружен модуль KeepAlive — типичный признак чит-клиента (player)."
+  },
+  {
+   "id": "potionsaver",
+   "name": "PotionSaver",
+   "category": "player",
+   "aliases": [
+    "potionsaver"
+   ],
+   "severity": 4,
+   "weight": 7,
+   "name_ru": "PotionSaver",
+   "qol": false,
+   "description": "Обнаружен модуль PotionSaver — типичный признак чит-клиента (player)."
+  },
+  {
+   "id": "potionspoof",
+   "name": "PotionSpoof",
+   "category": "player",
+   "aliases": [
+    "potionspoof"
+   ],
+   "severity": 4,
+   "weight": 7,
+   "name_ru": "PotionSpoof",
+   "qol": false,
+   "description": "Обнаружен модуль PotionSpoof — типичный признак чит-клиента (player)."
+  },
+  {
+   "id": "regen",
+   "name": "Regen",
+   "category": "player",
+   "aliases": [
+    "regen"
+   ],
+   "severity": 5,
+   "weight": 14,
+   "name_ru": "Regen",
+   "qol": false,
+   "description": "Обнаружен модуль Regen — типичный признак чит-клиента (player)."
+  },
+  {
+   "id": "replenish",
+   "name": "Replenish",
+   "category": "player",
+   "aliases": [
+    "replenish"
+   ],
+   "severity": 4,
+   "weight": 6,
+   "name_ru": "Replenish",
+   "qol": false,
+   "description": "Обнаружен модуль Replenish — типичный признак чит-клиента (player)."
+  },
+  {
+   "id": "speedmine",
+   "name": "SpeedMine",
+   "category": "player",
+   "aliases": [
+    "speedmine"
+   ],
+   "severity": 5,
+   "weight": 10,
+   "name_ru": "SpeedMine",
+   "qol": false,
+   "description": "Обнаружен модуль SpeedMine — типичный признак чит-клиента (player)."
+  },
+  {
+   "id": "basefinder",
+   "name": "BaseFinder",
+   "category": "render",
+   "aliases": [
+    "basefinder"
+   ],
+   "severity": 4,
+   "weight": 10,
+   "name_ru": "BaseFinder (поиск баз)",
+   "qol": false,
+   "description": "Обнаружен модуль BaseFinder — типичный признак чит-клиента (render)."
+  },
+  {
+   "id": "bedprotectionesp",
+   "name": "BedProtectionESP",
+   "category": "render",
+   "aliases": [
+    "bedprotectionesp"
+   ],
+   "severity": 4,
+   "weight": 9,
+   "name_ru": "BedProtectionESP",
+   "qol": false,
+   "description": "Обнаружен модуль BedProtectionESP — типичный признак чит-клиента (render)."
+  },
+  {
+   "id": "blockesp",
+   "name": "BlockESP",
+   "category": "render",
+   "aliases": [
+    "blockesp"
+   ],
+   "severity": 4,
+   "weight": 10,
+   "name_ru": "BlockESP",
+   "qol": false,
+   "description": "Обнаружен модуль BlockESP — типичный признак чит-клиента (render)."
+  },
+  {
+   "id": "cameratweaks",
+   "name": "CameraTweaks",
+   "category": "render",
+   "aliases": [
+    "cameratweaks"
+   ],
+   "severity": 4,
+   "weight": 5,
+   "name_ru": "CameraTweaks",
+   "qol": true,
+   "description": "Модуль CameraTweaks — слабый/QoL-признак, сам по себе не является читом."
+  },
+  {
+   "id": "cavefinder",
+   "name": "CaveFinder",
+   "category": "render",
+   "aliases": [
+    "cavefinder"
+   ],
+   "severity": 4,
+   "weight": 9,
+   "name_ru": "CaveFinder (поиск пещер)",
+   "qol": false,
+   "description": "Обнаружен модуль CaveFinder — типичный признак чит-клиента (render)."
+  },
+  {
+   "id": "chams",
+   "name": "Chams",
+   "category": "render",
+   "aliases": [
+    "chams"
+   ],
+   "severity": 4,
+   "weight": 11,
+   "name_ru": "Chams (подсветка моделей)",
+   "qol": false,
+   "description": "Обнаружен модуль Chams — типичный признак чит-клиента (render)."
+  },
+  {
+   "id": "chestesp",
+   "name": "ChestESP",
+   "category": "render",
+   "aliases": [
+    "chestesp"
+   ],
+   "severity": 4,
+   "weight": 10,
+   "name_ru": "ChestESP",
+   "qol": false,
+   "description": "Обнаружен модуль ChestESP — типичный признак чит-клиента (render)."
+  },
+  {
+   "id": "chunkfinder",
+   "name": "ChunkFinder",
+   "category": "render",
+   "aliases": [
+    "chunkfinder"
+   ],
+   "severity": 4,
+   "weight": 7,
+   "name_ru": "ChunkFinder",
+   "qol": false,
+   "description": "Обнаружен модуль ChunkFinder — типичный признак чит-клиента (render)."
+  },
+  {
+   "id": "cityesp",
+   "name": "CityESP",
+   "category": "render",
+   "aliases": [
+    "cityesp"
+   ],
+   "severity": 4,
+   "weight": 9,
+   "name_ru": "CityESP",
+   "qol": false,
+   "description": "Обнаружен модуль CityESP — типичный признак чит-клиента (render)."
+  },
+  {
+   "id": "crystalview",
+   "name": "CrystalView",
+   "category": "render",
+   "aliases": [
+    "crystalview"
+   ],
+   "severity": 4,
+   "weight": 8,
+   "name_ru": "CrystalView",
+   "qol": false,
+   "description": "Обнаружен модуль CrystalView — типичный признак чит-клиента (render)."
+  },
+  {
+   "id": "esp",
+   "name": "ESP",
+   "category": "render",
+   "aliases": [
+    "esp"
+   ],
+   "severity": 4,
+   "weight": 12,
+   "name_ru": "ESP (видно сущности сквозь стены)",
+   "qol": false,
+   "description": "Обнаружен модуль ESP — типичный признак чит-клиента (render)."
+  },
+  {
+   "id": "esp2d",
+   "name": "ESP2D",
+   "category": "render",
+   "aliases": [
+    "esp2d"
+   ],
+   "severity": 4,
+   "weight": 8,
+   "name_ru": "ESP2D",
+   "qol": false,
+   "description": "Обнаружен модуль ESP2D — типичный признак чит-клиента (render)."
+  },
+  {
+   "id": "eyefinder",
+   "name": "EyeFinder",
+   "category": "render",
+   "aliases": [
+    "eyefinder"
+   ],
+   "severity": 4,
+   "weight": 7,
+   "name_ru": "EyeFinder",
+   "qol": false,
+   "description": "Обнаружен модуль EyeFinder — типичный признак чит-клиента (render)."
+  },
+  {
+   "id": "farmesp",
+   "name": "FarmESP",
+   "category": "render",
+   "aliases": [
+    "farmesp"
+   ],
+   "severity": 4,
+   "weight": 8,
+   "name_ru": "FarmESP",
+   "qol": false,
+   "description": "Обнаружен модуль FarmESP — типичный признак чит-клиента (render)."
+  },
+  {
+   "id": "freecam",
+   "name": "Freecam",
+   "category": "render",
+   "aliases": [
+    "freecam"
+   ],
+   "severity": 4,
+   "weight": 10,
+   "name_ru": "Freecam (свободная камера)",
+   "qol": false,
+   "description": "Обнаружен модуль Freecam — типичный признак чит-клиента (render)."
+  },
+  {
+   "id": "freelook",
+   "name": "FreeLook",
+   "category": "render",
+   "aliases": [
+    "freelook"
+   ],
+   "severity": 4,
+   "weight": 6,
+   "name_ru": "FreeLook (свободный обзор)",
+   "qol": true,
+   "description": "Модуль FreeLook — слабый/QoL-признак, сам по себе не является читом."
+  },
+  {
+   "id": "fullbright",
+   "name": "Fullbright",
+   "category": "render",
+   "aliases": [
+    "fullbright",
+    "gamma"
+   ],
+   "severity": 4,
+   "weight": 6,
+   "name_ru": "Fullbright (яркость)",
+   "qol": true,
+   "description": "Модуль Fullbright — слабый/QoL-признак, сам по себе не является читом."
+  },
+  {
+   "id": "healthtags",
+   "name": "HealthTags",
+   "category": "render",
+   "aliases": [
+    "healthtags"
+   ],
+   "severity": 4,
+   "weight": 6,
+   "name_ru": "HealthTags",
+   "qol": true,
+   "description": "Модуль HealthTags — слабый/QoL-признак, сам по себе не является читом."
+  },
+  {
+   "id": "holeesp",
+   "name": "HoleESP",
+   "category": "render",
+   "aliases": [
+    "holeesp"
+   ],
+   "severity": 4,
+   "weight": 12,
+   "name_ru": "HoleESP (дыры в полу)",
+   "qol": false,
+   "description": "Обнаружен модуль HoleESP — типичный признак чит-клиента (render)."
+  },
+  {
+   "id": "itemchams",
+   "name": "ItemChams",
+   "category": "render",
+   "aliases": [
+    "itemchams"
+   ],
+   "severity": 4,
+   "weight": 8,
+   "name_ru": "ItemChams",
+   "qol": false,
+   "description": "Обнаружен модуль ItemChams — типичный признак чит-клиента (render)."
+  },
+  {
+   "id": "itemesp",
+   "name": "ItemESP",
+   "category": "render",
+   "aliases": [
+    "itemesp"
+   ],
+   "severity": 4,
+   "weight": 10,
+   "name_ru": "ItemESP",
+   "qol": false,
+   "description": "Обнаружен модуль ItemESP — типичный признак чит-клиента (render)."
+  },
+  {
+   "id": "logoutspots",
+   "name": "LogoutSpots",
+   "category": "render",
+   "aliases": [
+    "logoutspots"
+   ],
+   "severity": 4,
+   "weight": 8,
+   "name_ru": "LogoutSpots",
+   "qol": false,
+   "description": "Обнаружен модуль LogoutSpots — типичный признак чит-клиента (render)."
+  },
+  {
+   "id": "mobesp",
+   "name": "MobESP",
+   "category": "render",
+   "aliases": [
+    "mobesp"
+   ],
+   "severity": 4,
+   "weight": 10,
+   "name_ru": "MobESP",
+   "qol": false,
+   "description": "Обнаружен модуль MobESP — типичный признак чит-клиента (render)."
+  },
+  {
+   "id": "nametags",
+   "name": "NameTags",
+   "category": "render",
+   "aliases": [
+    "nametag",
+    "nametags"
+   ],
+   "severity": 4,
+   "weight": 7,
+   "name_ru": "NameTags (теги игроков)",
+   "qol": true,
+   "description": "Модуль NameTags — слабый/QoL-признак, сам по себе не является читом."
+  },
+  {
+   "id": "newchunks",
+   "name": "NewChunks",
+   "category": "render",
+   "aliases": [
+    "newchunks"
+   ],
+   "severity": 4,
+   "weight": 9,
+   "name_ru": "NewChunks (новые чанки)",
+   "qol": false,
+   "description": "Обнаружен модуль NewChunks — типичный признак чит-клиента (render)."
+  },
+  {
+   "id": "playeresp",
+   "name": "PlayerESP",
+   "category": "render",
+   "aliases": [
+    "playeresp"
+   ],
+   "severity": 4,
+   "weight": 10,
+   "name_ru": "PlayerESP",
+   "qol": false,
+   "description": "Обнаружен модуль PlayerESP — типичный признак чит-клиента (render)."
+  },
+  {
+   "id": "pointeresp",
+   "name": "PointerESP",
+   "category": "render",
+   "aliases": [
+    "pointeresp"
+   ],
+   "severity": 4,
+   "weight": 8,
+   "name_ru": "PointerESP",
+   "qol": false,
+   "description": "Обнаружен модуль PointerESP — типичный признак чит-клиента (render)."
+  },
+  {
+   "id": "popchams",
+   "name": "PopChams",
+   "category": "render",
+   "aliases": [
+    "popchams"
+   ],
+   "severity": 4,
+   "weight": 8,
+   "name_ru": "PopChams",
+   "qol": false,
+   "description": "Обнаружен модуль PopChams — типичный признак чит-клиента (render)."
+  },
+  {
+   "id": "portalesp",
+   "name": "PortalESP",
+   "category": "render",
+   "aliases": [
+    "portalesp"
+   ],
+   "severity": 4,
+   "weight": 10,
+   "name_ru": "PortalESP",
+   "qol": false,
+   "description": "Обнаружен модуль PortalESP — типичный признак чит-клиента (render)."
+  },
+  {
+   "id": "prophuntesp",
+   "name": "ProphuntESP",
+   "category": "render",
+   "aliases": [
+    "prophuntesp"
+   ],
+   "severity": 4,
+   "weight": 10,
+   "name_ru": "ProphuntESP",
+   "qol": false,
+   "description": "Обнаружен модуль ProphuntESP — типичный признак чит-клиента (render)."
+  },
+  {
+   "id": "radar",
+   "name": "Radar",
+   "category": "render",
+   "aliases": [
+    "radar"
+   ],
+   "severity": 4,
+   "weight": 7,
+   "name_ru": "Radar (радар игроков)",
+   "qol": true,
+   "description": "Модуль Radar — слабый/QoL-признак, сам по себе не является читом."
+  },
+  {
+   "id": "search",
+   "name": "Search",
+   "category": "render",
+   "aliases": [
+    "blocksearch",
+    "search"
+   ],
+   "severity": 4,
+   "weight": 8,
+   "name_ru": "Search (поиск блоков)",
+   "qol": false,
+   "description": "Обнаружен модуль Search — типичный признак чит-клиента (render)."
+  },
+  {
+   "id": "stashfinder",
+   "name": "StashFinder",
+   "category": "render",
+   "aliases": [
+    "stashfinder"
+   ],
+   "severity": 4,
+   "weight": 10,
+   "name_ru": "StashFinder (поиск складов)",
+   "qol": false,
+   "description": "Обнаружен модуль StashFinder — типичный признак чит-клиента (render)."
+  },
+  {
+   "id": "storageesp",
+   "name": "StorageESP",
+   "category": "render",
+   "aliases": [
+    "storageesp"
+   ],
+   "severity": 4,
+   "weight": 12,
+   "name_ru": "StorageESP (сундуки сквозь стены)",
+   "qol": false,
+   "description": "Обнаружен модуль StorageESP — типичный признак чит-клиента (render)."
+  },
+  {
+   "id": "tntesp",
+   "name": "TNTESP",
+   "category": "render",
+   "aliases": [
+    "tntesp"
+   ],
+   "severity": 4,
+   "weight": 9,
+   "name_ru": "TNTESP",
+   "qol": false,
+   "description": "Обнаружен модуль TNTESP — типичный признак чит-клиента (render)."
+  },
+  {
+   "id": "tracers",
+   "name": "Tracers",
+   "category": "render",
+   "aliases": [
+    "tracer",
+    "tracers"
+   ],
+   "severity": 4,
+   "weight": 12,
+   "name_ru": "Tracers (линии до игроков)",
+   "qol": false,
+   "description": "Обнаружен модуль Tracers — типичный признак чит-клиента (render)."
+  },
+  {
+   "id": "trajectories",
+   "name": "Trajectories",
+   "category": "render",
+   "aliases": [
+    "trajectories",
+    "trajectory"
+   ],
+   "severity": 4,
+   "weight": 7,
+   "name_ru": "Trajectories (траектория полёта)",
+   "qol": true,
+   "description": "Модуль Trajectories — слабый/QoL-признак, сам по себе не является читом."
+  },
+  {
+   "id": "tunnelesp",
+   "name": "TunnelESP",
+   "category": "render",
+   "aliases": [
+    "tunnelesp"
+   ],
+   "severity": 4,
+   "weight": 8,
+   "name_ru": "TunnelESP",
+   "qol": false,
+   "description": "Обнаружен модуль TunnelESP — типичный признак чит-клиента (render)."
+  },
+  {
+   "id": "voidesp",
+   "name": "VoidESP",
+   "category": "render",
+   "aliases": [
+    "voidesp"
+   ],
+   "severity": 4,
+   "weight": 9,
+   "name_ru": "VoidESP",
+   "qol": false,
+   "description": "Обнаружен модуль VoidESP — типичный признак чит-клиента (render)."
+  },
+  {
+   "id": "wallhack",
+   "name": "WallHack",
+   "category": "render",
+   "aliases": [
+    "wallhack",
+    "wallhacks"
+   ],
+   "severity": 4,
+   "weight": 13,
+   "name_ru": "WallHack (видно сквозь стены)",
+   "qol": false,
+   "description": "Обнаружен модуль WallHack — типичный признак чит-клиента (render)."
+  },
+  {
+   "id": "xray",
+   "name": "XRay",
+   "category": "render",
+   "aliases": [
+    "xray"
+   ],
+   "severity": 4,
+   "weight": 14,
+   "name_ru": "X-Ray (рентген блоков)",
+   "qol": false,
+   "description": "Обнаружен модуль XRay — типичный признак чит-клиента (render)."
+  },
+  {
+   "id": "antibed",
+   "name": "AntiBed",
+   "category": "world",
+   "aliases": [
+    "antibed"
+   ],
+   "severity": 4,
+   "weight": 8,
+   "name_ru": "AntiBed",
+   "qol": false,
+   "description": "Обнаружен модуль AntiBed — типичный признак чит-клиента (world)."
+  },
+  {
+   "id": "armorswap",
+   "name": "ArmorSwap",
+   "category": "world",
+   "aliases": [
+    "armorswap"
+   ],
+   "severity": 4,
+   "weight": 6,
+   "name_ru": "ArmorSwap",
+   "qol": false,
+   "description": "Обнаружен модуль ArmorSwap — типичный признак чит-клиента (world)."
+  },
+  {
+   "id": "autoanvil",
+   "name": "AutoAnvil",
+   "category": "world",
+   "aliases": [
+    "autoanvil"
+   ],
+   "severity": 5,
+   "weight": 11,
+   "name_ru": "AutoAnvil",
+   "qol": false,
+   "description": "Обнаружен модуль AutoAnvil — типичный признак чит-клиента (world)."
+  },
+  {
+   "id": "autobrewer",
+   "name": "AutoBrewer",
+   "category": "world",
+   "aliases": [
+    "autobrewer"
+   ],
+   "severity": 4,
+   "weight": 7,
+   "name_ru": "AutoBrewer",
+   "qol": true,
+   "description": "Модуль AutoBrewer — слабый/QoL-признак, сам по себе не является читом."
+  },
+  {
+   "id": "autobuild",
+   "name": "AutoBuild",
+   "category": "world",
+   "aliases": [
+    "autobuild"
+   ],
+   "severity": 5,
+   "weight": 12,
+   "name_ru": "AutoBuild (авто-строительство)",
+   "qol": false,
+   "description": "Обнаружен модуль AutoBuild — типичный признак чит-клиента (world)."
+  },
+  {
+   "id": "autocity",
+   "name": "AutoCity",
+   "category": "world",
+   "aliases": [
+    "autocity"
+   ],
+   "severity": 5,
+   "weight": 12,
+   "name_ru": "AutoCity",
+   "qol": false,
+   "description": "Обнаружен модуль AutoCity — типичный признак чит-клиента (world)."
+  },
+  {
+   "id": "autofarm",
+   "name": "AutoFarm",
+   "category": "world",
+   "aliases": [
+    "autofarm"
+   ],
+   "severity": 5,
+   "weight": 12,
+   "name_ru": "AutoFarm (авто-ферма)",
+   "qol": false,
+   "description": "Обнаружен модуль AutoFarm — типичный признак чит-клиента (world)."
+  },
+  {
+   "id": "autonametag",
+   "name": "AutoNameTag",
+   "category": "world",
+   "aliases": [
+    "autonametag"
+   ],
+   "severity": 4,
+   "weight": 5,
+   "name_ru": "AutoNameTag",
+   "qol": true,
+   "description": "Модуль AutoNameTag — слабый/QoL-признак, сам по себе не является читом."
+  },
+  {
+   "id": "autosteal",
+   "name": "AutoSteal",
+   "category": "world",
+   "aliases": [
+    "autosteal"
+   ],
+   "severity": 5,
+   "weight": 11,
+   "name_ru": "AutoSteal",
+   "qol": false,
+   "description": "Обнаружен модуль AutoSteal — типичный признак чит-клиента (world)."
+  },
+  {
+   "id": "autosword",
+   "name": "AutoSword",
+   "category": "world",
+   "aliases": [
+    "autosword"
+   ],
+   "severity": 4,
+   "weight": 5,
+   "name_ru": "AutoSword",
+   "qol": true,
+   "description": "Модуль AutoSword — слабый/QoL-признак, сам по себе не является читом."
+  },
+  {
+   "id": "autotool",
+   "name": "AutoTool",
+   "category": "world",
+   "aliases": [
+    "autotool"
+   ],
+   "severity": 4,
+   "weight": 5,
+   "name_ru": "AutoTool (авто-инструмент)",
+   "qol": true,
+   "description": "Модуль AutoTool — слабый/QoL-признак, сам по себе не является читом."
+  },
+  {
+   "id": "autotorch",
+   "name": "AutoTorch",
+   "category": "world",
+   "aliases": [
+    "autotorch"
+   ],
+   "severity": 4,
+   "weight": 5,
+   "name_ru": "AutoTorch",
+   "qol": true,
+   "description": "Модуль AutoTorch — слабый/QoL-признак, сам по себе не является читом."
+  },
+  {
+   "id": "autoweapon",
+   "name": "AutoWeapon",
+   "category": "world",
+   "aliases": [
+    "autoweapon"
+   ],
+   "severity": 4,
+   "weight": 5,
+   "name_ru": "AutoWeapon",
+   "qol": true,
+   "description": "Модуль AutoWeapon — слабый/QoL-признак, сам по себе не является читом."
+  },
+  {
+   "id": "autowither",
+   "name": "AutoWither",
+   "category": "world",
+   "aliases": [
+    "autowither"
+   ],
+   "severity": 5,
+   "weight": 10,
+   "name_ru": "AutoWither",
+   "qol": false,
+   "description": "Обнаружен модуль AutoWither — типичный признак чит-клиента (world)."
+  },
+  {
+   "id": "blockin",
+   "name": "BlockIn",
+   "category": "world",
+   "aliases": [
+    "blockin"
+   ],
+   "severity": 5,
+   "weight": 12,
+   "name_ru": "BlockIn",
+   "qol": false,
+   "description": "Обнаружен модуль BlockIn — типичный признак чит-клиента (world)."
+  },
+  {
+   "id": "blocktrap",
+   "name": "BlockTrap",
+   "category": "world",
+   "aliases": [
+    "blocktrap"
+   ],
+   "severity": 5,
+   "weight": 12,
+   "name_ru": "BlockTrap",
+   "qol": false,
+   "description": "Обнаружен модуль BlockTrap — типичный признак чит-клиента (world)."
+  },
+  {
+   "id": "chestcleaner",
+   "name": "ChestCleaner",
+   "category": "world",
+   "aliases": [
+    "chestcleaner"
+   ],
+   "severity": 4,
+   "weight": 7,
+   "name_ru": "ChestCleaner",
+   "qol": false,
+   "description": "Обнаружен модуль ChestCleaner — типичный признак чит-клиента (world)."
+  },
+  {
+   "id": "cheststealer",
+   "name": "ChestStealer",
+   "category": "world",
+   "aliases": [
+    "cheststealer"
+   ],
+   "severity": 5,
+   "weight": 14,
+   "name_ru": "ChestStealer (кража из сундуков)",
+   "qol": false,
+   "description": "Обнаружен модуль ChestStealer — типичный признак чит-клиента (world)."
+  },
+  {
+   "id": "excavator",
+   "name": "Excavator",
+   "category": "world",
+   "aliases": [
+    "excavator"
+   ],
+   "severity": 4,
+   "weight": 7,
+   "name_ru": "Excavator (копание области)",
+   "qol": false,
+   "description": "Обнаружен модуль Excavator — типичный признак чит-клиента (world)."
+  },
+  {
+   "id": "fastplace",
+   "name": "FastPlace",
+   "category": "world",
+   "aliases": [
+    "fastplace"
+   ],
+   "severity": 5,
+   "weight": 11,
+   "name_ru": "FastPlace (быстрая установка)",
+   "qol": false,
+   "description": "Обнаружен модуль FastPlace — типичный признак чит-клиента (world)."
+  },
+  {
+   "id": "flamethrower",
+   "name": "Flamethrower",
+   "category": "world",
+   "aliases": [
+    "flamethrower"
+   ],
+   "severity": 5,
+   "weight": 10,
+   "name_ru": "Flamethrower",
+   "qol": false,
+   "description": "Обнаружен модуль Flamethrower — типичный признак чит-клиента (world)."
+  },
+  {
+   "id": "highwaybuilder",
+   "name": "HighwayBuilder",
+   "category": "world",
+   "aliases": [
+    "highwaybuilder"
+   ],
+   "severity": 5,
+   "weight": 12,
+   "name_ru": "HighwayBuilder (авто-трасса)",
+   "qol": false,
+   "description": "Обнаружен модуль HighwayBuilder — типичный признак чит-клиента (world)."
+  },
+  {
+   "id": "holefiller",
+   "name": "HoleFiller",
+   "category": "world",
+   "aliases": [
+    "holefiller"
+   ],
+   "severity": 5,
+   "weight": 12,
+   "name_ru": "HoleFiller",
+   "qol": false,
+   "description": "Обнаружен модуль HoleFiller — типичный признак чит-клиента (world)."
+  },
+  {
+   "id": "hotbarrefill",
+   "name": "HotbarRefill",
+   "category": "world",
+   "aliases": [
+    "hotbarrefill"
+   ],
+   "severity": 4,
+   "weight": 7,
+   "name_ru": "HotbarRefill",
+   "qol": false,
+   "description": "Обнаружен модуль HotbarRefill — типичный признак чит-клиента (world)."
+  },
+  {
+   "id": "inventorycleaner",
+   "name": "InventoryCleaner",
+   "category": "world",
+   "aliases": [
+    "inventorycleaner"
+   ],
+   "severity": 4,
+   "weight": 6,
+   "name_ru": "InventoryCleaner",
+   "qol": false,
+   "description": "Обнаружен модуль InventoryCleaner — типичный признак чит-клиента (world)."
+  },
+  {
+   "id": "lawnmower",
+   "name": "Lawnmower",
+   "category": "world",
+   "aliases": [
+    "lawnmower"
+   ],
+   "severity": 5,
+   "weight": 11,
+   "name_ru": "Lawnmower (стрижка области)",
+   "qol": false,
+   "description": "Обнаружен модуль Lawnmower — типичный признак чит-клиента (world)."
+  },
+  {
+   "id": "nuker",
+   "name": "Nuker",
+   "category": "world",
+   "aliases": [
+    "nuker"
+   ],
+   "severity": 5,
+   "weight": 14,
+   "name_ru": "Nuker (разрушение блоков)",
+   "qol": false,
+   "description": "Обнаружен модуль Nuker — типичный признак чит-клиента (world)."
+  },
+  {
+   "id": "refill",
+   "name": "Refill",
+   "category": "world",
+   "aliases": [
+    "refill"
+   ],
+   "severity": 4,
+   "weight": 7,
+   "name_ru": "Refill",
+   "qol": false,
+   "description": "Обнаружен модуль Refill — типичный признак чит-клиента (world)."
+  },
+  {
+   "id": "restock",
+   "name": "Restock",
+   "category": "world",
+   "aliases": [
+    "restock"
+   ],
+   "severity": 4,
+   "weight": 8,
+   "name_ru": "Restock",
+   "qol": false,
+   "description": "Обнаружен модуль Restock — типичный признак чит-клиента (world)."
+  },
+  {
+   "id": "scaffold",
+   "name": "Scaffold",
+   "category": "world",
+   "aliases": [
+    "scaffold",
+    "tower"
+   ],
+   "severity": 5,
+   "weight": 14,
+   "name_ru": "Scaffold (авто-мост)",
+   "qol": false,
+   "description": "Обнаружен модуль Scaffold — типичный признак чит-клиента (world)."
+  },
+  {
+   "id": "selfanvil",
+   "name": "SelfAnvil",
+   "category": "world",
+   "aliases": [
+    "selfanvil"
+   ],
+   "severity": 5,
+   "weight": 10,
+   "name_ru": "SelfAnvil",
+   "qol": false,
+   "description": "Обнаружен модуль SelfAnvil — типичный признак чит-клиента (world)."
+  },
+  {
+   "id": "tunneller",
+   "name": "Tunneller",
+   "category": "world",
+   "aliases": [
+    "tunneller"
+   ],
+   "severity": 5,
+   "weight": 11,
+   "name_ru": "Tunneller (авто-туннель)",
+   "qol": false,
+   "description": "Обнаружен модуль Tunneller — типичный признак чит-клиента (world)."
+  },
+  {
+   "id": "veinminer",
+   "name": "VeinMiner",
+   "category": "world",
+   "aliases": [
+    "veinminer"
+   ],
+   "severity": 4,
+   "weight": 5,
+   "name_ru": "VeinMiner (добыча жил)",
+   "qol": true,
+   "description": "Модуль VeinMiner — слабый/QoL-признак, сам по себе не является читом."
+  }
+ ]
+}

@@ -1,0 +1,1410 @@
+{
+ "version": 1,
+ "rules": [
+  {
+   "id": "client_wurst",
+   "name": "Wurst Client",
+   "category": "client",
+   "severity": 5,
+   "weight": 60,
+   "any": [
+    {
+     "type": "class",
+     "regex": "(?i)(^|/)net/wurstclient(/|$)"
+    },
+    {
+     "type": "meta",
+     "regex": "(?i)(\"id\"\\s*:\\s*\"wurst\"|\\bwurst\\s*client\\b)"
+    },
+    {
+     "type": "path",
+     "regex": "(?i)(^|[/\\\\])wurst[^/\\\\]*\\.jar$"
+    },
+    {
+     "type": "string",
+     "regex": "(?i)\\bwurst\\s*client\\b"
+    }
+   ]
+  },
+  {
+   "id": "client_meteor",
+   "name": "Meteor Client",
+   "category": "client",
+   "severity": 5,
+   "weight": 60,
+   "any": [
+    {
+     "type": "class",
+     "regex": "(?i)(^|/)meteordevelopment/meteorclient(/|$)"
+    },
+    {
+     "type": "meta",
+     "regex": "(?i)(meteor-client|meteorclient|\"meteor client\")"
+    },
+    {
+     "type": "path",
+     "regex": "(?i)(^|[/\\\\])meteor[^/\\\\]*\\.jar$"
+    },
+    {
+     "type": "string",
+     "regex": "(?i)\\bmeteor\\s*client\\b"
+    }
+   ]
+  },
+  {
+   "id": "client_liquidbounce",
+   "name": "LiquidBounce",
+   "category": "client",
+   "severity": 5,
+   "weight": 58,
+   "any": [
+    {
+     "type": "class",
+     "regex": "(?i)(^|/)net/ccbluex/liquidbounce(/|$)"
+    },
+    {
+     "type": "meta",
+     "regex": "(?i)(liquidbounce|liquid-bounce)"
+    },
+    {
+     "type": "path",
+     "regex": "(?i)liquidbounce"
+    }
+   ]
+  },
+  {
+   "id": "client_fdp",
+   "name": "FDPClient",
+   "category": "client",
+   "severity": 5,
+   "weight": 55,
+   "any": [
+    {
+     "type": "meta",
+     "regex": "(?i)(fdpclient|fdp-client)"
+    },
+    {
+     "type": "string",
+     "regex": "(?i)\\bfdp\\s*client\\b"
+    },
+    {
+     "type": "path",
+     "regex": "(?i)fdp[^/\\\\]*\\.jar$"
+    }
+   ]
+  },
+  {
+   "id": "client_kami",
+   "name": "KAMI Blue",
+   "category": "client",
+   "severity": 5,
+   "weight": 55,
+   "any": [
+    {
+     "type": "class",
+     "regex": "(?i)(^|/)me/zeroeightsix/kami(/|$)"
+    },
+    {
+     "type": "meta",
+     "regex": "(?i)(kamiblue|kami-blue)"
+    },
+    {
+     "type": "path",
+     "regex": "(?i)kami[^/\\\\]*\\.jar$"
+    }
+   ]
+  },
+  {
+   "id": "client_salhack",
+   "name": "SalHack",
+   "category": "client",
+   "severity": 5,
+   "weight": 55,
+   "any": [
+    {
+     "type": "class",
+     "regex": "(?i)(^|/)me/ionar/salhack(/|$)"
+    },
+    {
+     "type": "meta",
+     "regex": "(?i)salhack"
+    },
+    {
+     "type": "string",
+     "regex": "(?i)\\bsalhack\\b"
+    },
+    {
+     "type": "path",
+     "regex": "(?i)salhack"
+    }
+   ]
+  },
+  {
+   "id": "client_seppuku",
+   "name": "Seppuku",
+   "category": "client",
+   "severity": 5,
+   "weight": 55,
+   "any": [
+    {
+     "type": "class",
+     "regex": "(?i)(^|/)me/rigamortis/seppuku(/|$)"
+    },
+    {
+     "type": "meta",
+     "regex": "(?i)seppuku"
+    },
+    {
+     "type": "string",
+     "regex": "(?i)\\bseppuku\\b"
+    },
+    {
+     "type": "path",
+     "regex": "(?i)seppuku"
+    }
+   ]
+  },
+  {
+   "id": "client_bleachhack",
+   "name": "BleachHack",
+   "category": "client",
+   "severity": 5,
+   "weight": 52,
+   "any": [
+    {
+     "type": "class",
+     "regex": "(?i)(^|/)bleachhack(/|$)"
+    },
+    {
+     "type": "meta",
+     "regex": "(?i)bleachhack"
+    },
+    {
+     "type": "string",
+     "regex": "(?i)\\bbleachhack\\b"
+    },
+    {
+     "type": "path",
+     "regex": "(?i)bleachhack"
+    }
+   ]
+  },
+  {
+   "id": "client_trollhack",
+   "name": "TrollHack",
+   "category": "client",
+   "severity": 5,
+   "weight": 52,
+   "any": [
+    {
+     "type": "class",
+     "regex": "(?i)(^|/)trollhack(/|$)"
+    },
+    {
+     "type": "meta",
+     "regex": "(?i)trollhack"
+    },
+    {
+     "type": "string",
+     "regex": "(?i)\\btrollhack\\b"
+    },
+    {
+     "type": "path",
+     "regex": "(?i)trollhack"
+    }
+   ]
+  },
+  {
+   "id": "client_impact",
+   "name": "Impact",
+   "category": "client",
+   "severity": 5,
+   "weight": 55,
+   "any": [
+    {
+     "type": "class",
+     "regex": "(?i)(^|/)com/impactclient(/|$)"
+    },
+    {
+     "type": "meta",
+     "regex": "(?i)impactclient"
+    },
+    {
+     "type": "string",
+     "regex": "(?i)\\bimpact\\s*client\\b"
+    },
+    {
+     "type": "path",
+     "regex": "(?i)impact[^/\\\\]*\\.jar$"
+    }
+   ]
+  },
+  {
+   "id": "client_aristois",
+   "name": "Aristois",
+   "category": "client",
+   "severity": 5,
+   "weight": 55,
+   "any": [
+    {
+     "type": "class",
+     "regex": "(?i)(^|/)me/aristois(/|$)"
+    },
+    {
+     "type": "meta",
+     "regex": "(?i)aristois"
+    },
+    {
+     "type": "string",
+     "regex": "(?i)\\baristois\\b"
+    },
+    {
+     "type": "path",
+     "regex": "(?i)aristois"
+    }
+   ]
+  },
+  {
+   "id": "client_future",
+   "name": "Future Client",
+   "category": "client",
+   "severity": 5,
+   "weight": 55,
+   "any": [
+    {
+     "type": "class",
+     "regex": "(?i)(^|/)com/future(/|$)"
+    },
+    {
+     "type": "meta",
+     "regex": "(?i)(futureclient|future-client)"
+    },
+    {
+     "type": "string",
+     "regex": "(?i)\\bfuture\\s*client\\b"
+    },
+    {
+     "type": "path",
+     "regex": "(?i)future[^/\\\\]*\\.jar$"
+    }
+   ]
+  },
+  {
+   "id": "client_rusherhack",
+   "name": "RusherHack",
+   "category": "client",
+   "severity": 5,
+   "weight": 55,
+   "any": [
+    {
+     "type": "class",
+     "regex": "(?i)(^|/)com/rusherhack(/|$)"
+    },
+    {
+     "type": "meta",
+     "regex": "(?i)rusherhack"
+    },
+    {
+     "type": "string",
+     "regex": "(?i)\\brusherhack\\b"
+    },
+    {
+     "type": "path",
+     "regex": "(?i)rusherhack"
+    }
+   ]
+  },
+  {
+   "id": "client_sigma",
+   "name": "Sigma",
+   "category": "client",
+   "severity": 5,
+   "weight": 55,
+   "any": [
+    {
+     "type": "class",
+     "regex": "(?i)(^|/)com/sigma(/|$)"
+    },
+    {
+     "type": "meta",
+     "regex": "(?i)(sigmaclient|sigma-client)"
+    },
+    {
+     "type": "string",
+     "regex": "(?i)\\bsigma\\s*(client|5\\.0)\\b"
+    },
+    {
+     "type": "path",
+     "regex": "(?i)sigma[^/\\\\]*\\.jar$"
+    }
+   ]
+  },
+  {
+   "id": "client_astolfo",
+   "name": "Astolfo",
+   "category": "client",
+   "severity": 5,
+   "weight": 55,
+   "any": [
+    {
+     "type": "class",
+     "regex": "(?i)(^|/)com/astolfo(/|$)"
+    },
+    {
+     "type": "meta",
+     "regex": "(?i)(astolfoclient|astolfo-client)"
+    },
+    {
+     "type": "path",
+     "regex": "(?i)astolfo"
+    }
+   ]
+  },
+  {
+   "id": "client_rise",
+   "name": "Rise",
+   "category": "client",
+   "severity": 5,
+   "weight": 52,
+   "any": [
+    {
+     "type": "class",
+     "regex": "(?i)(^|/)com/rise(/|$)"
+    },
+    {
+     "type": "meta",
+     "regex": "(?i)(riseclient|rise-client)"
+    },
+    {
+     "type": "string",
+     "regex": "(?i)\\brise\\s*client\\b"
+    },
+    {
+     "type": "path",
+     "regex": "(?i)rise[^/\\\\]*\\.jar$"
+    }
+   ]
+  },
+  {
+   "id": "client_tenacity",
+   "name": "Tenacity",
+   "category": "client",
+   "severity": 5,
+   "weight": 52,
+   "any": [
+    {
+     "type": "class",
+     "regex": "(?i)(^|/)com/tenacity(/|$)"
+    },
+    {
+     "type": "meta",
+     "regex": "(?i)(tenacityclient|tenacity-client)"
+    },
+    {
+     "type": "string",
+     "regex": "(?i)\\btenacity\\b"
+    },
+    {
+     "type": "path",
+     "regex": "(?i)tenacity"
+    }
+   ]
+  },
+  {
+   "id": "client_novo",
+   "name": "Novo",
+   "category": "client",
+   "severity": 5,
+   "weight": 52,
+   "any": [
+    {
+     "type": "class",
+     "regex": "(?i)(^|/)com/novo(/|$)"
+    },
+    {
+     "type": "meta",
+     "regex": "(?i)(novoclient|novo-client)"
+    },
+    {
+     "type": "string",
+     "regex": "(?i)\\bnovo\\s*client\\b"
+    },
+    {
+     "type": "path",
+     "regex": "(?i)novo[^/\\\\]*\\.jar$"
+    }
+   ]
+  },
+  {
+   "id": "client_gamesense",
+   "name": "GameSense",
+   "category": "client",
+   "severity": 5,
+   "weight": 52,
+   "any": [
+    {
+     "type": "class",
+     "regex": "(?i)(^|/)com/gamesense(/|$)"
+    },
+    {
+     "type": "meta",
+     "regex": "(?i)gamesense"
+    },
+    {
+     "type": "string",
+     "regex": "(?i)\\bgame\\s*sense\\b"
+    },
+    {
+     "type": "path",
+     "regex": "(?i)gamesense"
+    }
+   ]
+  },
+  {
+   "id": "client_konas",
+   "name": "Konas",
+   "category": "client",
+   "severity": 5,
+   "weight": 52,
+   "any": [
+    {
+     "type": "class",
+     "regex": "(?i)(^|/)com/konas(/|$)"
+    },
+    {
+     "type": "meta",
+     "regex": "(?i)konas"
+    },
+    {
+     "type": "string",
+     "regex": "(?i)\\bkonas\\b"
+    },
+    {
+     "type": "path",
+     "regex": "(?i)konas"
+    }
+   ]
+  },
+  {
+   "id": "client_moonlight",
+   "name": "MoonLight",
+   "category": "client",
+   "severity": 5,
+   "weight": 50,
+   "any": [
+    {
+     "type": "class",
+     "regex": "(?i)(^|/)com/moonlight(/|$)"
+    },
+    {
+     "type": "meta",
+     "regex": "(?i)moonlightclient"
+    }
+   ]
+  },
+  {
+   "id": "client_lambda",
+   "name": "Lambda",
+   "category": "client",
+   "severity": 5,
+   "weight": 50,
+   "any": [
+    {
+     "type": "class",
+     "regex": "(?i)(^|/)com/lambda(/|$)"
+    },
+    {
+     "type": "meta",
+     "regex": "(?i)lambdaclient"
+    },
+    {
+     "type": "string",
+     "regex": "(?i)\\blambda\\s*client\\b"
+    },
+    {
+     "type": "path",
+     "regex": "(?i)lambda[^/\\\\]*\\.jar$"
+    }
+   ]
+  },
+  {
+   "id": "client_inertia",
+   "name": "Inertia",
+   "category": "client",
+   "severity": 5,
+   "weight": 50,
+   "any": [
+    {
+     "type": "class",
+     "regex": "(?i)(^|/)com/inertia(/|$)"
+    },
+    {
+     "type": "meta",
+     "regex": "(?i)inertiaclient"
+    },
+    {
+     "type": "string",
+     "regex": "(?i)\\binertia\\s*client\\b"
+    },
+    {
+     "type": "path",
+     "regex": "(?i)inertia[^/\\\\]*\\.jar$"
+    }
+   ]
+  },
+  {
+   "id": "client_phobos",
+   "name": "Phobos",
+   "category": "client",
+   "severity": 5,
+   "weight": 50,
+   "any": [
+    {
+     "type": "class",
+     "regex": "(?i)(^|/)com/phobos(/|$)"
+    },
+    {
+     "type": "meta",
+     "regex": "(?i)phobosclient"
+    }
+   ]
+  },
+  {
+   "id": "client_vape",
+   "name": "Vape",
+   "category": "client",
+   "severity": 5,
+   "weight": 58,
+   "any": [
+    {
+     "type": "meta",
+     "regex": "(?i)(vape\\.gg|vapeclient|vape-v4)"
+    },
+    {
+     "type": "string",
+     "regex": "(?i)\\bvape\\s*(v4|lite|v2)?\\b"
+    },
+    {
+     "type": "path",
+     "regex": "(?i)vape[^/\\\\]*\\.jar$"
+    }
+   ]
+  },
+  {
+   "id": "client_novoline",
+   "name": "Novoline",
+   "category": "client",
+   "severity": 5,
+   "weight": 52,
+   "any": [
+    {
+     "type": "class",
+     "regex": "(?i)(^|/)com/novoline(/|$)"
+    },
+    {
+     "type": "meta",
+     "regex": "(?i)novoline"
+    },
+    {
+     "type": "string",
+     "regex": "(?i)\\bnovoline\\b"
+    }
+   ]
+  },
+  {
+   "id": "client_zeroday",
+   "name": "ZeroDay",
+   "category": "client",
+   "severity": 5,
+   "weight": 50,
+   "any": [
+    {
+     "type": "class",
+     "regex": "(?i)(^|/)com/zeroday(/|$)"
+    },
+    {
+     "type": "meta",
+     "regex": "(?i)zerodayclient"
+    }
+   ]
+  },
+  {
+   "id": "client_dotgod",
+   "name": "DotGod",
+   "category": "client",
+   "severity": 5,
+   "weight": 48,
+   "any": [
+    {
+     "type": "class",
+     "regex": "(?i)(^|/)com/dotgod(/|$)"
+    },
+    {
+     "type": "meta",
+     "regex": "(?i)dotgod"
+    },
+    {
+     "type": "string",
+     "regex": "(?i)\\bdotgod\\b"
+    }
+   ]
+  },
+  {
+   "id": "client_pulsive",
+   "name": "Pulsive",
+   "category": "client",
+   "severity": 5,
+   "weight": 48,
+   "any": [
+    {
+     "type": "class",
+     "regex": "(?i)(^|/)com/pulsive(/|$)"
+    },
+    {
+     "type": "meta",
+     "regex": "(?i)pulsive"
+    },
+    {
+     "type": "string",
+     "regex": "(?i)\\bpulsive\\b"
+    }
+   ]
+  },
+  {
+   "id": "client_dort",
+   "name": "Dort",
+   "category": "client",
+   "severity": 5,
+   "weight": 48,
+   "any": [
+    {
+     "type": "class",
+     "regex": "(?i)(^|/)com/dort(/|$)"
+    },
+    {
+     "type": "meta",
+     "regex": "(?i)dortclient"
+    },
+    {
+     "type": "string",
+     "regex": "(?i)\\bdort\\b"
+    }
+   ]
+  },
+  {
+   "id": "client_ambient",
+   "name": "Ambient",
+   "category": "client",
+   "severity": 5,
+   "weight": 48,
+   "any": [
+    {
+     "type": "class",
+     "regex": "(?i)(^|/)com/ambient(/|$)"
+    },
+    {
+     "type": "meta",
+     "regex": "(?i)ambientclient"
+    },
+    {
+     "type": "string",
+     "regex": "(?i)\\bambient\\s*client\\b"
+    }
+   ]
+  },
+  {
+   "id": "client_krypton",
+   "name": "Krypton",
+   "category": "client",
+   "severity": 5,
+   "weight": 48,
+   "any": [
+    {
+     "type": "class",
+     "regex": "(?i)(^|/)com/krypton(/|$)"
+    },
+    {
+     "type": "meta",
+     "regex": "(?i)kryptonclient"
+    },
+    {
+     "type": "string",
+     "regex": "(?i)\\bkrypton\\s*client\\b"
+    }
+   ]
+  },
+  {
+   "id": "client_exhibition",
+   "name": "Exhibition",
+   "category": "client",
+   "severity": 5,
+   "weight": 48,
+   "any": [
+    {
+     "type": "class",
+     "regex": "(?i)(^|/)com/exhibition(/|$)"
+    },
+    {
+     "type": "meta",
+     "regex": "(?i)exhibitionclient"
+    },
+    {
+     "type": "string",
+     "regex": "(?i)\\bexhibition\\b"
+    }
+   ]
+  },
+  {
+   "id": "client_azura",
+   "name": "Azura",
+   "category": "client",
+   "severity": 5,
+   "weight": 48,
+   "any": [
+    {
+     "type": "class",
+     "regex": "(?i)(^|/)com/azura(/|$)"
+    },
+    {
+     "type": "meta",
+     "regex": "(?i)azuraclient"
+    },
+    {
+     "type": "string",
+     "regex": "(?i)\\bazura\\b"
+    }
+   ]
+  },
+  {
+   "id": "client_xulu",
+   "name": "Xulu",
+   "category": "client",
+   "severity": 5,
+   "weight": 48,
+   "any": [
+    {
+     "type": "class",
+     "regex": "(?i)(^|/)com/xulu(/|$)"
+    },
+    {
+     "type": "meta",
+     "regex": "(?i)xuluclient"
+    },
+    {
+     "type": "string",
+     "regex": "(?i)\\bxulu\\b"
+    }
+   ]
+  },
+  {
+   "id": "client_fluid",
+   "name": "Fluix / Fluid",
+   "category": "client",
+   "severity": 5,
+   "weight": 46,
+   "any": [
+    {
+     "type": "class",
+     "regex": "(?i)(^|/)com/fluix(/|$)"
+    },
+    {
+     "type": "meta",
+     "regex": "(?i)(fluixclient|fluidclient)"
+    },
+    {
+     "type": "string",
+     "regex": "(?i)\\bfluix\\b"
+    }
+   ]
+  },
+  {
+   "id": "client_akrien",
+   "name": "Akrien",
+   "category": "client",
+   "severity": 5,
+   "weight": 46,
+   "any": [
+    {
+     "type": "class",
+     "regex": "(?i)(^|/)com/akrien(/|$)"
+    },
+    {
+     "type": "meta",
+     "regex": "(?i)akrien"
+    }
+   ]
+  },
+  {
+   "id": "client_remix",
+   "name": "Remix",
+   "category": "client",
+   "severity": 5,
+   "weight": 46,
+   "any": [
+    {
+     "type": "class",
+     "regex": "(?i)(^|/)com/remix(/|$)"
+    },
+    {
+     "type": "meta",
+     "regex": "(?i)remixclient"
+    },
+    {
+     "type": "string",
+     "regex": "(?i)\\bremix\\s*client\\b"
+    }
+   ]
+  },
+  {
+   "id": "client_celestial",
+   "name": "Celestial",
+   "category": "client",
+   "severity": 5,
+   "weight": 46,
+   "any": [
+    {
+     "type": "class",
+     "regex": "(?i)(^|/)com/celestial(/|$)"
+    },
+    {
+     "type": "meta",
+     "regex": "(?i)celestialclient"
+    },
+    {
+     "type": "string",
+     "regex": "(?i)\\bcelestial\\s*client\\b"
+    }
+   ]
+  },
+  {
+   "id": "client_vanish",
+   "name": "Vanish",
+   "category": "client",
+   "severity": 5,
+   "weight": 46,
+   "any": [
+    {
+     "type": "class",
+     "regex": "(?i)(^|/)com/vanish(/|$)"
+    },
+    {
+     "type": "meta",
+     "regex": "(?i)vanishclient"
+    },
+    {
+     "type": "string",
+     "regex": "(?i)\\bvanish\\s*client\\b"
+    }
+   ]
+  },
+  {
+   "id": "client_blaze",
+   "name": "Blaze",
+   "category": "client",
+   "severity": 5,
+   "weight": 46,
+   "any": [
+    {
+     "type": "class",
+     "regex": "(?i)(^|/)com/blaze(/|$)"
+    },
+    {
+     "type": "meta",
+     "regex": "(?i)blazeclient"
+    },
+    {
+     "type": "string",
+     "regex": "(?i)\\bblaze\\s*client\\b"
+    }
+   ]
+  },
+  {
+   "id": "client_frost",
+   "name": "Frost",
+   "category": "client",
+   "severity": 5,
+   "weight": 46,
+   "any": [
+    {
+     "type": "class",
+     "regex": "(?i)(^|/)com/frost(/|$)"
+    },
+    {
+     "type": "meta",
+     "regex": "(?i)frostclient"
+    },
+    {
+     "type": "string",
+     "regex": "(?i)\\bfrost\\s*client\\b"
+    }
+   ]
+  },
+  {
+   "id": "client_nebula",
+   "name": "Nebula",
+   "category": "client",
+   "severity": 5,
+   "weight": 46,
+   "any": [
+    {
+     "type": "class",
+     "regex": "(?i)(^|/)com/nebula(/|$)"
+    },
+    {
+     "type": "meta",
+     "regex": "(?i)nebulaclient"
+    },
+    {
+     "type": "string",
+     "regex": "(?i)\\bnebula\\s*client\\b"
+    }
+   ]
+  },
+  {
+   "id": "client_astro",
+   "name": "Astro",
+   "category": "client",
+   "severity": 5,
+   "weight": 46,
+   "any": [
+    {
+     "type": "class",
+     "regex": "(?i)(^|/)com/astro(/|$)"
+    },
+    {
+     "type": "meta",
+     "regex": "(?i)astroclient"
+    },
+    {
+     "type": "string",
+     "regex": "(?i)\\bastro\\s*client\\b"
+    }
+   ]
+  },
+  {
+   "id": "client_vortex",
+   "name": "Vortex",
+   "category": "client",
+   "severity": 5,
+   "weight": 46,
+   "any": [
+    {
+     "type": "class",
+     "regex": "(?i)(^|/)com/vortex(/|$)"
+    },
+    {
+     "type": "meta",
+     "regex": "(?i)vortexclient"
+    },
+    {
+     "type": "string",
+     "regex": "(?i)\\bvortex\\s*client\\b"
+    }
+   ]
+  },
+  {
+   "id": "client_solstice",
+   "name": "Solstice",
+   "category": "client",
+   "severity": 5,
+   "weight": 46,
+   "any": [
+    {
+     "type": "class",
+     "regex": "(?i)(^|/)com/solstice(/|$)"
+    },
+    {
+     "type": "meta",
+     "regex": "(?i)solsticeclient"
+    },
+    {
+     "type": "string",
+     "regex": "(?i)\\bsolstice\\s*client\\b"
+    }
+   ]
+  },
+  {
+   "id": "client_vega",
+   "name": "Vega",
+   "category": "client",
+   "severity": 5,
+   "weight": 46,
+   "any": [
+    {
+     "type": "class",
+     "regex": "(?i)(^|/)com/vega(/|$)"
+    },
+    {
+     "type": "meta",
+     "regex": "(?i)vegaclient"
+    },
+    {
+     "type": "string",
+     "regex": "(?i)\\bvega\\s*client\\b"
+    }
+   ]
+  },
+  {
+   "id": "client_zephyr",
+   "name": "Zephyr",
+   "category": "client",
+   "severity": 5,
+   "weight": 46,
+   "any": [
+    {
+     "type": "class",
+     "regex": "(?i)(^|/)com/zephyr(/|$)"
+    },
+    {
+     "type": "meta",
+     "regex": "(?i)zephyrclient"
+    },
+    {
+     "type": "string",
+     "regex": "(?i)\\bzephyr\\s*client\\b"
+    }
+   ]
+  },
+  {
+   "id": "client_wizard",
+   "name": "Wizard",
+   "category": "client",
+   "severity": 5,
+   "weight": 44,
+   "any": [
+    {
+     "type": "class",
+     "regex": "(?i)(^|/)com/wizard(/|$)"
+    },
+    {
+     "type": "meta",
+     "regex": "(?i)wizardclient"
+    },
+    {
+     "type": "string",
+     "regex": "(?i)\\bwizard\\s*client\\b"
+    }
+   ]
+  },
+  {
+   "id": "client_crypt",
+   "name": "Crypt",
+   "category": "client",
+   "severity": 5,
+   "weight": 44,
+   "any": [
+    {
+     "type": "class",
+     "regex": "(?i)(^|/)com/crypt(/|$)"
+    },
+    {
+     "type": "meta",
+     "regex": "(?i)cryptclient"
+    },
+    {
+     "type": "string",
+     "regex": "(?i)\\bcrypt\\s*client\\b"
+    }
+   ]
+  },
+  {
+   "id": "client_slinky",
+   "name": "Slinky",
+   "category": "client",
+   "severity": 5,
+   "weight": 44,
+   "any": [
+    {
+     "type": "class",
+     "regex": "(?i)(^|/)com/slinky(/|$)"
+    },
+    {
+     "type": "meta",
+     "regex": "(?i)slinkyclient"
+    },
+    {
+     "type": "string",
+     "regex": "(?i)\\bslinky\\b"
+    }
+   ]
+  },
+  {
+   "id": "client_spicy",
+   "name": "Spicy",
+   "category": "client",
+   "severity": 5,
+   "weight": 44,
+   "any": [
+    {
+     "type": "class",
+     "regex": "(?i)(^|/)com/spicy(/|$)"
+    },
+    {
+     "type": "meta",
+     "regex": "(?i)spicyclient"
+    },
+    {
+     "type": "string",
+     "regex": "(?i)\\bspicy\\s*client\\b"
+    }
+   ]
+  },
+  {
+   "id": "client_drip",
+   "name": "Drip",
+   "category": "client",
+   "severity": 5,
+   "weight": 44,
+   "any": [
+    {
+     "type": "class",
+     "regex": "(?i)(^|/)com/drip(/|$)"
+    },
+    {
+     "type": "meta",
+     "regex": "(?i)dripclient"
+    },
+    {
+     "type": "string",
+     "regex": "(?i)\\bdrip\\s*client\\b"
+    }
+   ]
+  },
+  {
+   "id": "client_panda",
+   "name": "Panda",
+   "category": "client",
+   "severity": 5,
+   "weight": 44,
+   "any": [
+    {
+     "type": "class",
+     "regex": "(?i)(^|/)com/panda(/|$)"
+    },
+    {
+     "type": "meta",
+     "regex": "(?i)pandaclient"
+    },
+    {
+     "type": "string",
+     "regex": "(?i)\\bpanda\\s*client\\b"
+    }
+   ]
+  },
+  {
+   "id": "client_mio",
+   "name": "Mio",
+   "category": "client",
+   "severity": 5,
+   "weight": 44,
+   "any": [
+    {
+     "type": "class",
+     "regex": "(?i)(^|/)com/mio(/|$)"
+    },
+    {
+     "type": "meta",
+     "regex": "(?i)mioclient"
+    },
+    {
+     "type": "string",
+     "regex": "(?i)\\bmio\\s*client\\b"
+    }
+   ]
+  },
+  {
+   "id": "client_meow",
+   "name": "Meow Client",
+   "category": "client",
+   "severity": 5,
+   "weight": 50,
+   "any": [
+    {
+     "type": "meta",
+     "regex": "(?i)\"id\"\\s*:\\s*\"meow\""
+    },
+    {
+     "type": "string",
+     "regex": "(?i)\\bmeow\\s*client\\b"
+    },
+    {
+     "type": "path",
+     "regex": "(?i)meow-offline|meow-client"
+    }
+   ]
+  },
+  {
+   "id": "client_catlavan",
+   "name": "Catlavan",
+   "category": "client",
+   "severity": 5,
+   "weight": 45,
+   "any": [
+    {
+     "type": "path",
+     "regex": "(?i)catlavan"
+    }
+   ]
+  },
+  {
+   "id": "client_lightbeta",
+   "name": "LightBeta",
+   "category": "client",
+   "severity": 5,
+   "weight": 50,
+   "any": [
+    {
+     "type": "meta",
+     "regex": "(?i)\"id\"\\s*:\\s*\"light\""
+    },
+    {
+     "type": "class",
+     "regex": "(?i)^tech/lightclient(/|$)"
+    },
+    {
+     "type": "string",
+     "regex": "(?i)\\blightbeta\\b"
+    }
+   ]
+  },
+  {
+   "id": "client_nemesis",
+   "name": "Nemesis",
+   "category": "client",
+   "severity": 5,
+   "weight": 50,
+   "any": [
+    {
+     "type": "meta",
+     "regex": "(?i)\"id\"\\s*:\\s*\"nemesis\""
+    },
+    {
+     "type": "class",
+     "regex": "(?i)^nemesis/inject(/|$)"
+    },
+    {
+     "type": "string",
+     "regex": "(?i)\\bnemesis\\s*client\\b"
+    }
+   ]
+  },
+  {
+   "id": "client_rockstar",
+   "name": "Rockstar",
+   "category": "client",
+   "severity": 5,
+   "weight": 50,
+   "any": [
+    {
+     "type": "meta",
+     "regex": "(?i)\"id\"\\s*:\\s*\"rockstar\""
+    },
+    {
+     "type": "class",
+     "regex": "(?i)^pyrock(/|$)"
+    },
+    {
+     "type": "path",
+     "regex": "(?i)rockstar-client"
+    }
+   ]
+  },
+  {
+   "id": "client_aurora",
+   "name": "AuroraHack",
+   "category": "client",
+   "severity": 5,
+   "weight": 45,
+   "any": [
+    {
+     "type": "string",
+     "regex": "(?i)aurora beta offline payload"
+    },
+    {
+     "type": "path",
+     "regex": "(?i)aurora-beta-offline|aurora-beta"
+    }
+   ]
+  },
+  {
+   "id": "client_arbuz",
+   "name": "ArbuzClient",
+   "category": "client",
+   "severity": 5,
+   "weight": 50,
+   "any": [
+    {
+     "type": "meta",
+     "regex": "(?i)\"id\"\\s*:\\s*\"arbuzhack\""
+    },
+    {
+     "type": "class",
+     "regex": "(?i)^org/patch/arbuzhack(/|$)"
+    },
+    {
+     "type": "path",
+     "regex": "(?i)arbuzclient"
+    }
+   ]
+  },
+  {
+   "id": "client_plintus",
+   "name": "PlintusVisuals",
+   "category": "client",
+   "severity": 5,
+   "weight": 40,
+   "any": [
+    {
+     "type": "meta",
+     "regex": "(?i)\"id\"\\s*:\\s*\"plintusvisuals\""
+    },
+    {
+     "type": "class",
+     "regex": "(?i)^com/plintusvisuals(/|$)"
+    }
+   ]
+  },
+  {
+   "id": "client_wild",
+   "name": "Wild",
+   "category": "client",
+   "severity": 5,
+   "weight": 50,
+   "any": [
+    {
+     "type": "meta",
+     "regex": "(?i)\"id\"\\s*:\\s*\"wild\""
+    },
+    {
+     "type": "class",
+     "regex": "(?i)^ru/metaculture(/|$)"
+    },
+    {
+     "type": "path",
+     "regex": "(?i)w1ld-cracked"
+    }
+   ]
+  },
+  {
+   "id": "client_nursultan",
+   "name": "Nursultan",
+   "category": "client",
+   "severity": 5,
+   "weight": 50,
+   "any": [
+    {
+     "type": "meta",
+     "regex": "(?i)\"id\"\\s*:\\s*\"nursultan\""
+    },
+    {
+     "type": "class",
+     "regex": "(?i)^Nursultan(/|$)"
+    },
+    {
+     "type": "string",
+     "regex": "(?i)\\bnursultan\\s*client\\b"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,131 @@
+{
+ "version": 1,
+ "hashes": [
+  {
+   "sha256": "052e7862b83d6b295f494e5206aa3a91f592108e4b70941f326d6edc81e897ac",
+   "name": "AuroraHack 1.21.8",
+   "category": "cheat",
+   "comment": "Нативный загрузчик и чит-клиент Aurora"
+  },
+  {
+   "sha256": "fc01c858e300e70ba0eeac02d011600924ab5536a68a5a68e8c8cc5d9d74e864",
+   "name": "Celestial 1.16.5",
+   "category": "cheat",
+   "comment": "Защищённая сборка Celestial"
+  },
+  {
+   "sha256": "2316720d27cbd149cdcb36207812285e9563e3b459e50cc9d337c07fcee3e1ed",
+   "name": "Catlavan 1.16.5",
+   "category": "cheat",
+   "comment": "Obfuscated sg/* client; hitbox/collision behavior"
+  },
+  {
+   "sha256": "176cf7661343a790eeccd7bbd358865d6b31654a2bb4d7580c503e325e1bae50",
+   "name": "Meow 1.21.11",
+   "category": "cheat",
+   "comment": "123 modules; GRU neuro aim profile"
+  },
+  {
+   "sha256": "11a3aae895a025e287e6d1df4f522d614fcd46a5ef096984ebe4bd9b6a2e43c8",
+   "name": "Nursultan 1.21.11",
+   "category": "cheat",
+   "comment": "Clear Nursultan/* modules; Fabric client"
+  },
+  {
+   "sha256": "5fc5a95ba50ec85f303e0baedf9fa581e0bdabf0a44d1783ee5ba45140c3714d",
+   "name": "PlintusVisuals 1.2.1",
+   "category": "cheat",
+   "comment": "Arabic/Unicode obfuscation; rotation/trap/trigger modules"
+  },
+  {
+   "sha256": "905f0cd03c42b5746090a065a79f0563966363690f75488c6ab0d897f62c67cc",
+   "name": "Wild 1.21.8",
+   "category": "cheat",
+   "comment": "ru.metaculture client; Telegram placeholders, HotSwapAgent library"
+  },
+  {
+   "sha256": "64acbdb0c9d3c1ee57c19b7797addbb789b5d3dcdbb442514dd070519b0ebb8a",
+   "name": "LightBeta 1.21.11 dev",
+   "category": "cheat",
+   "comment": "Source-backed client; NeuroModel/Aura; HWID/process telemetry"
+  },
+  {
+   "sha256": "ea25ea850850be8645f8df10ff53018a8215690f6eac2384f6a5d91cfc4f358a",
+   "name": "Nemesis 1.21.4",
+   "category": "cheat",
+   "comment": "xtzprotect; default_pitch/default_yaw AI models"
+  },
+  {
+   "sha256": "7240c6e840434bac9230ee460cd68ba51957b18d63551d8a2287500b98c3205d",
+   "name": "Rockstar 1.21.4",
+   "category": "cheat",
+   "comment": "pyrock modules; ONNX rotation predictors; auth/session store"
+  },
+  {
+   "sha256": "d794c81044a3e04c4b2c75d4ed65e536df50caeb5b309d14b85648ceb96b2d09",
+   "name": "ArbuzClient 1.21.4 CRACKED",
+   "category": "cheat",
+   "comment": "Aethereal obfuscation; aim.onnx/pitch.cbm/yaw.cbm"
+  },
+  {
+   "sha256": "c5039ce1e3c7d4545dba2683324c48e2168ac8be925e729def0755b55e630a4c",
+   "name": "FDPClient b17",
+   "category": "cheat",
+   "comment": "LiquidBounce fork with combat modules"
+  },
+  {
+   "sha256": "e56981f764bd68c5bbb72c6c96e834eaa56e389142ba3224093de99314331bf6",
+   "name": "KAMI Blue 1.16.5",
+   "category": "cheat",
+   "comment": "Open-source KAMI client"
+  },
+  {
+   "sha256": "3c3613ed5696d11553acedde3cdc841995b93f8545774400eeab447a5e8cf9d9",
+   "name": "SalHack 2.05",
+   "category": "cheat",
+   "comment": "Open-source SalHack client"
+  },
+  {
+   "sha256": "07f85d34845ca97ac56f4d11f79ecd33ed8bd21872df5903a856f7d74ec08122",
+   "name": "Seppuku 3.3.0",
+   "category": "cheat",
+   "comment": "Open-source Seppuku client"
+  },
+  {
+   "sha256": "d394b2a47a1f14b0a3ab1840267561652e3a79caa9cf5829877d71d8a27fe3c1",
+   "name": "ClearHitboxes 1.20",
+   "category": "clean",
+   "comment": "Visual hitbox renderer only"
+  },
+  {
+   "sha256": "c9bb9631f61cd25609d1ba1455c62d020541d58396b7ec2e0e29c9fd369856c3",
+   "name": "CombatHitbox 1.0.11",
+   "category": "clean",
+   "comment": "Visual hitbox renderer only"
+  },
+  {
+   "sha256": "de2e41a247180b48b93e2c591dffef63ea78efe7359c6d5296cd42d408856df7",
+   "name": "HitBox+ 1.0.0",
+   "category": "clean",
+   "comment": "Visual hitbox utility"
+  },
+  {
+   "sha256": "a627f49d6892f85c54d600c4afe5aed4d0dcebefca8b476b98cecfb29b5f6d11",
+   "name": "More Hitboxes 1.21.1",
+   "category": "clean",
+   "comment": "Visual hitbox utility"
+  },
+  {
+   "sha256": "7d116c29bb333516d3baa91069ddf08202b95deceb3d662731b419ef07079297",
+   "name": "aurora-beta.dll (Aurora)",
+   "category": "cheat",
+   "comment": "Нативная библиотека чит-клиента Aurora"
+  },
+  {
+   "sha256": "14fc06a058e53b25a8d8f4ef92f98274d93ab53085549ac37f2ed17c31f776a9",
+   "name": "vcruntime_aux_carrier.dll (Aurora)",
+   "category": "cheat",
+   "comment": "Нативная библиотека, поставляется с Aurora"
+  }
+ ]
+}

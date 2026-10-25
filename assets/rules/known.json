@@ -1,0 +1,4729 @@
+{
+ "version": 1,
+ "entries": [
+  {
+   "id": "known_inventorywalk_0",
+   "name": "Inventory Walk",
+   "category": "utility",
+   "severity": 4,
+   "weight": 55,
+   "kind": "jar",
+   "aliases": [
+    "inventorywalk",
+    "invmove"
+   ],
+   "sizes_kb": [
+    119.0,
+    122.0,
+    123.0,
+    125.0,
+    126.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine / Fabric 1.16.5 - 1.21.10",
+   "comment": "",
+   "proof": "me/pieking1215/invmove InvMove.class",
+   "paths": [
+    "invmove.class",
+    "me/pieking1215/invmove"
+   ],
+   "pseudo": false
+  },
+  {
+   "id": "known_freecam_1",
+   "name": "Freecam",
+   "category": "render",
+   "severity": 4,
+   "weight": 55,
+   "kind": "jar",
+   "aliases": [
+    "freecam"
+   ],
+   "sizes_kb": [
+    42.0,
+    74.0,
+    1047.0,
+    1048.0,
+    1059.0,
+    1069.0,
+    1075.0,
+    1104.0,
+    1111.0,
+    1117.0,
+    1122.0,
+    1124.0,
+    1130.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / NeoForge / Fabric / ForgeOptifine 1.16.5 - 1.21.10",
+   "comment": "",
+   "proof": "net/xolt/freecam freecam.class | com/zergatul/freecam freecam.class",
+   "paths": [
+    "com/zergatul/freecam",
+    "freecam.class",
+    "net/xolt/freecam"
+   ],
+   "pseudo": false
+  },
+  {
+   "id": "known_bedrockbricker_2",
+   "name": "Bedrock Bricker",
+   "category": "exploit",
+   "severity": 4,
+   "weight": 60,
+   "kind": "jar",
+   "aliases": [
+    "bedrockbricker",
+    "bedrockmod",
+    "breakingbedrock"
+   ],
+   "sizes_kb": [
+    41.8
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "",
+   "proof": "net/mcreator/bedrockmod | net/anawesomguy/breakingbedrock BedrockBlock.class",
+   "paths": [
+    "bedrockblock.class",
+    "net/anawesomguy/breakingbedrock",
+    "net/mcreator/bedrockmod"
+   ],
+   "pseudo": false
+  },
+  {
+   "id": "known_viaversion_3",
+   "name": "ViaVersion",
+   "category": "utility",
+   "severity": 3,
+   "weight": 15,
+   "kind": "jar",
+   "aliases": [
+    "viafabric",
+    "viaversion"
+   ],
+   "sizes_kb": [
+    5031.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Fabric 1.14.4 - 1.21.3",
+   "comment": "",
+   "proof": "com/viaversion/fabric/common ViaFabric.class",
+   "paths": [
+    "com/viaversion/fabric/common",
+    "viafabric.class"
+   ],
+   "pseudo": false
+  },
+  {
+   "id": "known_doublehotbar_4",
+   "name": "Double Hotbar",
+   "category": "utility",
+   "severity": 3,
+   "weight": 40,
+   "kind": "jar",
+   "aliases": [
+    "doublehotbar"
+   ],
+   "sizes_kb": [
+    29.0,
+    35.0,
+    36.0,
+    37.0,
+    42.0,
+    43.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "",
+   "comment": "",
+   "proof": "com/sidezbros/double_hotbar DoubleHotbar.class",
+   "paths": [
+    "com/sidezbros/double_hotbar",
+    "doublehotbar.class"
+   ],
+   "pseudo": false
+  },
+  {
+   "id": "known_elytraswap_5",
+   "name": "Elytra Swap",
+   "category": "utility",
+   "severity": 3,
+   "weight": 45,
+   "kind": "jar",
+   "aliases": [
+    "elytraswap",
+    "elytraswapper",
+    "jjelytraswap"
+   ],
+   "sizes_kb": [
+    568.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Fabric 1.16.5",
+   "comment": "",
+   "proof": "net/szum123321/elytra_swap ElytraSwap.class | com/saolghra/elytraswapper Elytraswapper.class | io/github/jumperonjava/jjelytraswap ConfigScreen.class",
+   "paths": [
+    "com/saolghra/elytraswapper",
+    "elytraswap.class",
+    "elytraswapper.class",
+    "io/github/jumperonjava/jjelytraswap",
+    "net/szum123321/elytra_swap"
+   ],
+   "pseudo": false
+  },
+  {
+   "id": "known_armorhotswap_6",
+   "name": "Armor Hotswap",
+   "category": "utility",
+   "severity": 3,
+   "weight": 45,
+   "kind": "jar",
+   "aliases": [
+    "armorhotswap",
+    "betterarmorswap"
+   ],
+   "sizes_kb": [
+    19.0,
+    20.0,
+    21.0,
+    28.0,
+    29.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Minecraft Forge / Fabric / ForgeOptifine 1.16.5 - 1.19",
+   "comment": "",
+   "proof": "com/loucaskreger/armorhotswap ArmorHotswap.class | heyblack/betterarmorswap/mixin ClientPlayerInteractionManagerMixin.class",
+   "paths": [
+    "armorhotswap.class",
+    "com/loucaskreger/armorhotswap",
+    "heyblack/betterarmorswap/mixin"
+   ],
+   "pseudo": false
+  },
+  {
+   "id": "known_chestlocator_7",
+   "name": "Chest Locator",
+   "category": "utility",
+   "severity": 3,
+   "weight": 45,
+   "kind": "jar",
+   "aliases": [
+    "chestlocator"
+   ],
+   "sizes_kb": [
+    870.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "",
+   "proof": "com/github/hexomod/chestlocator/Z.class z.class Y.class y.class",
+   "paths": [
+    "com/github/hexomod/chestlocator/z.class"
+   ],
+   "pseudo": false
+  },
+  {
+   "id": "known_worlddownloader_8",
+   "name": "WorldDownloader",
+   "category": "utility",
+   "severity": 3,
+   "weight": 45,
+   "kind": "jar",
+   "aliases": [
+    "wdl",
+    "worldbackup",
+    "worlddownloader"
+   ],
+   "sizes_kb": [
+    574.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "",
+   "proof": "wdl/WorldBackup.class",
+   "paths": [
+    "wdl/worldbackup.class",
+    "worldbackup.class"
+   ],
+   "pseudo": false
+  },
+  {
+   "id": "known_topkaautobuyv1_9",
+   "name": "TopkaAutoBuy v1",
+   "category": "autobuy",
+   "severity": 5,
+   "weight": 85,
+   "kind": "jar",
+   "aliases": [
+    "product",
+    "topkaautobuy",
+    "topkaautobuyv1"
+   ],
+   "sizes_kb": [
+    48.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "Бан за хранение",
+   "proof": "папка topka product",
+   "paths": [],
+   "pseudo": false
+  },
+  {
+   "id": "known_topkaautobuyv1dll_10",
+   "name": "TopkaAutoBuy v1 DLL",
+   "category": "autobuy",
+   "severity": 5,
+   "weight": 90,
+   "kind": "dll",
+   "aliases": [
+    "topkaautobuy",
+    "topkaautobuyv1",
+    "topkaautobuyv1dll"
+   ],
+   "sizes_kb": [
+    6419.0,
+    7019.0,
+    7030.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "Бан за хранение",
+   "proof": "natives/<version>",
+   "paths": [],
+   "pseudo": false
+  },
+  {
+   "id": "known_topkaautobuyv2_11",
+   "name": "TopkaAutoBuy v2",
+   "category": "autobuy",
+   "severity": 5,
+   "weight": 90,
+   "kind": "jar",
+   "aliases": [
+    "topkaautobuy",
+    "topkaautobuyv2"
+   ],
+   "sizes_kb": [
+    7606.0,
+    7783.0,
+    7798.0,
+    7772.0,
+    7802.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "Бан за хранение",
+   "proof": "",
+   "paths": [],
+   "pseudo": false
+  },
+  {
+   "id": "known_gumballoffmode_12",
+   "name": "GUMBALLOFFMODE",
+   "category": "client",
+   "severity": 4,
+   "weight": 70,
+   "kind": "jar",
+   "aliases": [
+    "gumball",
+    "gumballoffmode"
+   ],
+   "sizes_kb": [
+    2701.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "",
+   "proof": "com/moandjiezana/toml WriterContext.class",
+   "paths": [],
+   "pseudo": false
+  },
+  {
+   "id": "known_librariantradefinder_13",
+   "name": "Librarian Trade Finder",
+   "category": "utility",
+   "severity": 3,
+   "weight": 30,
+   "kind": "jar",
+   "aliases": [
+    "librarian",
+    "librariantradefinder"
+   ],
+   "sizes_kb": [
+    94.0,
+    100.0,
+    101.0,
+    3203.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Fabric 1.19.3 - 1.21.4",
+   "comment": "",
+   "proof": "de/greenman999/Librarian Trade.class",
+   "paths": [
+    "de/greenman999/librarian",
+    "trade.class"
+   ],
+   "pseudo": false
+  },
+  {
+   "id": "known_autoattack_14",
+   "name": "Auto Attack",
+   "category": "combat",
+   "severity": 4,
+   "weight": 70,
+   "kind": "jar",
+   "aliases": [
+    "autoattack"
+   ],
+   "sizes_kb": [
+    4.0,
+    77.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5 / Fabric 1.19.3",
+   "comment": "",
+   "proof": "com/tfar/autoattack/AutoAttack.class | vin35/autoattack/AutoAttack.class",
+   "paths": [
+    "autoattack.class",
+    "com/tfar/autoattack/autoattack.class",
+    "vin35/autoattack/autoattack.class"
+   ],
+   "pseudo": false
+  },
+  {
+   "id": "known_entityoutliner_15",
+   "name": "Entity Outliner",
+   "category": "utility",
+   "severity": 3,
+   "weight": 30,
+   "kind": "jar",
+   "aliases": [
+    "entityoutliner"
+   ],
+   "sizes_kb": [
+    32.0,
+    33.0,
+    39.0,
+    41.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Fabric 1.16.5 - 1.19.3",
+   "comment": "",
+   "proof": "net/entityoutliner/EntityOutliner.class",
+   "paths": [
+    "entityoutliner.class",
+    "net/entityoutliner/entityoutliner.class"
+   ],
+   "pseudo": false
+  },
+  {
+   "id": "known_seedcracker_16",
+   "name": "SeedCracker",
+   "category": "exploit",
+   "severity": 4,
+   "weight": 55,
+   "kind": "jar",
+   "aliases": [
+    "seedcracker"
+   ],
+   "sizes_kb": [
+    607.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Fabric 1.16.5",
+   "comment": "",
+   "proof": "kaptainwutax/seedcracker/SeedCracker.class",
+   "paths": [
+    "kaptainwutax/seedcracker/seedcracker.class",
+    "seedcracker.class"
+   ],
+   "pseudo": false
+  },
+  {
+   "id": "known_camerautils_17",
+   "name": "Camera Utils",
+   "category": "utility",
+   "severity": 3,
+   "weight": 30,
+   "kind": "jar",
+   "aliases": [
+    "camerautils"
+   ],
+   "sizes_kb": [
+    88.0,
+    296.0,
+    317.0,
+    344.0,
+    348.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Fabric / Quilt 1.18.2 - 1.21.4",
+   "comment": "",
+   "proof": "de/maxhenkel/camerautils CameraUtils.class",
+   "paths": [
+    "camerautils.class",
+    "de/maxhenkel/camerautils"
+   ],
+   "pseudo": false
+  },
+  {
+   "id": "known_walljumptxf_18",
+   "name": "Wall-Jump TXF",
+   "category": "utility",
+   "severity": 3,
+   "weight": 30,
+   "kind": "jar",
+   "aliases": [
+    "walljump",
+    "walljumptxf"
+   ],
+   "sizes_kb": [
+    155.0,
+    159.0,
+    160.0,
+    161.0,
+    162.0,
+    163.0,
+    165.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / NeoForge / Fabric / Quilt 1.18.2 - 1.21.4",
+   "comment": "",
+   "proof": "com/jahirtrap/walljump/WallJump.class | genandnic/walljump/WallJump.class",
+   "paths": [
+    "com/jahirtrap/walljump/walljump.class",
+    "genandnic/walljump/walljump.class",
+    "walljump.class"
+   ],
+   "pseudo": false
+  },
+  {
+   "id": "known_crystaloptimizer_19",
+   "name": "CrystalOptimizer",
+   "category": "combat",
+   "severity": 4,
+   "weight": 55,
+   "kind": "jar",
+   "aliases": [
+    "crystaloptimizer",
+    "marlowcrystal"
+   ],
+   "sizes_kb": [
+    90.0,
+    97.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Fabric 1.18.2 | 1.21.4",
+   "comment": "",
+   "proof": "com/marlowcrystal/marlowcrystal/MarlowCrystal.class | CrystalOptimizer.class",
+   "paths": [
+    "com/marlowcrystal/marlowcrystal/marlowcrystal.class",
+    "crystaloptimizer.class",
+    "marlowcrystal.class"
+   ],
+   "pseudo": false
+  },
+  {
+   "id": "known_soupapi_20",
+   "name": "Soup API",
+   "category": "client",
+   "severity": 5,
+   "weight": 75,
+   "kind": "jar",
+   "aliases": [
+    "soupapi"
+   ],
+   "sizes_kb": [
+    942.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Fabric 1.20.4",
+   "comment": "Бан за хранение",
+   "proof": "org/ChSP/soupapi/SoupApi.class",
+   "paths": [
+    "org/chsp/soupapi/soupapi.class",
+    "soupapi.class"
+   ],
+   "pseudo": false
+  },
+  {
+   "id": "known_wurstclient_21",
+   "name": "Wurst Client",
+   "category": "client",
+   "severity": 5,
+   "weight": 95,
+   "kind": "jar",
+   "aliases": [
+    "wurst",
+    "wurstclient"
+   ],
+   "sizes_kb": [
+    3678.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge 1.8.9 - 1.12.2 | Fabric 1.14.4 - 1.21.5",
+   "comment": "Бан за хранение",
+   "proof": "net/wurstclient/wurstclient.class | assets/wurst",
+   "paths": [
+    "assets/wurst",
+    "net/wurstclient/wurstclient.class",
+    "wurstclient.class"
+   ],
+   "pseudo": false
+  },
+  {
+   "id": "known_meteorclient_22",
+   "name": "Meteor Client",
+   "category": "client",
+   "severity": 5,
+   "weight": 95,
+   "kind": "jar",
+   "aliases": [
+    "meteor",
+    "meteorclient"
+   ],
+   "sizes_kb": [
+    4574.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Fabric 1.17.1 - 1.21.10 / Forge 1.17.1",
+   "comment": "Бан за хранение",
+   "proof": "meteordevelopment/meteorclient/MeteorClient.class",
+   "paths": [
+    "meteorclient.class",
+    "meteordevelopment/meteorclient/meteorclient.class"
+   ],
+   "pseudo": false
+  },
+  {
+   "id": "known_clickcrystals_23",
+   "name": "ClickCrystals",
+   "category": "client",
+   "severity": 5,
+   "weight": 75,
+   "kind": "jar",
+   "aliases": [
+    "clickcrystals"
+   ],
+   "sizes_kb": [
+    2867.0,
+    4096.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Fabric 1.19.4 - 1.21.4",
+   "comment": "",
+   "proof": "io/github/itzispyder/clickcrystals/ClickCrystals.class",
+   "paths": [
+    "clickcrystals.class",
+    "io/github/itzispyder/clickcrystals/clickcrystals.class"
+   ],
+   "pseudo": false
+  },
+  {
+   "id": "known_sprintaddon_24",
+   "name": "sprint_addon",
+   "category": "hitbox",
+   "severity": 4,
+   "weight": 65,
+   "kind": "jar",
+   "aliases": [
+    "sprintaddon"
+   ],
+   "sizes_kb": [
+    3.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "LabyMod",
+   "comment": "",
+   "proof": "",
+   "paths": [],
+   "pseudo": false
+  },
+  {
+   "id": "known_hb_25",
+   "name": "HB",
+   "category": "hitbox",
+   "severity": 4,
+   "weight": 70,
+   "kind": "jar",
+   "aliases": [
+    "hb"
+   ],
+   "sizes_kb": [
+    5.0,
+    7.0,
+    8.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.19.4",
+   "comment": "",
+   "proof": "",
+   "paths": [],
+   "pseudo": false
+  },
+  {
+   "id": "known__26",
+   "name": "Простейшие хитбоксы",
+   "category": "hitbox",
+   "severity": 4,
+   "weight": 70,
+   "kind": "jar",
+   "aliases": [
+    "prosteyshie",
+    "simplehitboxes"
+   ],
+   "sizes_kb": [
+    8.0,
+    31.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "",
+   "comment": "",
+   "proof": "",
+   "paths": [],
+   "pseudo": false
+  },
+  {
+   "id": "known_fullbrightnesstoggle_27",
+   "name": "FullBrightnessToggle",
+   "category": "hitbox",
+   "severity": 4,
+   "weight": 60,
+   "kind": "jar",
+   "aliases": [
+    "fullbrightnesstoggle"
+   ],
+   "sizes_kb": [
+    9.0,
+    26.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "",
+   "proof": "",
+   "paths": [],
+   "pseudo": false
+  },
+  {
+   "id": "known_crosshairmod_28",
+   "name": "crosshair_mod",
+   "category": "hitbox",
+   "severity": 4,
+   "weight": 65,
+   "kind": "jar",
+   "aliases": [
+    "crosshair",
+    "crosshairmod"
+   ],
+   "sizes_kb": [
+    9.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "Буквенные классы",
+   "proof": "",
+   "paths": [],
+   "pseudo": false
+  },
+  {
+   "id": "known_takker_29",
+   "name": "TAKKER",
+   "category": "hitbox",
+   "severity": 4,
+   "weight": 70,
+   "kind": "jar",
+   "aliases": [
+    "takker"
+   ],
+   "sizes_kb": [
+    9.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "",
+   "proof": "com/example/examplemod/Modules AfkTaker.class",
+   "paths": [
+    "afktaker.class"
+   ],
+   "pseudo": false
+  },
+  {
+   "id": "known_ezhitboxes_30",
+   "name": "Ezhitboxes",
+   "category": "hitbox",
+   "severity": 5,
+   "weight": 80,
+   "kind": "jar",
+   "aliases": [
+    "ezhitboxes",
+    "ezhits"
+   ],
+   "sizes_kb": [
+    8.0,
+    9.0,
+    10.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "",
+   "proof": "me/bushroot/hb/Modules",
+   "paths": [
+    "me/bushroot/hb/modules"
+   ],
+   "pseudo": false
+  },
+  {
+   "id": "known_hbexamplemod_31",
+   "name": "HB (Example mod)",
+   "category": "hitbox",
+   "severity": 4,
+   "weight": 70,
+   "kind": "jar",
+   "aliases": [
+    "hbexample",
+    "hbexamplemod",
+    "mousedelayfix"
+   ],
+   "sizes_kb": [
+    10.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "",
+   "comment": "",
+   "proof": "com/MouseDelayFix/REGISTER",
+   "paths": [
+    "com/mousedelayfix/register"
+   ],
+   "pseudo": false
+  },
+  {
+   "id": "known_bush1rootfabric_32",
+   "name": "bush1root fabric",
+   "category": "hitbox",
+   "severity": 5,
+   "weight": 80,
+   "kind": "jar",
+   "aliases": [
+    "bush1root",
+    "bush1rootfabric",
+    "bushroot"
+   ],
+   "sizes_kb": [
+    11.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Fabric 1.16.5",
+   "comment": "",
+   "proof": "me/bushroot",
+   "paths": [
+    "me/bushroot"
+   ],
+   "pseudo": false
+  },
+  {
+   "id": "known_fabrichits_33",
+   "name": "Fabric hits",
+   "category": "hitbox",
+   "severity": 5,
+   "weight": 75,
+   "kind": "jar",
+   "aliases": [
+    "fabrichits"
+   ],
+   "sizes_kb": [
+    15.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Fabric 1.16.5",
+   "comment": "",
+   "proof": "net/fabricmc/example/mixin RenderMixin.class",
+   "paths": [
+    "rendermixin.class"
+   ],
+   "pseudo": false
+  },
+  {
+   "id": "known_hbexamplemod_34",
+   "name": "HB (Example mod)",
+   "category": "hitbox",
+   "severity": 4,
+   "weight": 70,
+   "kind": "jar",
+   "aliases": [
+    "hbexample",
+    "hbexamplemod"
+   ],
+   "sizes_kb": [
+    11.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "",
+   "proof": "com/example/examplemod Render.class Render2.class",
+   "paths": [],
+   "pseudo": false
+  },
+  {
+   "id": "known_hb_35",
+   "name": "HB",
+   "category": "hitbox",
+   "severity": 4,
+   "weight": 70,
+   "kind": "jar",
+   "aliases": [
+    "hb"
+   ],
+   "sizes_kb": [
+    12.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "",
+   "proof": "com/example/examplemod/Module/imlp буквенные .class",
+   "paths": [],
+   "pseudo": false
+  },
+  {
+   "id": "known_defaulthb_36",
+   "name": "Default HB",
+   "category": "hitbox",
+   "severity": 4,
+   "weight": 65,
+   "kind": "jar",
+   "aliases": [
+    "defaulthb"
+   ],
+   "sizes_kb": [
+    14.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "",
+   "proof": "",
+   "paths": [],
+   "pseudo": false
+  },
+  {
+   "id": "known_autoreconnect_37",
+   "name": "AutoReconnect",
+   "category": "hitbox",
+   "severity": 4,
+   "weight": 60,
+   "kind": "jar",
+   "aliases": [
+    "autoreconnect"
+   ],
+   "sizes_kb": [
+    11.0,
+    17.0,
+    42.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "LabyMod",
+   "comment": "size 0.5 смотрите F3+B, другая иконка",
+   "proof": "",
+   "paths": [],
+   "pseudo": false
+  },
+  {
+   "id": "known_moreparticles_38",
+   "name": "MoreParticles",
+   "category": "hitbox",
+   "severity": 4,
+   "weight": 55,
+   "kind": "jar",
+   "aliases": [
+    "moreparticles"
+   ],
+   "sizes_kb": [
+    17.0,
+    16.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "LabyMod",
+   "comment": "",
+   "proof": "",
+   "paths": [],
+   "pseudo": false
+  },
+  {
+   "id": "known_hb_39",
+   "name": "HB",
+   "category": "hitbox",
+   "severity": 4,
+   "weight": 70,
+   "kind": "jar",
+   "aliases": [
+    "hb",
+    "mousefixfps"
+   ],
+   "sizes_kb": [
+    19.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "",
+   "proof": "com/example/examplemod/MouseFixFPS",
+   "paths": [],
+   "pseudo": false
+  },
+  {
+   "id": "known_hb_40",
+   "name": "HB",
+   "category": "hitbox",
+   "severity": 5,
+   "weight": 75,
+   "kind": "jar",
+   "aliases": [
+    "hb"
+   ],
+   "sizes_kb": [
+    19.0,
+    20.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "",
+   "comment": "",
+   "proof": "ぐぐぐぐぐぐぐぐ$1",
+   "paths": [],
+   "pseudo": false
+  },
+  {
+   "id": "known_pseudochunkanimator_41",
+   "name": "PseudoChunkAnimator",
+   "category": "hitbox",
+   "severity": 4,
+   "weight": 60,
+   "kind": "jar",
+   "aliases": [
+    "chunkanimator",
+    "pseudochunkanimator"
+   ],
+   "sizes_kb": [
+    19.4,
+    21.0,
+    53.0,
+    50.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "",
+   "proof": "",
+   "paths": [],
+   "pseudo": true
+  },
+  {
+   "id": "known_bush1rootexamplemod_42",
+   "name": "bush1root (Example mod)",
+   "category": "hitbox",
+   "severity": 5,
+   "weight": 80,
+   "kind": "jar",
+   "aliases": [
+    "bush1root",
+    "bush1rootexample",
+    "bush1rootexamplemod",
+    "bushroot"
+   ],
+   "sizes_kb": [
+    21.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "",
+   "proof": "me/bushroot/hb/Modules",
+   "paths": [
+    "me/bushroot/hb/modules"
+   ],
+   "pseudo": false
+  },
+  {
+   "id": "known_useless_43",
+   "name": "Useless",
+   "category": "hitbox",
+   "severity": 4,
+   "weight": 65,
+   "kind": "jar",
+   "aliases": [
+    "useless"
+   ],
+   "sizes_kb": [
+    22.0,
+    23.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "букв. class",
+   "proof": "",
+   "paths": [],
+   "pseudo": false
+  },
+  {
+   "id": "known_hbautosprint_44",
+   "name": "HB(autosprint)",
+   "category": "hitbox",
+   "severity": 4,
+   "weight": 70,
+   "kind": "jar",
+   "aliases": [
+    "autosprint",
+    "hbautosprint"
+   ],
+   "sizes_kb": [
+    22.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "",
+   "proof": "sacura/sacura Букв.class",
+   "paths": [
+    "sacura/sacura"
+   ],
+   "pseudo": false
+  },
+  {
+   "id": "known_pseudocreativecore_45",
+   "name": "PseudoCreativeCore",
+   "category": "hitbox",
+   "severity": 4,
+   "weight": 65,
+   "kind": "jar",
+   "aliases": [
+    "creativecore",
+    "pseudocreativecore"
+   ],
+   "sizes_kb": [
+    7.0,
+    20.0,
+    23.0,
+    401.0,
+    22.3,
+    100.0,
+    103.0,
+    99.0,
+    101.0,
+    104.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "",
+   "proof": "team/creative/creativecore/client ぐぐぐぐぐぐぐぐ.class | ぐ.class | ljlynbreqewarbmu.class",
+   "paths": [
+    "ljlynbreqewarbmu.class"
+   ],
+   "pseudo": true
+  },
+  {
+   "id": "known_labymodhb_46",
+   "name": "Labymod Hb",
+   "category": "hitbox",
+   "severity": 5,
+   "weight": 75,
+   "kind": "jar",
+   "aliases": [
+    "labymod",
+    "labymodhb"
+   ],
+   "sizes_kb": [
+    29.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "LabyMod",
+   "comment": "Protected by CorruptedBytes",
+   "proof": "",
+   "paths": [],
+   "pseudo": false
+  },
+  {
+   "id": "known_pseudoshulker_47",
+   "name": "Pseudoshulker",
+   "category": "hitbox",
+   "severity": 4,
+   "weight": 60,
+   "kind": "jar",
+   "aliases": [
+    "pseudoshulker",
+    "shulker"
+   ],
+   "sizes_kb": [
+    30.0,
+    31.0,
+    50.0,
+    51.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "",
+   "proof": "com/misterpemodder/shulkerboxtooltip/module/impl",
+   "paths": [],
+   "pseudo": true
+  },
+  {
+   "id": "known_betterfpsredist_48",
+   "name": "BetterFpsRedist",
+   "category": "hitbox",
+   "severity": 4,
+   "weight": 65,
+   "kind": "jar",
+   "aliases": [
+    "betterfps",
+    "betterfpsredist"
+   ],
+   "sizes_kb": [
+    20.0,
+    15.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "Внутри обфускация",
+   "proof": "",
+   "paths": [],
+   "pseudo": false
+  },
+  {
+   "id": "known_hb_49",
+   "name": "Hb",
+   "category": "hitbox",
+   "severity": 4,
+   "weight": 70,
+   "kind": "jar",
+   "aliases": [
+    "hb"
+   ],
+   "sizes_kb": [
+    23.0,
+    33.0,
+    38.0,
+    39.0,
+    45.0,
+    99.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "возможен ALLATORI",
+   "proof": "",
+   "paths": [],
+   "pseudo": false
+  },
+  {
+   "id": "known_waohitboxes_50",
+   "name": "Waohitboxes",
+   "category": "hitbox",
+   "severity": 5,
+   "weight": 80,
+   "kind": "jar",
+   "aliases": [
+    "wao",
+    "waohitboxes"
+   ],
+   "sizes_kb": [
+    36.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "",
+   "proof": "com/wao",
+   "paths": [
+    "com/wao"
+   ],
+   "pseudo": false
+  },
+  {
+   "id": "known_hb_51",
+   "name": "HB",
+   "category": "hitbox",
+   "severity": 4,
+   "weight": 70,
+   "kind": "jar",
+   "aliases": [
+    "hb"
+   ],
+   "sizes_kb": [
+    38.0,
+    39.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "букв. class",
+   "proof": "",
+   "paths": [],
+   "pseudo": false
+  },
+  {
+   "id": "known_hbinfancyblockoverlay_52",
+   "name": "HB in FancyBlockOverlay",
+   "category": "hitbox",
+   "severity": 4,
+   "weight": 60,
+   "kind": "jar",
+   "aliases": [
+    "fancyblockoverlay",
+    "hbinfancyblockoverlay"
+   ],
+   "sizes_kb": [
+    39.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.12.2",
+   "comment": "букв. class",
+   "proof": "",
+   "paths": [],
+   "pseudo": true
+  },
+  {
+   "id": "known_chattime_53",
+   "name": "ChatTime",
+   "category": "hitbox",
+   "severity": 4,
+   "weight": 50,
+   "kind": "jar",
+   "aliases": [
+    "chattime"
+   ],
+   "sizes_kb": [
+    42.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "LabyMod",
+   "comment": "",
+   "proof": "",
+   "paths": [],
+   "pseudo": false
+  },
+  {
+   "id": "known_hbinentityculling_54",
+   "name": "HB in entityculling",
+   "category": "hitbox",
+   "severity": 4,
+   "weight": 60,
+   "kind": "jar",
+   "aliases": [
+    "entityculling",
+    "hbinentityculling"
+   ],
+   "sizes_kb": [
+    46.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "",
+   "proof": "",
+   "paths": [],
+   "pseudo": true
+  },
+  {
+   "id": "known_hbinbetterfps_55",
+   "name": "HB in Better FPS",
+   "category": "hitbox",
+   "severity": 4,
+   "weight": 60,
+   "kind": "jar",
+   "aliases": [
+    "betterfps",
+    "hbinbetterfps"
+   ],
+   "sizes_kb": [
+    47.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "",
+   "proof": "",
+   "paths": [],
+   "pseudo": true
+  },
+  {
+   "id": "known_hb_56",
+   "name": "HB",
+   "category": "hitbox",
+   "severity": 5,
+   "weight": 75,
+   "kind": "jar",
+   "aliases": [
+    "derick1337",
+    "hb"
+   ],
+   "sizes_kb": [
+    52.0,
+    59.4,
+    65.0,
+    79.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "",
+   "proof": "me/derick1337/by",
+   "paths": [
+    "me/derick1337/by"
+   ],
+   "pseudo": false
+  },
+  {
+   "id": "known_ch0ffahb_57",
+   "name": "ch0ffa hb",
+   "category": "hitbox",
+   "severity": 5,
+   "weight": 80,
+   "kind": "jar",
+   "aliases": [
+    "ch0ffa",
+    "ch0ffahb"
+   ],
+   "sizes_kb": [
+    58.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "",
+   "proof": "com/ch0ffaindustries/ch0ffa_box/",
+   "paths": [
+    "com/ch0ffaindustries/ch0ffa_box"
+   ],
+   "pseudo": false
+  },
+  {
+   "id": "known_minecraftrenderhb_58",
+   "name": "MinecraftRender HB",
+   "category": "hitbox",
+   "severity": 5,
+   "weight": 80,
+   "kind": "jar",
+   "aliases": [
+    "minecraftrender",
+    "minecraftrenderhb"
+   ],
+   "sizes_kb": [
+    64.0,
+    65.0,
+    66.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "",
+   "proof": "net/minecraft/render + 21 .class",
+   "paths": [],
+   "pseudo": false
+  },
+  {
+   "id": "known_pseudotopkavisual_59",
+   "name": "PseudoTopkaVisual",
+   "category": "hitbox",
+   "severity": 4,
+   "weight": 65,
+   "kind": "jar",
+   "aliases": [
+    "pseudotopkavisual",
+    "topkavisual"
+   ],
+   "sizes_kb": [
+    64.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "",
+   "proof": "",
+   "paths": [],
+   "pseudo": true
+  },
+  {
+   "id": "known_hb_60",
+   "name": "Hb",
+   "category": "hitbox",
+   "severity": 4,
+   "weight": 60,
+   "kind": "jar",
+   "aliases": [
+    "hb"
+   ],
+   "sizes_kb": [
+    65.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "",
+   "proof": "",
+   "paths": [],
+   "pseudo": false
+  },
+  {
+   "id": "known_ezhitsfree_61",
+   "name": "EzHits Free",
+   "category": "hitbox",
+   "severity": 5,
+   "weight": 80,
+   "kind": "jar",
+   "aliases": [
+    "ezhits",
+    "ezhitsfree"
+   ],
+   "sizes_kb": [
+    65.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "",
+   "proof": "net/minecraft/render много классов",
+   "paths": [],
+   "pseudo": false
+  },
+  {
+   "id": "known_hb_62",
+   "name": "Hb",
+   "category": "hitbox",
+   "severity": 4,
+   "weight": 70,
+   "kind": "jar",
+   "aliases": [
+    "hb"
+   ],
+   "sizes_kb": [
+    66.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "",
+   "proof": "|||||||||||||||||||||||||||||||||||||||||||||.class",
+   "paths": [],
+   "pseudo": false
+  },
+  {
+   "id": "known_minecraftoptimization_63",
+   "name": "MinecraftOptimization",
+   "category": "hitbox",
+   "severity": 4,
+   "weight": 65,
+   "kind": "jar",
+   "aliases": [
+    "minecraftoptimization"
+   ],
+   "sizes_kb": [
+    69.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "",
+   "proof": "dev/minecraftoptimization",
+   "paths": [
+    "dev/minecraftoptimization"
+   ],
+   "pseudo": false
+  },
+  {
+   "id": "known_nohurtcamdanilsimxjar_64",
+   "name": "NoHurtCam DanilSimX.jar",
+   "category": "hitbox",
+   "severity": 4,
+   "weight": 65,
+   "kind": "jar",
+   "aliases": [
+    "danilsimx",
+    "nohurtcam",
+    "nohurtcamdanilsimx",
+    "nohurtcamdanilsimxjar"
+   ],
+   "sizes_kb": [
+    95.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "",
+   "proof": "nohurtcam/ML.class",
+   "paths": [
+    "nohurtcam/ml.class"
+   ],
+   "pseudo": false
+  },
+  {
+   "id": "known_hb_65",
+   "name": "Hb",
+   "category": "hitbox",
+   "severity": 4,
+   "weight": 70,
+   "kind": "jar",
+   "aliases": [
+    "hb"
+   ],
+   "sizes_kb": [
+    87.0,
+    99.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "",
+   "proof": "|||||||||||||||||||||||||||||||||||.class",
+   "paths": [],
+   "pseudo": false
+  },
+  {
+   "id": "known_pseudofpsboost_66",
+   "name": "PseudoFpsBoost",
+   "category": "hitbox",
+   "severity": 4,
+   "weight": 65,
+   "kind": "jar",
+   "aliases": [
+    "fpsboost",
+    "pseudofpsboost"
+   ],
+   "sizes_kb": [
+    96.4,
+    97.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "",
+   "proof": "a/A.class",
+   "paths": [
+    "a/a.class"
+   ],
+   "pseudo": true
+  },
+  {
+   "id": "known_autojumpaddon_67",
+   "name": "AutoJump addon",
+   "category": "hitbox",
+   "severity": 4,
+   "weight": 60,
+   "kind": "jar",
+   "aliases": [
+    "autojump",
+    "autojumpaddon"
+   ],
+   "sizes_kb": [
+    100.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "LabyMod",
+   "comment": "",
+   "proof": "|||||||||||||||||||||||||||||||||||.class",
+   "paths": [],
+   "pseudo": false
+  },
+  {
+   "id": "known_creativecore_68",
+   "name": "CreativeCore",
+   "category": "hitbox",
+   "severity": 4,
+   "weight": 50,
+   "kind": "jar",
+   "aliases": [
+    "creativecore"
+   ],
+   "sizes_kb": [
+    135.0,
+    143.0,
+    401.0,
+    400.0,
+    4335.0,
+    101.0,
+    99.0,
+    104.0,
+    399.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "",
+   "proof": "",
+   "paths": [],
+   "pseudo": true
+  },
+  {
+   "id": "known_topkahitboxes_69",
+   "name": "TopkaHitboxes",
+   "category": "hitbox",
+   "severity": 5,
+   "weight": 85,
+   "kind": "jar",
+   "aliases": [
+    "topkahitboxes"
+   ],
+   "sizes_kb": [
+    149.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "",
+   "proof": "",
+   "paths": [],
+   "pseudo": false
+  },
+  {
+   "id": "known_hb_70",
+   "name": "Hb",
+   "category": "hitbox",
+   "severity": 4,
+   "weight": 60,
+   "kind": "jar",
+   "aliases": [
+    "hb"
+   ],
+   "sizes_kb": [
+    151.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "",
+   "comment": "lmao",
+   "proof": "",
+   "paths": [],
+   "pseudo": false
+  },
+  {
+   "id": "known_hbingameaccountswitcherias_71",
+   "name": "HB в InGameAccountSwitcher (ias)",
+   "category": "hitbox",
+   "severity": 4,
+   "weight": 65,
+   "kind": "jar",
+   "aliases": [
+    "hbingameaccountswitcherias",
+    "ias",
+    "ingameaccountswitcher"
+   ],
+   "sizes_kb": [
+    180.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "Есть одноименный чистый мод, который весит тоже 180кб, обращать внимание на внутренности",
+   "proof": "ru/main.class cfg.class func.class log.class",
+   "paths": [],
+   "pseudo": true
+  },
+  {
+   "id": "known_fullbrightaddon_72",
+   "name": "FullBright_Addon",
+   "category": "hitbox",
+   "severity": 4,
+   "weight": 55,
+   "kind": "jar",
+   "aliases": [
+    "fullbrightaddon"
+   ],
+   "sizes_kb": [
+    212.0,
+    213.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "LabyMod",
+   "comment": "",
+   "proof": "",
+   "paths": [],
+   "pseudo": false
+  },
+  {
+   "id": "known_torohealth_73",
+   "name": "ToroHealth",
+   "category": "hitbox",
+   "severity": 3,
+   "weight": 45,
+   "kind": "jar",
+   "aliases": [
+    "torohealth"
+   ],
+   "sizes_kb": [
+    252.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "",
+   "proof": "",
+   "paths": [],
+   "pseudo": true
+  },
+  {
+   "id": "known_hb_74",
+   "name": "HB",
+   "category": "hitbox",
+   "severity": 5,
+   "weight": 75,
+   "kind": "jar",
+   "aliases": [
+    "hb"
+   ],
+   "sizes_kb": [
+    327.0,
+    336.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "Большое кол-во .class с китайскими символами",
+   "proof": "",
+   "paths": [],
+   "pseudo": false
+  },
+  {
+   "id": "known_hbinbetterhud_75",
+   "name": "HB in BetterHUD",
+   "category": "hitbox",
+   "severity": 4,
+   "weight": 60,
+   "kind": "jar",
+   "aliases": [
+    "betterhud",
+    "hbinbetterhud"
+   ],
+   "sizes_kb": [
+    403.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "",
+   "proof": "",
+   "paths": [],
+   "pseudo": true
+  },
+  {
+   "id": "known_hb_76",
+   "name": "HB",
+   "category": "hitbox",
+   "severity": 4,
+   "weight": 60,
+   "kind": "jar",
+   "aliases": [
+    "hb"
+   ],
+   "sizes_kb": [
+    612.0,
+    544.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "",
+   "comment": "",
+   "proof": "",
+   "paths": [],
+   "pseudo": false
+  },
+  {
+   "id": "known_hbincodechickenlib_77",
+   "name": "HB in codechickenlib",
+   "category": "hitbox",
+   "severity": 4,
+   "weight": 60,
+   "kind": "jar",
+   "aliases": [
+    "codechickenlib",
+    "hbincodechickenlib"
+   ],
+   "sizes_kb": [
+    622.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "",
+   "proof": "com/codechicken/codechickenlib/libraries Main.class gui.class",
+   "paths": [],
+   "pseudo": true
+  },
+  {
+   "id": "known_hbinjei_78",
+   "name": "HB in JEI",
+   "category": "hitbox",
+   "severity": 4,
+   "weight": 55,
+   "kind": "jar",
+   "aliases": [
+    "hbinjei",
+    "jei"
+   ],
+   "sizes_kb": [
+    663.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.12.2",
+   "comment": "",
+   "proof": "",
+   "paths": [],
+   "pseudo": true
+  },
+  {
+   "id": "known_hb_79",
+   "name": "HB",
+   "category": "hitbox",
+   "severity": 5,
+   "weight": 75,
+   "kind": "jar",
+   "aliases": [
+    "hb"
+   ],
+   "sizes_kb": [
+    1473.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "",
+   "comment": "китайские классы, Tlskin.class, описание SOSATI",
+   "proof": "Tlskin.class",
+   "paths": [
+    "tlskin.class"
+   ],
+   "pseudo": false
+  },
+  {
+   "id": "known_hb_80",
+   "name": "HB",
+   "category": "hitbox",
+   "severity": 5,
+   "weight": 80,
+   "kind": "jar",
+   "aliases": [
+    "hb"
+   ],
+   "sizes_kb": [
+    10796.0,
+    2463.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Fabric 1.20.1",
+   "comment": "",
+   "proof": "",
+   "paths": [],
+   "pseudo": false
+  },
+  {
+   "id": "known_hbfrombush1root_81",
+   "name": "HB from Bush1root",
+   "category": "hitbox",
+   "severity": 5,
+   "weight": 80,
+   "kind": "jar",
+   "aliases": [
+    "bush1root",
+    "bushroot",
+    "hbfrombush1root"
+   ],
+   "sizes_kb": [
+    20.1,
+    21.0,
+    66.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "",
+   "proof": "me/bush1root | me/bushroot",
+   "paths": [
+    "me/bush1root",
+    "me/bushroot"
+   ],
+   "pseudo": false
+  },
+  {
+   "id": "known_obfsallatorixdemo_82",
+   "name": "obfs. ALLATORIxDEMO",
+   "category": "hitbox",
+   "severity": 4,
+   "weight": 70,
+   "kind": "jar",
+   "aliases": [
+    "allatori",
+    "obfsallatorixdemo"
+   ],
+   "sizes_kb": [
+    6.0,
+    7.0,
+    11.0,
+    27.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "ALLATORI, букв. .class",
+   "proof": "",
+   "paths": [],
+   "pseudo": false
+  },
+  {
+   "id": "known_hbintapemouse_83",
+   "name": "HB in TapeMouse",
+   "category": "hitbox",
+   "severity": 4,
+   "weight": 60,
+   "kind": "jar",
+   "aliases": [
+    "hbintapemouse",
+    "tapemouse"
+   ],
+   "sizes_kb": [
+    140.0,
+    141.0,
+    154.0,
+    163.0,
+    262.0,
+    170.0,
+    28.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "12 .class вместо 2ух",
+   "proof": "net/dries007/tapemouse",
+   "paths": [],
+   "pseudo": true
+  },
+  {
+   "id": "known_pseudoneat_84",
+   "name": "PseudoNeat",
+   "category": "hitbox",
+   "severity": 4,
+   "weight": 60,
+   "kind": "jar",
+   "aliases": [
+    "neat",
+    "pseudoneat"
+   ],
+   "sizes_kb": [
+    10.0,
+    17.0,
+    18.0,
+    19.0,
+    23.0,
+    21.0,
+    27.0,
+    28.0,
+    29.0,
+    33.0,
+    34.0,
+    38.0,
+    37.0,
+    71.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "vazkii/neat отсутствие HealthBarRender | AA.class AB.class | Красный HealthBar",
+   "proof": "vazkii/neat",
+   "paths": [],
+   "pseudo": true
+  },
+  {
+   "id": "known_hbinneat_85",
+   "name": "HB in Neat",
+   "category": "hitbox",
+   "severity": 4,
+   "weight": 60,
+   "kind": "jar",
+   "aliases": [
+    "hbinneat",
+    "neat"
+   ],
+   "sizes_kb": [
+    8.0,
+    20.4,
+    20.7,
+    21.4,
+    26.0,
+    34.0,
+    70.0,
+    188.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "",
+   "proof": "",
+   "paths": [],
+   "pseudo": true
+  },
+  {
+   "id": "known_sharex_86",
+   "name": "ShareX",
+   "category": "ghost",
+   "severity": 5,
+   "weight": 80,
+   "kind": "jar",
+   "aliases": [
+    "sharex"
+   ],
+   "sizes_kb": [
+    32.0,
+    76.0,
+    45.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge 1.16.5",
+   "comment": "Бан за хранение",
+   "proof": "ru/centbrowser/sharex/",
+   "paths": [
+    "ru/centbrowser/sharex"
+   ],
+   "pseudo": false
+  },
+  {
+   "id": "known_nekoclient_87",
+   "name": "NekoClient",
+   "category": "ghost",
+   "severity": 5,
+   "weight": 85,
+   "kind": "jar",
+   "aliases": [
+    "neko",
+    "nekoclient"
+   ],
+   "sizes_kb": [
+    40.0,
+    2002.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "Бан за хранение",
+   "proof": "zrhx/nekoparts/ | net/redteadev/nekoclient/ | NekoClient.class",
+   "paths": [
+    "nekoclient.class",
+    "net/redteadev/nekoclient",
+    "zrhx/nekoparts"
+   ],
+   "pseudo": false
+  },
+  {
+   "id": "known_nightlightfree_88",
+   "name": "NightLightFree",
+   "category": "ghost",
+   "severity": 5,
+   "weight": 75,
+   "kind": "jar",
+   "aliases": [
+    "nightlight",
+    "nightlightfree"
+   ],
+   "sizes_kb": [
+    42.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "Бан за хранение",
+   "proof": "mode/forge БУКВ папка БУКВ.class",
+   "paths": [
+    "mode/forge"
+   ],
+   "pseudo": false
+  },
+  {
+   "id": "known_jeed_89",
+   "name": "jeed",
+   "category": "ghost",
+   "severity": 5,
+   "weight": 80,
+   "kind": "jar",
+   "aliases": [
+    "jeed"
+   ],
+   "sizes_kb": [
+    43.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "Бан за хранение",
+   "proof": "mixins.jeed",
+   "paths": [],
+   "pseudo": false
+  },
+  {
+   "id": "known_rollerongh_90",
+   "name": "rolleron GH",
+   "category": "ghost",
+   "severity": 5,
+   "weight": 80,
+   "kind": "jar",
+   "aliases": [
+    "rolleron",
+    "rollerongh"
+   ],
+   "sizes_kb": [
+    30.0,
+    34.0,
+    41.0,
+    43.0,
+    55.0,
+    64.0,
+    52.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "Бан за хранение",
+   "proof": "me/rolleron/launch This.class",
+   "paths": [
+    "me/rolleron/launch"
+   ],
+   "pseudo": false
+  },
+  {
+   "id": "known_pseudoautosprint_91",
+   "name": "Pseudoautosprint",
+   "category": "ghost",
+   "severity": 5,
+   "weight": 75,
+   "kind": "jar",
+   "aliases": [
+    "autosprint",
+    "pseudoautosprint"
+   ],
+   "sizes_kb": [
+    56.1
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "",
+   "comment": "Бан за хранение",
+   "proof": "dvd/explorer/nocheat/client/impl/ghost Hitbox.class",
+   "paths": [
+    "dvd/explorer/nocheat/client/impl/ghost",
+    "hitbox.class"
+   ],
+   "pseudo": false
+  },
+  {
+   "id": "known_pseudofullbright_92",
+   "name": "Pseudofullbright",
+   "category": "ghost",
+   "severity": 4,
+   "weight": 65,
+   "kind": "jar",
+   "aliases": [
+    "pseudofullbright"
+   ],
+   "sizes_kb": [
+    1154.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Fabric 1.19.2",
+   "comment": "Бан за хранение",
+   "proof": "",
+   "paths": [],
+   "pseudo": false
+  },
+  {
+   "id": "known_minced_93",
+   "name": "Minced",
+   "category": "ghost",
+   "severity": 5,
+   "weight": 80,
+   "kind": "jar",
+   "aliases": [
+    "minced"
+   ],
+   "sizes_kb": [
+    1610.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Fabric 1.20.4",
+   "comment": "Бан за хранение",
+   "proof": "free/minced",
+   "paths": [
+    "free/minced"
+   ],
+   "pseudo": false
+  },
+  {
+   "id": "known_justgh_94",
+   "name": "Just GH",
+   "category": "ghost",
+   "severity": 5,
+   "weight": 80,
+   "kind": "jar",
+   "aliases": [
+    "just",
+    "justgh"
+   ],
+   "sizes_kb": [
+    27.0,
+    61.0,
+    62.0,
+    64.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "Бан за хранение",
+   "proof": "com/cmdcoders/cheats Integration.class",
+   "paths": [
+    "com/cmdcoders/cheats"
+   ],
+   "pseudo": false
+  },
+  {
+   "id": "known_hbintopkahealth_95",
+   "name": "HB In TopkaHealth",
+   "category": "ghost",
+   "severity": 4,
+   "weight": 70,
+   "kind": "jar",
+   "aliases": [
+    "hbintopkahealth",
+    "topkahealth"
+   ],
+   "sizes_kb": [
+    66.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "Бан за хранение",
+   "proof": "",
+   "paths": [],
+   "pseudo": false
+  },
+  {
+   "id": "known_superclient_96",
+   "name": "SuperClient",
+   "category": "ghost",
+   "severity": 5,
+   "weight": 80,
+   "kind": "jar",
+   "aliases": [
+    "super",
+    "superclient"
+   ],
+   "sizes_kb": [
+    68.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "Бан за хранение",
+   "proof": "com/example/examplemod/Module/imlp Jojo.class",
+   "paths": [],
+   "pseudo": false
+  },
+  {
+   "id": "known_ch0ffa_97",
+   "name": "ch0ffa",
+   "category": "ghost",
+   "severity": 5,
+   "weight": 85,
+   "kind": "jar",
+   "aliases": [
+    "ch0ffa"
+   ],
+   "sizes_kb": [
+    67.0,
+    58.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "Бан за хранение",
+   "proof": "ch0ffaindustries/ch0ffa_box DiscordWebhook",
+   "paths": [
+    "ch0ffaindustries/ch0ffa_box"
+   ],
+   "pseudo": false
+  },
+  {
+   "id": "known_ghost_98",
+   "name": "Ghost без названия",
+   "category": "ghost",
+   "severity": 5,
+   "weight": 75,
+   "kind": "jar",
+   "aliases": [
+    "ghost"
+   ],
+   "sizes_kb": [
+    24.0,
+    26.0,
+    94.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "Бан за хранение",
+   "proof": "com/example/examplemod/Module/imlp",
+   "paths": [],
+   "pseudo": false
+  },
+  {
+   "id": "known_pseudofpsboost_99",
+   "name": "PseudoFpsBoost",
+   "category": "ghost",
+   "severity": 4,
+   "weight": 70,
+   "kind": "jar",
+   "aliases": [
+    "fpsboost",
+    "pseudofpsboost"
+   ],
+   "sizes_kb": [
+    96.4
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "",
+   "comment": "Бан за хранение",
+   "proof": "a/A.class Side.Class",
+   "paths": [
+    "a/a.class"
+   ],
+   "pseudo": false
+  },
+  {
+   "id": "known_taboverlay_100",
+   "name": "TabOverlay",
+   "category": "ghost",
+   "severity": 4,
+   "weight": 70,
+   "kind": "jar",
+   "aliases": [
+    "taboverlay"
+   ],
+   "sizes_kb": [
+    99.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "Бан за хранение, японские классы",
+   "proof": "",
+   "paths": [],
+   "pseudo": false
+  },
+  {
+   "id": "known_clumps_101",
+   "name": "clumps",
+   "category": "utility",
+   "severity": 3,
+   "weight": 40,
+   "kind": "jar",
+   "aliases": [
+    "clumps"
+   ],
+   "sizes_kb": [
+    100.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "Бан за хранение",
+   "proof": "",
+   "paths": [],
+   "pseudo": false
+  },
+  {
+   "id": "known_pseudoworldedit_102",
+   "name": "PseudoWorldEdit",
+   "category": "ghost",
+   "severity": 4,
+   "weight": 60,
+   "kind": "jar",
+   "aliases": [
+    "pseudoworldedit",
+    "worldedit"
+   ],
+   "sizes_kb": [
+    102.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "Бан за хранение",
+   "proof": "",
+   "paths": [],
+   "pseudo": false
+  },
+  {
+   "id": "known_rastypaster_103",
+   "name": "RastyPaster",
+   "category": "ghost",
+   "severity": 5,
+   "weight": 80,
+   "kind": "jar",
+   "aliases": [
+    "rasty",
+    "rastypaster"
+   ],
+   "sizes_kb": [
+    118.0,
+    138.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "Бан за хранение",
+   "proof": "ua/RastyPaster/RastyLegit",
+   "paths": [
+    "ua/rastypaster/rastylegit"
+   ],
+   "pseudo": false
+  },
+  {
+   "id": "known_stressclient_104",
+   "name": "StressClient",
+   "category": "ghost",
+   "severity": 5,
+   "weight": 80,
+   "kind": "jar",
+   "aliases": [
+    "stress",
+    "stressclient"
+   ],
+   "sizes_kb": [
+    134.0,
+    136.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.12.2",
+   "comment": "Бан за хранение, букв. классы + ALLATORI",
+   "proof": "",
+   "paths": [],
+   "pseudo": false
+  },
+  {
+   "id": "known_louxtool_105",
+   "name": "LouxTool",
+   "category": "ghost",
+   "severity": 5,
+   "weight": 75,
+   "kind": "jar",
+   "aliases": [
+    "louxtool"
+   ],
+   "sizes_kb": [
+    196.0,
+    626.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "Бан за хранение",
+   "proof": "",
+   "paths": [],
+   "pseudo": false
+  },
+  {
+   "id": "known_gh_106",
+   "name": "GH",
+   "category": "ghost",
+   "severity": 5,
+   "weight": 75,
+   "kind": "jar",
+   "aliases": [
+    "gh"
+   ],
+   "sizes_kb": [
+    257.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "Бан за хранение, китайские классы",
+   "proof": "",
+   "paths": [],
+   "pseudo": false
+  },
+  {
+   "id": "known_arbuzgh_107",
+   "name": "Arbuz GH",
+   "category": "ghost",
+   "severity": 5,
+   "weight": 80,
+   "kind": "jar",
+   "aliases": [
+    "arbuz",
+    "arbuzgh"
+   ],
+   "sizes_kb": [
+    293.0,
+    298.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "Бан за хранение",
+   "proof": "me/leansani/phasma",
+   "paths": [
+    "me/leansani/phasma"
+   ],
+   "pseudo": false
+  },
+  {
+   "id": "known_gh_108",
+   "name": "GH с русскими названиями",
+   "category": "ghost",
+   "severity": 5,
+   "weight": 75,
+   "kind": "jar",
+   "aliases": [
+    "gh"
+   ],
+   "sizes_kb": [
+    343.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.12.2",
+   "comment": "Бан за хранение",
+   "proof": "абсорбент.class абсцесс.class",
+   "paths": [],
+   "pseudo": false
+  },
+  {
+   "id": "known_ghost_109",
+   "name": "Ghost без названия",
+   "category": "ghost",
+   "severity": 4,
+   "weight": 70,
+   "kind": "jar",
+   "aliases": [
+    "ghost",
+    "orderly"
+   ],
+   "sizes_kb": [
+    439.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Fabric 1.16.5",
+   "comment": "X",
+   "proof": "io/github/prospector/orderly/",
+   "paths": [
+    "io/github/prospector/orderly"
+   ],
+   "pseudo": false
+  },
+  {
+   "id": "known_bozar_110",
+   "name": "Bozar",
+   "category": "ghost",
+   "severity": 5,
+   "weight": 80,
+   "kind": "jar",
+   "aliases": [
+    "bozar"
+   ],
+   "sizes_kb": [
+    508.0,
+    521.0,
+    139.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "Бан за хранение",
+   "proof": "Упоминание Bozar",
+   "paths": [],
+   "pseudo": false
+  },
+  {
+   "id": "known_hbinwizoom_111",
+   "name": "HB In WI-Zoom",
+   "category": "hitbox",
+   "severity": 4,
+   "weight": 65,
+   "kind": "jar",
+   "aliases": [
+    "hbinwizoom",
+    "wizoom"
+   ],
+   "sizes_kb": [
+    508.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Fabric 1.16.5",
+   "comment": "Бан за хранение",
+   "proof": "",
+   "paths": [],
+   "pseudo": true
+  },
+  {
+   "id": "known_gh_112",
+   "name": "GH",
+   "category": "ghost",
+   "severity": 4,
+   "weight": 70,
+   "kind": "jar",
+   "aliases": [
+    "gh"
+   ],
+   "sizes_kb": [
+    583.0,
+    584.0,
+    1066.0,
+    964.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "Бан за хранение, проверить me/ichun/mods/ichunutil",
+   "proof": "me/ichun/mods/ichunutil",
+   "paths": [],
+   "pseudo": false
+  },
+  {
+   "id": "known_virgins_113",
+   "name": "Virgins",
+   "category": "ghost",
+   "severity": 5,
+   "weight": 80,
+   "kind": "jar",
+   "aliases": [
+    "virgins"
+   ],
+   "sizes_kb": [
+    511.0,
+    1837.0,
+    1781.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Fabric 1.19.1 | 1.20.1",
+   "comment": "Бан за хранение",
+   "proof": "",
+   "paths": [],
+   "pseudo": false
+  },
+  {
+   "id": "known_clowdylite_114",
+   "name": "ClowdyLite",
+   "category": "ghost",
+   "severity": 5,
+   "weight": 75,
+   "kind": "jar",
+   "aliases": [
+    "clowdylite"
+   ],
+   "sizes_kb": [
+    859.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "Бан за хранение, китайские классы",
+   "proof": "",
+   "paths": [],
+   "pseudo": false
+  },
+  {
+   "id": "known_lnet_115",
+   "name": "Lnet",
+   "category": "ghost",
+   "severity": 4,
+   "weight": 70,
+   "kind": "jar",
+   "aliases": [
+    "lnet"
+   ],
+   "sizes_kb": [
+    32.0,
+    30.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "если активна в игре и показывает как Lnet - бан",
+   "proof": "anatawa32",
+   "paths": [],
+   "pseudo": false
+  },
+  {
+   "id": "known__116",
+   "name": "Безымянный",
+   "category": "ghost",
+   "severity": 5,
+   "weight": 80,
+   "kind": "jar",
+   "aliases": [
+    "vydra"
+   ],
+   "sizes_kb": [
+    869.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "Бан за хранение",
+   "proof": "com/vydra/death/screen/modules",
+   "paths": [
+    "com/vydra/death/screen/modules"
+   ],
+   "pseudo": false
+  },
+  {
+   "id": "known_francium_117",
+   "name": "Francium",
+   "category": "ghost",
+   "severity": 5,
+   "weight": 80,
+   "kind": "jar",
+   "aliases": [
+    "francium"
+   ],
+   "sizes_kb": [
+    875.0,
+    3041.0,
+    1283.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Fabric 1.20.4 | 1.19.4",
+   "comment": "Бан за хранение",
+   "proof": "dev/jnic",
+   "paths": [
+    "dev/jnic"
+   ],
+   "pseudo": false
+  },
+  {
+   "id": "known_gh_118",
+   "name": "GH",
+   "category": "ghost",
+   "severity": 5,
+   "weight": 75,
+   "kind": "jar",
+   "aliases": [
+    "gh"
+   ],
+   "sizes_kb": [
+    965.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "Бан за хранение",
+   "proof": "com/example/examplemod/Module/imlp",
+   "paths": [],
+   "pseudo": false
+  },
+  {
+   "id": "known_britvagh_119",
+   "name": "Britva GH",
+   "category": "ghost",
+   "severity": 4,
+   "weight": 65,
+   "kind": "jar",
+   "aliases": [
+    "britva",
+    "britvagh"
+   ],
+   "sizes_kb": [
+    1207.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "Насчет классификации - не точно",
+   "proof": "win32-x86-64/discord-rpc.dll",
+   "paths": [],
+   "pseudo": false
+  },
+  {
+   "id": "known_tapemousesweet_120",
+   "name": "Tapemouse Sweet",
+   "category": "ghost",
+   "severity": 4,
+   "weight": 70,
+   "kind": "jar",
+   "aliases": [
+    "tapemouse",
+    "tapemousesweet"
+   ],
+   "sizes_kb": [
+    1138.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.12.2",
+   "comment": "Бан за хранение",
+   "proof": "",
+   "paths": [],
+   "pseudo": false
+  },
+  {
+   "id": "known_betterhud_121",
+   "name": "betterhud",
+   "category": "ghost",
+   "severity": 5,
+   "weight": 75,
+   "kind": "jar",
+   "aliases": [
+    "betterhud"
+   ],
+   "sizes_kb": [
+    3557.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "Бан за хранение",
+   "proof": "assets/minecraft/fragment/events",
+   "paths": [
+    "assets/minecraft/fragment/events"
+   ],
+   "pseudo": false
+  },
+  {
+   "id": "known_nikitageyjar_122",
+   "name": "NikitaGey.jar",
+   "category": "ghost",
+   "severity": 5,
+   "weight": 85,
+   "kind": "jar",
+   "aliases": [
+    "nikitagey",
+    "nikitageyjar"
+   ],
+   "sizes_kb": [
+    2346.0,
+    763.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "Бан за хранение",
+   "proof": "llIllIllIIIlllIIllIIIllIIllIIlllIIlIllIlIIll.class",
+   "paths": [
+    "llillilliiillliilliiilliilliillliililliliill.class"
+   ],
+   "pseudo": false
+  },
+  {
+   "id": "known_clearwater_123",
+   "name": "ClearWater",
+   "category": "ghost",
+   "severity": 4,
+   "weight": 70,
+   "kind": "jar",
+   "aliases": [
+    "clearwater"
+   ],
+   "sizes_kb": [
+    3630.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "Бан за хранение",
+   "proof": "",
+   "paths": [],
+   "pseudo": false
+  },
+  {
+   "id": "known_cortezzclient_124",
+   "name": "Cortezz client",
+   "category": "ghost",
+   "severity": 5,
+   "weight": 85,
+   "kind": "jar",
+   "aliases": [
+    "cortezz",
+    "cortezzclient"
+   ],
+   "sizes_kb": [
+    3599.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "Бан за хранение",
+   "proof": "client/cortezz",
+   "paths": [
+    "client/cortezz"
+   ],
+   "pseudo": false
+  },
+  {
+   "id": "known_ghkeybind_125",
+   "name": "GH Keybind",
+   "category": "ghost",
+   "severity": 4,
+   "weight": 70,
+   "kind": "jar",
+   "aliases": [
+    "ghkeybind"
+   ],
+   "sizes_kb": [
+    4162.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "Бан за хранение",
+   "proof": "",
+   "paths": [],
+   "pseudo": false
+  },
+  {
+   "id": "known_editschs_126",
+   "name": "Edits_Chs",
+   "category": "ghost",
+   "severity": 4,
+   "weight": 70,
+   "kind": "jar",
+   "aliases": [
+    "editschs"
+   ],
+   "sizes_kb": [
+    5499.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.12.2",
+   "comment": "Бан за хранение",
+   "proof": "",
+   "paths": [],
+   "pseudo": false
+  },
+  {
+   "id": "known_dezcbetterfps_127",
+   "name": "dezc betterfps",
+   "category": "ghost",
+   "severity": 5,
+   "weight": 75,
+   "kind": "jar",
+   "aliases": [
+    "betterfps",
+    "dezcb",
+    "dezcbetterfps"
+   ],
+   "sizes_kb": [
+    52.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "Бан за хранение",
+   "proof": "com/dezc/betterfps/modules/impl/",
+   "paths": [
+    "com/dezc/betterfps/modules/impl"
+   ],
+   "pseudo": false
+  },
+  {
+   "id": "known_imperatorgh_128",
+   "name": "Imperator GH",
+   "category": "ghost",
+   "severity": 5,
+   "weight": 75,
+   "kind": "jar",
+   "aliases": [
+    "imperator",
+    "imperatorgh"
+   ],
+   "sizes_kb": [
+    4294.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "известна как keybinding patch, внутри обфа",
+   "proof": "",
+   "paths": [],
+   "pseudo": false
+  },
+  {
+   "id": "known_beta1031jar_129",
+   "name": "BETA-1_0_3 (1).jar",
+   "category": "ghost",
+   "severity": 4,
+   "weight": 70,
+   "kind": "jar",
+   "aliases": [
+    "beta103",
+    "beta1031",
+    "beta1031jar"
+   ],
+   "sizes_kb": [
+    4668.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "Бан за хранение",
+   "proof": "",
+   "paths": [],
+   "pseudo": false
+  },
+  {
+   "id": "known_grimcracked1201bykauselkillaurafixedjar_130",
+   "name": "Grim_Cracked_1_20_1_by_kausel_killaura_fixed.jar",
+   "category": "ghost",
+   "severity": 5,
+   "weight": 95,
+   "kind": "jar",
+   "aliases": [
+    "grim",
+    "grimcracked",
+    "grimcracked1201bykauselkillaurafixed",
+    "grimcracked1201bykauselkillaurafixedjar",
+    "killaurafixed"
+   ],
+   "sizes_kb": [
+    6518.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "Бан за хранение",
+   "proof": "",
+   "paths": [],
+   "pseudo": false
+  },
+  {
+   "id": "known_bushrootclient_131",
+   "name": "bushroot client",
+   "category": "ghost",
+   "severity": 5,
+   "weight": 85,
+   "kind": "jar",
+   "aliases": [
+    "bushroot",
+    "bushrootclient"
+   ],
+   "sizes_kb": [
+    6895.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.12.2",
+   "comment": "Бан за хранение",
+   "proof": "me/bushroot",
+   "paths": [
+    "me/bushroot"
+   ],
+   "pseudo": false
+  },
+  {
+   "id": "known_tutorialsweet_132",
+   "name": "Tutorial / Sweet",
+   "category": "ghost",
+   "severity": 5,
+   "weight": 75,
+   "kind": "jar",
+   "aliases": [
+    "bushroot",
+    "tutorialsweet"
+   ],
+   "sizes_kb": [
+    118.0,
+    166.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "Бан за хранение",
+   "proof": "me/bushroot",
+   "paths": [
+    "me/bushroot"
+   ],
+   "pseudo": false
+  },
+  {
+   "id": "known_pseudophosphor_133",
+   "name": "PseudoPhosphor",
+   "category": "ghost",
+   "severity": 4,
+   "weight": 65,
+   "kind": "jar",
+   "aliases": [
+    "phosphor",
+    "pseudophosphor"
+   ],
+   "sizes_kb": [
+    1886.0,
+    1901.0,
+    56.0,
+    1857.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Fabric 1.16.5",
+   "comment": "Бан за хранение",
+   "proof": "",
+   "paths": [],
+   "pseudo": false
+  },
+  {
+   "id": "known_nevervulcan_134",
+   "name": "nevervulcan",
+   "category": "ghost",
+   "severity": 5,
+   "weight": 80,
+   "kind": "jar",
+   "aliases": [
+    "nevervulcan"
+   ],
+   "sizes_kb": [
+    1232.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "Бан за хранение",
+   "proof": "ru/nedan/vulcan/",
+   "paths": [
+    "ru/nedan/vulcan"
+   ],
+   "pseudo": false
+  },
+  {
+   "id": "known_quickprivate_135",
+   "name": "QuickPrivate",
+   "category": "ghost",
+   "severity": 5,
+   "weight": 85,
+   "kind": "jar",
+   "aliases": [
+    "quickprivate"
+   ],
+   "sizes_kb": [
+    25103.0,
+    4642.0,
+    3591.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.12.2 / Fabric 1.20.1",
+   "comment": "Бан за хранение",
+   "proof": "win32-x86-64/discord-rpc.dll | zaebaaal/x64-windows.dll",
+   "paths": [
+    "zaebaaal/x64"
+   ],
+   "pseudo": false
+  },
+  {
+   "id": "known_gh_136",
+   "name": "GH",
+   "category": "ghost",
+   "severity": 4,
+   "weight": 65,
+   "kind": "jar",
+   "aliases": [
+    "gh"
+   ],
+   "sizes_kb": [
+    152.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Fabric 1.16.5",
+   "comment": "Бан за хранение",
+   "proof": "",
+   "paths": [],
+   "pseudo": false
+  },
+  {
+   "id": "known_gh_137",
+   "name": "GH",
+   "category": "ghost",
+   "severity": 4,
+   "weight": 70,
+   "kind": "jar",
+   "aliases": [
+    "gh"
+   ],
+   "sizes_kb": [
+    2652.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "Бан за хранение, обфускация",
+   "proof": "",
+   "paths": [],
+   "pseudo": false
+  },
+  {
+   "id": "known_helioscrackedjar_138",
+   "name": "Helios-Cracked.jar",
+   "category": "ghost",
+   "severity": 5,
+   "weight": 90,
+   "kind": "jar",
+   "aliases": [
+    "helios",
+    "helioscracked",
+    "helioscrackedjar"
+   ],
+   "sizes_kb": [
+    15176.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "Бан за хранение",
+   "proof": "",
+   "paths": [],
+   "pseudo": false
+  },
+  {
+   "id": "known_zamorozka_139",
+   "name": "Zamorozka",
+   "category": "ghost",
+   "severity": 5,
+   "weight": 90,
+   "kind": "jar",
+   "aliases": [
+    "zamorozka"
+   ],
+   "sizes_kb": [
+    37213.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "Бан за хранение",
+   "proof": "",
+   "paths": [],
+   "pseudo": false
+  },
+  {
+   "id": "known_gh_140",
+   "name": "GH",
+   "category": "ghost",
+   "severity": 5,
+   "weight": 75,
+   "kind": "jar",
+   "aliases": [
+    "gh"
+   ],
+   "sizes_kb": [
+    149.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "Бан за хранение, qProtect.class + eu/me/mods/keypearl",
+   "proof": "qProtect.class eu/me/mods/keypearl",
+   "paths": [
+    "eu/me/mods/keypearl",
+    "qprotect.class"
+   ],
+   "pseudo": false
+  },
+  {
+   "id": "known_vec_141",
+   "name": "vec",
+   "category": "native",
+   "severity": 5,
+   "weight": 80,
+   "kind": "dll",
+   "aliases": [
+    "vec"
+   ],
+   "sizes_kb": [
+    30.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "OptiFine / Forge / LabyMod 3",
+   "comment": "java 8, бан за хранение (доказать нужно)",
+   "proof": "net/minecraft/entity/EntitySize",
+   "paths": [],
+   "pseudo": false
+  },
+  {
+   "id": "known_easycheat_142",
+   "name": "EasyCheat",
+   "category": "native",
+   "severity": 5,
+   "weight": 85,
+   "kind": "dll",
+   "aliases": [
+    "easycheat"
+   ],
+   "sizes_kb": [
+    68.0,
+    923.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "",
+   "comment": "Бан за хранение",
+   "proof": "",
+   "paths": [],
+   "pseudo": false
+  },
+  {
+   "id": "known_blessedcrack_143",
+   "name": "Blessed crack",
+   "category": "native",
+   "severity": 5,
+   "weight": 80,
+   "kind": "dll",
+   "aliases": [
+    "blessed",
+    "blessedcrack"
+   ],
+   "sizes_kb": [
+    114.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "Бан за хранение",
+   "proof": "",
+   "paths": [],
+   "pseudo": false
+  },
+  {
+   "id": "known_dll_144",
+   "name": "Безымянный DLL",
+   "category": "native",
+   "severity": 5,
+   "weight": 75,
+   "kind": "dll",
+   "aliases": [
+    "dll"
+   ],
+   "sizes_kb": [
+    425.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "имеется hwid, бан за хранение",
+   "proof": "",
+   "paths": [],
+   "pseudo": false
+  },
+  {
+   "id": "known_troxillcrackdll_145",
+   "name": "Troxill Crack DLL",
+   "category": "native",
+   "severity": 5,
+   "weight": 80,
+   "kind": "dll",
+   "aliases": [
+    "troxill",
+    "troxillcrack",
+    "troxillcrackdll"
+   ],
+   "sizes_kb": [
+    1457.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "awt.dll легитимен, но лучше проверить",
+   "proof": "",
+   "paths": [],
+   "pseudo": false
+  },
+  {
+   "id": "known_vertzah_146",
+   "name": "Vertzah",
+   "category": "native",
+   "severity": 5,
+   "weight": 80,
+   "kind": "dll",
+   "aliases": [
+    "vertzah"
+   ],
+   "sizes_kb": [
+    1534.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "LabyMod, Optifine 1.16.5",
+   "comment": "",
+   "proof": "",
+   "paths": [],
+   "pseudo": false
+  },
+  {
+   "id": "known_gishcode_147",
+   "name": "GishCode",
+   "category": "native",
+   "severity": 5,
+   "weight": 85,
+   "kind": "dll",
+   "aliases": [
+    "gishcode"
+   ],
+   "sizes_kb": [
+    1207.0,
+    1892.0,
+    1916.0,
+    2060.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "1.12.2",
+   "comment": "Бан за хранение",
+   "proof": "",
+   "paths": [],
+   "pseudo": false
+  },
+  {
+   "id": "known_neverhooklegit_148",
+   "name": "NeverHook Legit",
+   "category": "native",
+   "severity": 5,
+   "weight": 85,
+   "kind": "dll",
+   "aliases": [
+    "neverhook",
+    "neverhooklegit"
+   ],
+   "sizes_kb": [
+    2486.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "1.12.2",
+   "comment": "Бан за хранение",
+   "proof": "",
+   "paths": [],
+   "pseudo": false
+  },
+  {
+   "id": "known_ripterms_149",
+   "name": "Ripterms",
+   "category": "native",
+   "severity": 5,
+   "weight": 85,
+   "kind": "dll",
+   "aliases": [
+    "ripterms"
+   ],
+   "sizes_kb": [
+    3483.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "1.16.5 LunarClient",
+   "comment": "Бан за хранение",
+   "proof": "",
+   "paths": [],
+   "pseudo": false
+  },
+  {
+   "id": "known_undetectable_150",
+   "name": "Undetectable",
+   "category": "native",
+   "severity": 5,
+   "weight": 85,
+   "kind": "dll",
+   "aliases": [
+    "undetectable"
+   ],
+   "sizes_kb": [
+    1578.0,
+    1590.0,
+    1597.0,
+    1642.0,
+    1713.0,
+    1756.0,
+    1639.0,
+    1707.0,
+    1732.0,
+    1748.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.12.2",
+   "comment": "Бан за хранение",
+   "proof": "",
+   "paths": [],
+   "pseudo": false
+  },
+  {
+   "id": "known_dll_151",
+   "name": "Безымянные DLL",
+   "category": "native",
+   "severity": 5,
+   "weight": 75,
+   "kind": "dll",
+   "aliases": [
+    "dll"
+   ],
+   "sizes_kb": [
+    1397.0,
+    1561.0,
+    1525.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "",
+   "comment": "Бан за хранение",
+   "proof": "",
+   "paths": [],
+   "pseudo": false
+  },
+  {
+   "id": "known_lunaroptimize_152",
+   "name": "Lunar Optimize",
+   "category": "native",
+   "severity": 5,
+   "weight": 75,
+   "kind": "dll",
+   "aliases": [
+    "lunaroptimize"
+   ],
+   "sizes_kb": [
+    5796.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "",
+   "comment": "Бан за хранение",
+   "proof": "",
+   "paths": [],
+   "pseudo": false
+  },
+  {
+   "id": "known_automyst_153",
+   "name": "automyst",
+   "category": "native",
+   "severity": 5,
+   "weight": 85,
+   "kind": "dll",
+   "aliases": [
+    "automyst"
+   ],
+   "sizes_kb": [
+    7310.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "Бан за хранение",
+   "proof": "",
+   "paths": [],
+   "pseudo": false
+  },
+  {
+   "id": "known_topkaautobuyv2dll_154",
+   "name": "TopkaAutoBuy v2 DLL",
+   "category": "native",
+   "severity": 5,
+   "weight": 90,
+   "kind": "dll",
+   "aliases": [
+    "topkaautobuy",
+    "topkaautobuyv2",
+    "topkaautobuyv2dll"
+   ],
+   "sizes_kb": [
+    7606.0,
+    7783.0,
+    7798.0,
+    7772.0,
+    7802.0,
+    7848.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "Бан за хранение",
+   "proof": "",
+   "paths": [],
+   "pseudo": false
+  },
+  {
+   "id": "known_doomsdaydll_155",
+   "name": "DoomsDay DLL",
+   "category": "native",
+   "severity": 5,
+   "weight": 90,
+   "kind": "dll",
+   "aliases": [
+    "doomsday",
+    "doomsdaydll"
+   ],
+   "sizes_kb": [
+    5510.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "На все версии",
+   "comment": "Проверить на Думсдей, бан за хранение",
+   "proof": "",
+   "paths": [],
+   "pseudo": false
+  },
+  {
+   "id": "known_ak1mus_156",
+   "name": "ak1mus",
+   "category": "native",
+   "severity": 5,
+   "weight": 90,
+   "kind": "dll",
+   "aliases": [
+    "ak1mus"
+   ],
+   "sizes_kb": [
+    9643.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "На все версии",
+   "comment": "альпха+, бан за хранение",
+   "proof": "",
+   "paths": [],
+   "pseudo": false
+  },
+  {
+   "id": "known_cortexcrack_157",
+   "name": "Cortex (crack)",
+   "category": "native",
+   "severity": 5,
+   "weight": 90,
+   "kind": "dll",
+   "aliases": [
+    "cortex",
+    "cortexcrack"
+   ],
+   "sizes_kb": [
+    15251.0,
+    17625.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "Бан за хранение",
+   "proof": "",
+   "paths": [],
+   "pseudo": false
+  },
+  {
+   "id": "known_cortexlegit_158",
+   "name": "Cortex Legit",
+   "category": "native",
+   "severity": 5,
+   "weight": 90,
+   "kind": "exe",
+   "aliases": [
+    "cortex",
+    "cortexlegit"
+   ],
+   "sizes_kb": [
+    16384.0,
+    20480.0,
+    12288.0,
+    15360.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.12.2 - 1.18.2",
+   "comment": "Бан за хранение",
+   "proof": "",
+   "paths": [],
+   "pseudo": false
+  },
+  {
+   "id": "known_anapa_159",
+   "name": "Anapa",
+   "category": "native",
+   "severity": 5,
+   "weight": 85,
+   "kind": "exe",
+   "aliases": [
+    "anapa"
+   ],
+   "sizes_kb": [
+    9180.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge 1.16.5",
+   "comment": ".mp3 хитбоксы, бан за хранение",
+   "proof": "",
+   "paths": [],
+   "pseudo": false
+  },
+  {
+   "id": "known_akrienlite_160",
+   "name": "Akrien Lite",
+   "category": "native",
+   "severity": 5,
+   "weight": 90,
+   "kind": "exe",
+   "aliases": [
+    "akrien",
+    "akrienlite"
+   ],
+   "sizes_kb": [
+    15084.0,
+    15077.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "1.12.2",
+   "comment": "Бан за хранение",
+   "proof": "",
+   "paths": [],
+   "pseudo": false
+  },
+  {
+   "id": "known_troxilllegit_161",
+   "name": "Troxill Legit",
+   "category": "native",
+   "severity": 5,
+   "weight": 85,
+   "kind": "exe",
+   "aliases": [
+    "troxill",
+    "troxilllegit"
+   ],
+   "sizes_kb": [
+    6084.0,
+    6782.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "",
+   "comment": "Бан за хранение",
+   "proof": "",
+   "paths": [],
+   "pseudo": false
+  },
+  {
+   "id": "known_dreampoolprem_162",
+   "name": "Dreampool(Prem)",
+   "category": "native",
+   "severity": 5,
+   "weight": 85,
+   "kind": "exe",
+   "aliases": [
+    "dreampool",
+    "dreampoolprem"
+   ],
+   "sizes_kb": [
+    7493.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "",
+   "comment": "Бан за хранение",
+   "proof": "",
+   "paths": [],
+   "pseudo": false
+  },
+  {
+   "id": "known_nursultan_163",
+   "name": "Nursultan",
+   "category": "native",
+   "severity": 5,
+   "weight": 90,
+   "kind": "exe",
+   "aliases": [
+    "nursultan"
+   ],
+   "sizes_kb": [
+    15562.0,
+    16461.0,
+    19037.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "1.16.5",
+   "comment": "Бан за хранение",
+   "proof": "",
+   "paths": [],
+   "pseudo": false
+  },
+  {
+   "id": "known_celestial_164",
+   "name": "Celestial",
+   "category": "native",
+   "severity": 5,
+   "weight": 90,
+   "kind": "exe",
+   "aliases": [
+    "celestial"
+   ],
+   "sizes_kb": [
+    16567.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "1.12.2 / 1.16.5",
+   "comment": "Бан за хранение",
+   "proof": "",
+   "paths": [],
+   "pseudo": false
+  },
+  {
+   "id": "known_deadcode_165",
+   "name": "Deadcode",
+   "category": "native",
+   "severity": 5,
+   "weight": 85,
+   "kind": "exe",
+   "aliases": [
+    "deadcode"
+   ],
+   "sizes_kb": [
+    9209.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "1.19.4",
+   "comment": "Бан за хранение, папка DeadCode, System Informer - java.exe",
+   "proof": "",
+   "paths": [],
+   "pseudo": false
+  },
+  {
+   "id": "known_dreampool_166",
+   "name": "Dreampool",
+   "category": "native",
+   "severity": 5,
+   "weight": 85,
+   "kind": "exe",
+   "aliases": [
+    "dreampool"
+   ],
+   "sizes_kb": [
+    27450.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge 1.16.5",
+   "comment": "Бан за хранение, -1 FPS, Minecraft в cmd.exe",
+   "proof": "",
+   "paths": [],
+   "pseudo": false
+  },
+  {
+   "id": "known_autobuyexe_167",
+   "name": "AutoBuy.exe",
+   "category": "autobuy",
+   "severity": 5,
+   "weight": 85,
+   "kind": "exe",
+   "aliases": [
+    "autobuy",
+    "autobuyexe"
+   ],
+   "sizes_kb": [
+    2751.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge 1.16.5",
+   "comment": "Бан за хранение (вес архива)",
+   "proof": "",
+   "paths": [],
+   "pseudo": false
+  },
+  {
+   "id": "known_norenderlite_168",
+   "name": "NoRender Lite",
+   "category": "native",
+   "severity": 5,
+   "weight": 85,
+   "kind": "exe",
+   "aliases": [
+    "norenderlite"
+   ],
+   "sizes_kb": [
+    23961.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "1.16.5",
+   "comment": "Бан за хранение",
+   "proof": "",
+   "paths": [],
+   "pseudo": false
+  },
+  {
+   "id": "known_autobuy_169",
+   "name": "AutoBuy",
+   "category": "autobuy",
+   "severity": 5,
+   "weight": 85,
+   "kind": "jar",
+   "aliases": [
+    "autobuy"
+   ],
+   "sizes_kb": [
+    143.0,
+    301.0,
+    398.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "Бан за хранение",
+   "proof": "ru/xorek/nbtautobuy | dev/sxmurxy",
+   "paths": [
+    "ru/xorek/nbtautobuy"
+   ],
+   "pseudo": false
+  },
+  {
+   "id": "known_autobuy_170",
+   "name": "AutoBuy",
+   "category": "autobuy",
+   "severity": 5,
+   "weight": 80,
+   "kind": "jar",
+   "aliases": [
+    "autobuy"
+   ],
+   "sizes_kb": [
+    7310.0,
+    269.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "Бан за хранение",
+   "proof": "",
+   "paths": [],
+   "pseudo": false
+  },
+  {
+   "id": "known_arbuzmyst_171",
+   "name": "ArbuzMyst",
+   "category": "autobuy",
+   "severity": 5,
+   "weight": 85,
+   "kind": "jar",
+   "aliases": [
+    "arbuz",
+    "arbuzmyst"
+   ],
+   "sizes_kb": [
+    298.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "Бан за хранение",
+   "proof": "me/leansani/phasma",
+   "paths": [
+    "me/leansani/phasma"
+   ],
+   "pseudo": false
+  },
+  {
+   "id": "known_autosell_172",
+   "name": "AutoSell",
+   "category": "autobuy",
+   "severity": 5,
+   "weight": 80,
+   "kind": "jar",
+   "aliases": [
+    "autosell"
+   ],
+   "sizes_kb": [
+    44.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "Бан за хранение",
+   "proof": "com/ch0ffaindustries/ch0ffa_mod autosell.class",
+   "paths": [
+    "autosell.class",
+    "com/ch0ffaindustries/ch0ffa_mod"
+   ],
+   "pseudo": false
+  },
+  {
+   "id": "known_autobuy_173",
+   "name": "AutoBuy",
+   "category": "autobuy",
+   "severity": 5,
+   "weight": 85,
+   "kind": "jar",
+   "aliases": [
+    "autobuy"
+   ],
+   "sizes_kb": [
+    2830.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "Бан за хранение",
+   "proof": "me/lithium/autobuy",
+   "paths": [
+    "me/lithium/autobuy"
+   ],
+   "pseudo": false
+  },
+  {
+   "id": "known_bloodymystfreejar_174",
+   "name": "BloodyMyst-FREE.jar",
+   "category": "autobuy",
+   "severity": 5,
+   "weight": 80,
+   "kind": "jar",
+   "aliases": [
+    "bloodymyst",
+    "bloodymystfree",
+    "bloodymystfreejar"
+   ],
+   "sizes_kb": [
+    122.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "Бан за хранение",
+   "proof": "",
+   "paths": [],
+   "pseudo": false
+  },
+  {
+   "id": "known_britvaautomyst_175",
+   "name": "Britva AutoMyst",
+   "category": "autobuy",
+   "severity": 5,
+   "weight": 85,
+   "kind": "jar",
+   "aliases": [
+    "britva",
+    "britvaautomyst"
+   ],
+   "sizes_kb": [
+    782.0,
+    24.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "Бан за хранение",
+   "proof": "Britva/britva britva.class",
+   "paths": [
+    "britva.class",
+    "britva/britva"
+   ],
+   "pseudo": false
+  },
+  {
+   "id": "known_automyst_176",
+   "name": "AutoMyst",
+   "category": "autobuy",
+   "severity": 5,
+   "weight": 80,
+   "kind": "jar",
+   "aliases": [
+    "automyst"
+   ],
+   "sizes_kb": [
+    4433.0,
+    11.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "Бан за хранение",
+   "proof": "xD/xD/xD",
+   "paths": [
+    "xd/xd/xd"
+   ],
+   "pseudo": false
+  },
+  {
+   "id": "known_ch0ffaautobuy_177",
+   "name": "Ch0ffa AutoBuy",
+   "category": "autobuy",
+   "severity": 5,
+   "weight": 85,
+   "kind": "jar",
+   "aliases": [
+    "ch0ffa",
+    "ch0ffaautobuy"
+   ],
+   "sizes_kb": [
+    20.0,
+    22.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "Бан за хранение",
+   "proof": "com/ch0ffaindustries/ch0ffa_mod buyhelper.class",
+   "paths": [
+    "buyhelper.class",
+    "com/ch0ffaindustries/ch0ffa_mod"
+   ],
+   "pseudo": false
+  },
+  {
+   "id": "known_autobuy_178",
+   "name": "AutoBuy",
+   "category": "autobuy",
+   "severity": 5,
+   "weight": 80,
+   "kind": "jar",
+   "aliases": [
+    "autobuy",
+    "fpsreducer"
+   ],
+   "sizes_kb": [
+    114.0,
+    20.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5 / Fabric 1.16.5",
+   "comment": "Бан за хранение, частое название fpsreducer",
+   "proof": "ru/autobuy/autobuy.class",
+   "paths": [
+    "autobuy.class",
+    "ru/autobuy/autobuy.class"
+   ],
+   "pseudo": false
+  },
+  {
+   "id": "known_sevenmyst_179",
+   "name": "SevenMyst",
+   "category": "autobuy",
+   "severity": 5,
+   "weight": 85,
+   "kind": "jar",
+   "aliases": [
+    "sevenmyst"
+   ],
+   "sizes_kb": [
+    991.0,
+    992.0,
+    2346.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "Бан за хранение",
+   "proof": "assets/automyst",
+   "paths": [
+    "assets/automyst"
+   ],
+   "pseudo": false
+  },
+  {
+   "id": "known_medautomyst_180",
+   "name": "Med? AutoMyst",
+   "category": "autobuy",
+   "severity": 5,
+   "weight": 80,
+   "kind": "jar",
+   "aliases": [
+    "automyst",
+    "medautomyst"
+   ],
+   "sizes_kb": [
+    1533.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "Бан за хранение",
+   "proof": "xD/xD/xD",
+   "paths": [
+    "xd/xd/xd"
+   ],
+   "pseudo": false
+  },
+  {
+   "id": "known_xorekautomyst_181",
+   "name": "XorekAutoMyst",
+   "category": "autobuy",
+   "severity": 5,
+   "weight": 85,
+   "kind": "jar",
+   "aliases": [
+    "xorek",
+    "xorekautomyst"
+   ],
+   "sizes_kb": [
+    110.0,
+    111.0,
+    112.0,
+    113.0,
+    114.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "Бан за хранение, китайские классы",
+   "proof": "",
+   "paths": [],
+   "pseudo": false
+  },
+  {
+   "id": "known_xorekautomystv2dll_182",
+   "name": "XorekAutoMystv2 (dll)",
+   "category": "autobuy",
+   "severity": 5,
+   "weight": 90,
+   "kind": "dll",
+   "aliases": [
+    "xorek",
+    "xorekautomyst",
+    "xorekautomystv2",
+    "xorekautomystv2dll"
+   ],
+   "sizes_kb": [
+    13086.0,
+    12695.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "Бан за хранение",
+   "proof": "",
+   "paths": [],
+   "pseudo": false
+  },
+  {
+   "id": "known_topkaautobuyer_183",
+   "name": "TopkaAutoBuyer",
+   "category": "autobuy",
+   "severity": 5,
+   "weight": 80,
+   "kind": "jar",
+   "aliases": [
+    "topkaautobuyer"
+   ],
+   "sizes_kb": [
+    23.0,
+    24.0,
+    53.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "Бан за хранение",
+   "proof": "папка aueshnik",
+   "paths": [],
+   "pseudo": false
+  },
+  {
+   "id": "known_horekautobuy_184",
+   "name": "HorekAutoBuy",
+   "category": "autobuy",
+   "severity": 5,
+   "weight": 80,
+   "kind": "jar",
+   "aliases": [
+    "horek",
+    "horekautobuy"
+   ],
+   "sizes_kb": [
+    144.0,
+    136.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "Бан за хранение, прячется под fpsreducer, папка bre2el",
+   "proof": "",
+   "paths": [],
+   "pseudo": false
+  },
+  {
+   "id": "known_sevenbuy_185",
+   "name": "SevenBuy",
+   "category": "autobuy",
+   "severity": 5,
+   "weight": 80,
+   "kind": "jar",
+   "aliases": [
+    "sevenbuy"
+   ],
+   "sizes_kb": [
+    680.0,
+    1043.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "Бан за хранение, обфускация, autobuy.json",
+   "proof": "",
+   "paths": [],
+   "pseudo": false
+  },
+  {
+   "id": "known_windyautomyst_186",
+   "name": "Windyautomyst",
+   "category": "autobuy",
+   "severity": 5,
+   "weight": 85,
+   "kind": "jar",
+   "aliases": [
+    "windyautomyst"
+   ],
+   "sizes_kb": [
+    93.0,
+    111.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "Бан за хранение",
+   "proof": "dev/windymyst",
+   "paths": [
+    "dev/windymyst"
+   ],
+   "pseudo": false
+  },
+  {
+   "id": "known_alphaautobuy_187",
+   "name": "AlphaAutoBuy",
+   "category": "autobuy",
+   "severity": 5,
+   "weight": 85,
+   "kind": "jar",
+   "aliases": [
+    "alphaautobuy"
+   ],
+   "sizes_kb": [
+    2258.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "Бан за хранение",
+   "proof": "me/lithium/autobuy",
+   "paths": [
+    "me/lithium/autobuy"
+   ],
+   "pseudo": false
+  },
+  {
+   "id": "known_britvaautomyst2_188",
+   "name": "Britva AutoMyst 2",
+   "category": "autobuy",
+   "severity": 5,
+   "weight": 85,
+   "kind": "jar",
+   "aliases": [
+    "britva",
+    "britvaautomyst",
+    "britvaautomyst2"
+   ],
+   "sizes_kb": [
+    4503.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "Бан за хранение",
+   "proof": "me/britva/myst + обфускация",
+   "paths": [
+    "me/britva/myst"
+   ],
+   "pseudo": false
+  },
+  {
+   "id": "known_autobuyfabric_189",
+   "name": "AutoBuy Fabric",
+   "category": "autobuy",
+   "severity": 5,
+   "weight": 85,
+   "kind": "jar",
+   "aliases": [
+    "autobuy",
+    "autobuyfabric"
+   ],
+   "sizes_kb": [
+    2243.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Fabric 1.16.5",
+   "comment": "Бан за хранение",
+   "proof": "me/lithium/autobuy",
+   "paths": [
+    "me/lithium/autobuy"
+   ],
+   "pseudo": false
+  },
+  {
+   "id": "known_diamondgen_190",
+   "name": "DiamondGen",
+   "category": "exploit",
+   "severity": 4,
+   "weight": 55,
+   "kind": "jar",
+   "aliases": [
+    "diamondgen"
+   ],
+   "sizes_kb": [
+    198.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Fabric 1.16.5 - 1.17.1",
+   "comment": "Бан за хранение",
+   "proof": "",
+   "paths": [],
+   "pseudo": false
+  },
+  {
+   "id": "known_doomsday_191",
+   "name": "DoomsDay",
+   "category": "client",
+   "severity": 5,
+   "weight": 80,
+   "kind": "jar",
+   "aliases": [
+    "doomsday"
+   ],
+   "sizes_kb": [
+    2319.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Все версии",
+   "comment": "Бан за хранение",
+   "proof": "net/java/i.class",
+   "paths": [
+    "net/java/i.class"
+   ],
+   "pseudo": false
+  },
+  {
+   "id": "known_troxillcrack_192",
+   "name": "Troxill Crack",
+   "category": "client",
+   "severity": 5,
+   "weight": 85,
+   "kind": "jar",
+   "aliases": [
+    "troxill",
+    "troxillcrack"
+   ],
+   "sizes_kb": [
+    165.0,
+    557.0,
+    167.0,
+    603.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / ForgeOptifine 1.16.5",
+   "comment": "Бан за хранение",
+   "proof": "ru/zdcoder/troxill | the/dmkn",
+   "paths": [
+    "ru/zdcoder/troxill",
+    "the/dmkn"
+   ],
+   "pseudo": false
+  },
+  {
+   "id": "known_hpshkishowinginvisibleplayers_193",
+   "name": "Hpshki//ShowingInvisiblePlayers",
+   "category": "render",
+   "severity": 4,
+   "weight": 70,
+   "kind": "jar",
+   "aliases": [
+    "healthindicator",
+    "hpshki",
+    "hpshkishowinginvisibleplayers",
+    "showinginvisibleplayers"
+   ],
+   "sizes_kb": [
+    11.0,
+    7.0,
+    999.0,
+    969.0,
+    1025.0,
+    1033.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Forge / Laby / Fabric 1.16.5",
+   "comment": "на фабрике подписан как HealthIndicator",
+   "proof": "ShowingInvisiblePlayers-refmap.json | indicator.refmap.json",
+   "paths": [],
+   "pseudo": false
+  },
+  {
+   "id": "known_takkerproxyhelper_194",
+   "name": "Takker Proxy Helper",
+   "category": "utility",
+   "severity": 3,
+   "weight": 40,
+   "kind": "jar",
+   "aliases": [
+    "takker",
+    "takkerproxyhelper"
+   ],
+   "sizes_kb": [
+    13.0,
+    12.0,
+    11.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "Fabric / Forge 1.16.5",
+   "comment": "обычно на телефонах, меняет коннект в логе",
+   "proof": "me/rizzener/fix_multiplayer/a/ | fpsboost mixin",
+   "paths": [
+    "me/rizzener/fix_multiplayer/a"
+   ],
+   "pseudo": false
+  },
+  {
+   "id": "known_xbasefinder_195",
+   "name": "XBaseFInder",
+   "category": "exploit",
+   "severity": 4,
+   "weight": 55,
+   "kind": "jar",
+   "aliases": [
+    "basefinder",
+    "xbasefinder"
+   ],
+   "sizes_kb": [],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "1.16.5",
+   "comment": "Бан за хранение, находится в логе",
+   "proof": "",
+   "paths": [],
+   "pseudo": false
+  },
+  {
+   "id": "known_stringclean_196",
+   "name": "String Clean",
+   "category": "utility",
+   "severity": 3,
+   "weight": 15,
+   "kind": "jar",
+   "aliases": [
+    "stringclean"
+   ],
+   "sizes_kb": [
+    28.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "",
+   "comment": "X",
+   "proof": "",
+   "paths": [],
+   "pseudo": false
+  },
+  {
+   "id": "known_pseudobetterperspective_197",
+   "name": "PseudoBetterPerspective",
+   "category": "utility",
+   "severity": 3,
+   "weight": 40,
+   "kind": "jar",
+   "aliases": [
+    "betterperspective",
+    "pseudobetterperspective"
+   ],
+   "sizes_kb": [
+    14.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "LabyMod",
+   "comment": "",
+   "proof": "",
+   "paths": [],
+   "pseudo": true
+  },
+  {
+   "id": "known_anticlearchat_198",
+   "name": "AntiClearChat",
+   "category": "utility",
+   "severity": 3,
+   "weight": 15,
+   "kind": "jar",
+   "aliases": [
+    "anticlearchat"
+   ],
+   "sizes_kb": [
+    5.0
+   ],
+   "size_min_kb": null,
+   "size_max_kb": null,
+   "versions": "LabyMod",
+   "comment": "",
+   "proof": "",
+   "paths": [],
+   "pseudo": false
+  }
+ ]
+}

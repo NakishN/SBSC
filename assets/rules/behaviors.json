@@ -1,0 +1,585 @@
+{
+ "version": 1,
+ "rules": [
+  {
+   "id": "behavior_hitbox_expand",
+   "name": "Расширение хитбоксов",
+   "category": "combat",
+   "severity": 5,
+   "weight": 16,
+   "description": "Код увеличивает bounding box сущностей (expand/grow/inflate) в связке с combat-логикой.",
+   "all": [
+    {
+     "type": "ref",
+     "regex": "(?i)(getEntityBoundingBox|getBoundingBox|AxisAlignedBB|net/minecraft/util/math/Box|class_238)"
+    },
+    {
+     "type": "ref",
+     "regex": "(?i)(expand|grow|inflate|stretch|offset)"
+    },
+    {
+     "type": "any",
+     "regex": "(?i)(hitbox|reach|combat|aura)"
+    }
+   ],
+   "any": [
+    {
+     "type": "any",
+     "regex": "(?i)\\b(hitbox|reach|aura|killaura)\\b"
+    }
+   ]
+  },
+  {
+   "id": "behavior_reach_attack",
+   "name": "Увеличенная дистанция атаки",
+   "category": "combat",
+   "severity": 5,
+   "weight": 14,
+   "description": "Проверка дистанции до цели и вызов атаки вне ванильных ограничений.",
+   "all": [
+    {
+     "type": "ref",
+     "regex": "(?i)(attackEntity|attackTarget|PlayerController|InteractionManager|class_636|class_310)"
+    },
+    {
+     "type": "ref",
+     "regex": "(?i)(getDistance|distanceTo|distanceSq|canEntityBeSeen|rayTrace|raycast)"
+    },
+    {
+     "type": "any",
+     "regex": "(?i)(reach|range|aura|combat|killaura)"
+    }
+   ],
+   "any": [
+    {
+     "type": "any",
+     "regex": "(?i)\\b(reach|range|aura|combat|killaura)\\b"
+    }
+   ]
+  },
+  {
+   "id": "behavior_rotation_aim",
+   "name": "Автоповорот / aim-логика",
+   "category": "combat",
+   "severity": 5,
+   "weight": 12,
+   "description": "Принудительная установка yaw/pitch и расчёт углов до цели.",
+   "all": [
+    {
+     "type": "ref",
+     "regex": "(?i)(setYaw|setPitch|wrapDegrees|lookAt|class_3532)"
+    },
+    {
+     "type": "any",
+     "regex": "(?i)(aim|aura|rotation|combat|killaura|silent)"
+    }
+   ],
+   "any": [
+    {
+     "type": "any",
+     "regex": "(?i)\\b(aim|aura|combat|killaura|silent)\\b"
+    }
+   ]
+  },
+  {
+   "id": "behavior_attack_loop",
+   "name": "Цикл авто-атаки",
+   "category": "combat",
+   "severity": 5,
+   "weight": 12,
+   "description": "Вызов атаки/свинга в связке с настройками CPS или задержки удара.",
+   "all": [
+    {
+     "type": "ref",
+     "regex": "(?i)(attackEntity|swingHand|sendPacket|C03PacketPlayer|class_2884)"
+    },
+    {
+     "type": "string",
+     "regex": "(?i)(cps|clicks.?per.?second|autoclicker|triggerbot|attack.?delay)"
+    }
+   ]
+  },
+  {
+   "id": "behavior_esp_render",
+   "name": "ESP / рендер сквозь стены",
+   "category": "render",
+   "severity": 4,
+   "weight": 8,
+   "description": "Рендер боксов/линий через RenderSystem, BufferBuilder или WorldRenderEvents.",
+   "all": [
+    {
+     "type": "ref",
+     "regex": "(?i)(RenderSystem|BufferBuilder|Tessellator|WorldRenderEvents|drawBox|drawOutline|GL11|GlStateManager|class_4587|class_287)"
+    },
+    {
+     "type": "any",
+     "regex": "(?i)(esp|tracer|chams|wallhack|render|outline)"
+    }
+   ],
+   "any": [
+    {
+     "type": "any",
+     "regex": "(?i)\\b(esp|tracer|chams|wallhack)\\b"
+    }
+   ]
+  },
+  {
+   "id": "behavior_xray",
+   "name": "X-Ray логика",
+   "category": "render",
+   "severity": 4,
+   "weight": 13,
+   "description": "Перехват отрисовки блоков и проверка непрозрачности в связке с X-Ray/поиском блоков.",
+   "all": [
+    {
+     "type": "ref",
+     "regex": "(?i)(BlockState|getBlockState|isOpaque|shouldDrawSide|getBlock|class_2680|class_1922)"
+    },
+    {
+     "type": "any",
+     "regex": "(?i)(xray|x-ray|blockesp|search|opaque)"
+    }
+   ],
+   "any": [
+    {
+     "type": "any",
+     "regex": "(?i)\\b(xray|x-ray|blockesp)\\b"
+    }
+   ]
+  },
+  {
+   "id": "behavior_fly",
+   "name": "Fly / изменение движения",
+   "category": "movement",
+   "severity": 5,
+   "weight": 12,
+   "description": "Прямое изменение motionY/velocity/capabilities в связке с полётом.",
+   "all": [
+    {
+     "type": "ref",
+     "regex": "(?i)(motionY|setVelocity|capabilities|flying|setPosition|class_1297|class_1309)"
+    },
+    {
+     "type": "any",
+     "regex": "(?i)(fly|flight|glide|jetpack|hover)"
+    }
+   ],
+   "any": [
+    {
+     "type": "any",
+     "regex": "(?i)\\b(fly|flight|glide|jetpack)\\b"
+    }
+   ]
+  },
+  {
+   "id": "behavior_velocity",
+   "name": "Отмена отбрасывания",
+   "category": "movement",
+   "severity": 4,
+   "weight": 11,
+   "description": "Обнуление/изменение velocity или knockback.",
+   "all": [
+    {
+     "type": "ref",
+     "regex": "(?i)(setVelocity|motionX|motionY|motionZ|knockback)"
+    },
+    {
+     "type": "any",
+     "regex": "(?i)(velocity|antiknockback|knockback)"
+    }
+   ],
+   "any": [
+    {
+     "type": "any",
+     "regex": "(?i)\\b(velocity|antiknockback|knockback)\\b"
+    }
+   ]
+  },
+  {
+   "id": "behavior_scaffold",
+   "name": "Scaffold / авто-мост",
+   "category": "world",
+   "severity": 5,
+   "weight": 12,
+   "description": "Автоматическая установка блоков под игроком.",
+   "all": [
+    {
+     "type": "ref",
+     "regex": "(?i)(placeBlock|BlockPlacement|BlockPos|getBlockState|interactBlock|class_3966|class_2338)"
+    },
+    {
+     "type": "any",
+     "regex": "(?i)(scaffold|tower|bridge|blockin)"
+    }
+   ],
+   "any": [
+    {
+     "type": "any",
+     "regex": "(?i)\\b(scaffold|tower|blockin)\\b"
+    }
+   ]
+  },
+  {
+   "id": "behavior_nuker",
+   "name": "Nuker / массовое разрушение",
+   "category": "world",
+   "severity": 5,
+   "weight": 12,
+   "description": "Массовое разрушение блоков через blockAction/clickBlock.",
+   "all": [
+    {
+     "type": "ref",
+     "regex": "(?i)(blockAction|onPlayerDamageBlock|clickBlock|destroyBlock|breakBlock|class_636|class_2885)"
+    },
+    {
+     "type": "any",
+     "regex": "(?i)(nuker|excavator|veinminer|autofarm)"
+    }
+   ]
+  },
+  {
+   "id": "behavior_disabler",
+   "name": "Disabler / AC scan",
+   "category": "misc",
+   "severity": 5,
+   "weight": 14,
+   "description": "Упоминание AC вместе с логикой обхода/флагов.",
+   "all": [
+    {
+     "type": "any",
+     "regex": "(?i)\\b(Verus|Intave|Grim|Matrix|Polar|Vulcan|Spartan|NoCheatPlus|NCP|AAC|Watchdog|Hypixel)\\b"
+    },
+    {
+     "type": "any",
+     "regex": "(?i)\\b(disabler|bypass|flag|exploit|antidetect)\\b"
+    }
+   ]
+  },
+  {
+   "id": "behavior_packet_exploit",
+   "name": "Пакетный эксплойт",
+   "category": "exploit",
+   "severity": 5,
+   "weight": 10,
+   "description": "Ссылки на пакеты, используемые в эксплойтах (ClickWindow, ConfirmTransaction, PacketFly и т.п.).",
+   "any": [
+    {
+     "type": "string",
+     "regex": "(?i)(C0EPacketClickWindow|C0FPacketConfirmTransaction|C00PacketKeepAlive|C03PacketPlayer|C04PacketPlayerPosition|PacketFly|ServerCrasher|ForceOp|class_2881|class_2883)"
+    }
+   ],
+   "all": [
+    {
+     "type": "ref",
+     "regex": "(?i)(Packet|sendPacket|C0[0-9]|C1[0-9]|C2[0-9]|C3[0-9])"
+    },
+    {
+     "type": "string",
+     "regex": "(?i)(C0EPacketClickWindow|C0FPacketConfirmTransaction|C00PacketKeepAlive|C03PacketPlayer|C04PacketPlayerPosition|PacketFly|ServerCrasher|ForceOp|class_2881|class_2883)"
+    }
+   ]
+  },
+  {
+   "id": "behavior_mixin_combat",
+   "name": "Mixin в combat-классы Minecraft",
+   "category": "combat",
+   "severity": 4,
+   "weight": 8,
+   "description": "Mixin-инъекции в Minecraft/ClientPlayerEntity/PlayerController в методах атаки/тиков.",
+   "all": [
+    {
+     "type": "any",
+     "regex": "(?i)(Mixin|CallbackInfo|Inject|Redirect|Overwrite)"
+    },
+    {
+     "type": "any",
+     "regex": "(?i)(MinecraftClient|net/minecraft/client/Minecraft|ClientPlayerEntity|ClientPlayerInteractionManager|PlayerController|class_310|class_746|class_636)"
+    },
+    {
+     "type": "any",
+     "regex": "(?i)(attack|sendMovement|rotation|look)"
+    },
+    {
+     "type": "any",
+     "regex": "(?i)\\b(combat|aura|reach|hitbox|killaura|aim)\\b"
+    }
+   ]
+  },
+  {
+   "id": "behavior_reflection_loader",
+   "name": "Динамическая загрузка классов",
+   "category": "obfuscation",
+   "severity": 4,
+   "weight": 9,
+   "description": "Class.forName/defineClass/URLClassLoader в связке с cheat/hack/inject/payload.",
+   "all": [
+    {
+     "type": "ref",
+     "regex": "(?i)(Class\\.forName|defineClass|URLClassLoader)"
+    },
+    {
+     "type": "any",
+     "regex": "(?i)(cheat|hack|inject|payload)"
+    }
+   ]
+  },
+  {
+   "id": "behavior_native_load",
+   "name": "Загрузка нативной библиотеки",
+   "category": "native",
+   "severity": 4,
+   "weight": 10,
+   "description": "System.load/loadLibrary и встроенная DLL/SO в jar.",
+   "all": [
+    {
+     "type": "ref",
+     "regex": "(?i)(System\\.load|loadLibrary|Runtime.*load|native)"
+    },
+    {
+     "type": "path",
+     "regex": "(?i)\\.(dll|so|dylib)$"
+    }
+   ]
+  },
+  {
+   "id": "behavior_aim_snap",
+   "name": "Snap-наведение",
+   "category": "combat",
+   "severity": 5,
+   "weight": 10,
+   "description": "Резкая установка углов в связке с silent/aim/aura.",
+   "all": [
+    {
+     "type": "ref",
+     "regex": "(?i)(setYaw|setPitch|yaw|pitch)"
+    },
+    {
+     "type": "string",
+     "regex": "(?i)\\b(silent|aura|killaura|aimbot)\\b"
+    }
+   ]
+  },
+  {
+   "id": "behavior_autoclicker",
+   "name": "Автокликер",
+   "category": "combat",
+   "severity": 4,
+   "weight": 10,
+   "description": "Эмуляция кликов/атаки в связке с CPS/autoclicker/triggerbot.",
+   "all": [
+    {
+     "type": "ref",
+     "regex": "(?i)(Mouse|mouse|click|attackEntity|swingHand)"
+    },
+    {
+     "type": "string",
+     "regex": "(?i)(cps|autoclicker|clicker|triggerbot)"
+    }
+   ]
+  },
+  {
+   "id": "behavior_chest_steal",
+   "name": "Кража из контейнеров",
+   "category": "world",
+   "severity": 4,
+   "weight": 10,
+   "description": "Автоматический перебор слотов контейнера/инвентаря.",
+   "all": [
+    {
+     "type": "ref",
+     "regex": "(?i)(Container|Chest|Inventory|clickWindow|class_1263|class_1702)"
+    },
+    {
+     "type": "string",
+     "regex": "(?i)(steal|cleaner|cheststealer|autosteal)"
+    }
+   ]
+  },
+  {
+   "id": "behavior_fast_place",
+   "name": "Быстрая установка блоков",
+   "category": "world",
+   "severity": 4,
+   "weight": 8,
+   "description": "Установка блоков без ванильной задержки.",
+   "all": [
+    {
+     "type": "ref",
+     "regex": "(?i)(placeBlock|rightClick|interactBlock|class_636)"
+    },
+    {
+     "type": "string",
+     "regex": "(?i)(fastplace|fast.?use)"
+    }
+   ]
+  },
+  {
+   "id": "behavior_nofall",
+   "name": "NoFall логика",
+   "category": "movement",
+   "severity": 4,
+   "weight": 9,
+   "description": "Обнуление fallDistance/урона от падения.",
+   "all": [
+    {
+     "type": "ref",
+     "regex": "(?i)(fallDistance|onLivingUpdate|motionY|class_1309)"
+    },
+    {
+     "type": "string",
+     "regex": "(?i)(nofall|fall.?damage)"
+    }
+   ]
+  },
+  {
+   "id": "behavior_timer",
+   "name": "Timer / ускорение тиков",
+   "category": "movement",
+   "severity": 4,
+   "weight": 8,
+   "description": "Изменение скорости тиков/таймера.",
+   "all": [
+    {
+     "type": "ref",
+     "regex": "(?i)(Timer|tick|setTimer|class_317)"
+    },
+    {
+     "type": "string",
+     "regex": "(?i)(speed.?hack|game.?speed|timer.?speed|timer.?hack)"
+    }
+   ]
+  },
+  {
+   "id": "behavior_antiaim",
+   "name": "AntiAim / SpinBot",
+   "category": "combat",
+   "severity": 4,
+   "weight": 9,
+   "description": "Некорректные/циклические углы поворота.",
+   "all": [
+    {
+     "type": "ref",
+     "regex": "(?i)(setYaw|setPitch|yaw|pitch)"
+    },
+    {
+     "type": "string",
+     "regex": "(?i)(antiaim|spinbot|headroll|derp)"
+    }
+   ]
+  },
+  {
+   "id": "behavior_backtrack",
+   "name": "Backtrack / FakeLag",
+   "category": "combat",
+   "severity": 4,
+   "weight": 8,
+   "description": "Манипуляция позициями/пакетами для отката цели.",
+   "all": [
+    {
+     "type": "ref",
+     "regex": "(?i)(Packet|position|Entity|class_1297)"
+    },
+    {
+     "type": "string",
+     "regex": "(?i)(backtrack|fakelag|lag.?range)"
+    }
+   ]
+  },
+  {
+   "id": "behavior_attack_aura",
+   "name": "Аура по списку сущностей",
+   "category": "combat",
+   "severity": 5,
+   "weight": 12,
+   "description": "Перебор сущностей мира и атака ближайших/всех целей.",
+   "all": [
+    {
+     "type": "ref",
+     "regex": "(?i)(attackEntity|swingHand|class_636)"
+    },
+    {
+     "type": "ref",
+     "regex": "(?i)(getEntities|getPlayers|getEntity|world|class_1922)"
+    },
+    {
+     "type": "string",
+     "regex": "(?i)(aura|killaura|target)"
+    }
+   ],
+   "any": [
+    {
+     "type": "any",
+     "regex": "(?i)\\b(aura|killaura|target)\\b"
+    }
+   ]
+  },
+  {
+   "id": "behavior_java_agent",
+   "name": "Java-агент",
+   "category": "native",
+   "severity": 2,
+   "weight": 8,
+   "description": "Premain-Class/Agent-Class/Launcher-Agent-Class — загрузка агента в JVM.",
+   "any": [
+    {
+     "type": "meta",
+     "regex": "(?i)(Premain-Class|Agent-Class|Launcher-Agent-Class)"
+    }
+   ]
+  },
+  {
+   "id": "behavior_hitbox_size",
+   "name": "HitBox: изменение размера через determineSize",
+   "category": "combat",
+   "severity": 5,
+   "weight": 22,
+   "description": "Класс/миксин вызывает HitBox.determineSize/getEntityValue — расширение хитбокса.",
+   "all": [
+    {
+     "type": "ref",
+     "regex": "(?i)(determineSize|getEntityValue)"
+    },
+    {
+     "type": "any",
+     "regex": "(?i)(hitbox|expand the hitbox|hitbox size|entity size)"
+    }
+   ]
+  },
+  {
+   "id": "behavior_reach_setting",
+   "name": "Reach: настройка дистанции",
+   "category": "combat",
+   "severity": 4,
+   "weight": 14,
+   "description": "Класс/метод хранит увеличенную дистанцию взаимодействия.",
+   "all": [
+    {
+     "type": "ref",
+     "regex": "(?i)(getReachDistance|reachDistance|getBlockReachDistance)"
+    },
+    {
+     "type": "any",
+     "regex": "(?i)(reach|range)"
+    }
+   ]
+  },
+  {
+   "id": "behavior_ai_aim",
+   "name": "AI/нейро-аим (ONNX/CatBoost/GRU)",
+   "category": "combat",
+   "severity": 5,
+   "weight": 26,
+   "description": "Класс использует ML-модель/инференс (ONNX, CatBoost, GRU, NeuroModel) для расчёта yaw/pitch.",
+   "all": [
+    {
+     "type": "any",
+     "regex": "(?i)(onnxruntime|ai\\.onnxruntime|catboost|NeuroModel|RotationController|RotationPredictor|PolicyNetwork|\\bGRU\\b)"
+    },
+    {
+     "type": "any",
+     "regex": "(?i)(aura|aimbot|aim\\b|yaw|pitch|rotation|killaura)"
+    }
+   ]
+  }
+ ]
+}

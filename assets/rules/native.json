@@ -1,0 +1,447 @@
+{
+ "version": 1,
+ "rules": [
+  {
+   "id": "native_injection",
+   "name": "Классическое внедрение в процесс",
+   "category": "native",
+   "severity": 5,
+   "weight": 70,
+   "description": "OpenProcess + VirtualAllocEx + WriteProcessMemory + CreateRemoteThread — инжектор.",
+   "all": [
+    {
+     "type": "import",
+     "regex": "(?i)^(OpenProcess|NtOpenProcess)$"
+    },
+    {
+     "type": "import",
+     "regex": "(?i)^(VirtualAllocEx|NtAllocateVirtualMemory)$"
+    },
+    {
+     "type": "import",
+     "regex": "(?i)^(WriteProcessMemory|NtWriteVirtualMemory)$"
+    },
+    {
+     "type": "import",
+     "regex": "(?i)^(CreateRemoteThread|CreateRemoteThreadEx|NtCreateThreadEx)$"
+    }
+   ]
+  },
+  {
+   "id": "native_injection_alt",
+   "name": "Альтернативное внедрение в процесс",
+   "category": "native",
+   "severity": 5,
+   "weight": 60,
+   "description": "OpenProcess + удалённый поток/APC/контекст потока.",
+   "all": [
+    {
+     "type": "import",
+     "regex": "(?i)^(OpenProcess|NtOpenProcess)$"
+    },
+    {
+     "type": "import",
+     "regex": "(?i)^(NtCreateThreadEx|RtlCreateUserThread|QueueUserAPC|SetThreadContext|Wow64SetThreadContext)$"
+    }
+   ]
+  },
+  {
+   "id": "native_manual_map",
+   "name": "Manual mapping / reflective DLL",
+   "category": "native",
+   "severity": 5,
+   "weight": 65,
+   "description": "NtUnmapViewOfSection + VirtualAllocEx + SetThreadContext — ручной маппинг DLL.",
+   "all": [
+    {
+     "type": "import",
+     "regex": "(?i)^(NtUnmapViewOfSection|ZwUnmapViewOfSection)$"
+    },
+    {
+     "type": "import",
+     "regex": "(?i)^(VirtualAllocEx|NtAllocateVirtualMemory)$"
+    },
+    {
+     "type": "import",
+     "regex": "(?i)^(SetThreadContext|NtSetContextThread)$"
+    }
+   ]
+  },
+  {
+   "id": "native_hook",
+   "name": "Глобальные хуки",
+   "category": "native",
+   "severity": 4,
+   "weight": 35,
+   "description": "SetWindowsHookEx + CallNextHookEx — перехват ввода/сообщений.",
+   "all": [
+    {
+     "type": "import",
+     "regex": "(?i)^(SetWindowsHookExA|SetWindowsHookExW|SetWindowsHookEx)$"
+    },
+    {
+     "type": "import",
+     "regex": "(?i)^(CallNextHookEx|UnhookWindowsHookEx)$"
+    }
+   ]
+  },
+  {
+   "id": "native_keyboard_hook",
+   "name": "Клавиатурный хук",
+   "category": "native",
+   "severity": 5,
+   "weight": 40,
+   "description": "Низкоуровневый хук клавиатуры + опрос клавиш.",
+   "all": [
+    {
+     "type": "import",
+     "regex": "(?i)^(SetWindowsHookExA|SetWindowsHookExW)$"
+    },
+    {
+     "type": "import",
+     "regex": "(?i)^(GetAsyncKeyState|GetKeyState|GetKeyboardState)$"
+    }
+   ]
+  },
+  {
+   "id": "native_mouse_hook",
+   "name": "Хук мыши",
+   "category": "native",
+   "severity": 4,
+   "weight": 30,
+   "description": "Низкоуровневый хук мыши.",
+   "all": [
+    {
+     "type": "import",
+     "regex": "(?i)^(SetWindowsHookExA|SetWindowsHookExW)$"
+    },
+    {
+     "type": "import",
+     "regex": "(?i)^(GetCursorPos|mouse_event|SendInput)$"
+    }
+   ]
+  },
+  {
+   "id": "native_overlay",
+   "name": "Overlay поверх игры",
+   "category": "native",
+   "severity": 4,
+   "weight": 30,
+   "description": "Direct3D/OpenGL контекст + SwapBuffers/Present — оверлей.",
+   "all": [
+    {
+     "type": "import",
+     "regex": "(?i)^(D3D11CreateDevice|Direct3DCreate9|wglCreateContext|wglSwapBuffers|SwapBuffers)$"
+    },
+    {
+     "type": "import",
+     "regex": "(?i)^(Present|SwapBuffers|wglSwapBuffers)$"
+    }
+   ]
+  },
+  {
+   "id": "native_imgui",
+   "name": "ImGui-меню",
+   "category": "native",
+   "severity": 4,
+   "weight": 28,
+   "description": "Строки ImGui + overlay-функции — типичное чит-меню.",
+   "all": [
+    {
+     "type": "dll_string",
+     "regex": "(?i)(ImGui|imgui\\.ini|ImGui::Begin|ImGui_Impl)"
+    },
+    {
+     "type": "import",
+     "regex": "(?i)^(Present|SwapBuffers|wglSwapBuffers|D3D11CreateDevice)$"
+    }
+   ]
+  },
+  {
+   "id": "native_input_sim",
+   "name": "Эмуляция ввода",
+   "category": "native",
+   "severity": 4,
+   "weight": 28,
+   "description": "SendInput/mouse_event/keybd_event + опрос состояния клавиш.",
+   "all": [
+    {
+     "type": "import",
+     "regex": "(?i)^(SendInput|mouse_event|keybd_event)$"
+    },
+    {
+     "type": "import",
+     "regex": "(?i)^(GetAsyncKeyState|GetKeyState|GetCursorPos)$"
+    }
+   ]
+  },
+  {
+   "id": "native_screen_capture",
+   "name": "Захват экрана",
+   "category": "native",
+   "severity": 4,
+   "weight": 20,
+   "description": "BitBlt/GetDC/CreateCompatibleDC — скриншоты/анализ пикселей.",
+   "all": [
+    {
+     "type": "import",
+     "regex": "(?i)^(BitBlt|GetDC|GetWindowDC|CreateCompatibleDC)$"
+    },
+    {
+     "type": "import",
+     "regex": "(?i)^(GetPixel|StretchBlt|CreateCompatibleBitmap)$"
+    }
+   ]
+  },
+  {
+   "id": "native_antidebug",
+   "name": "Anti-debug",
+   "category": "native",
+   "severity": 3,
+   "weight": 20,
+   "description": "Проверки отладчика/процессов защиты.",
+   "all": [
+    {
+     "type": "import",
+     "regex": "(?i)^(IsDebuggerPresent|CheckRemoteDebuggerPresent|NtQueryInformationProcess)$"
+    },
+    {
+     "type": "any",
+     "regex": "(?i)(debug|protect|hide|vm)"
+    }
+   ]
+  },
+  {
+   "id": "native_process_enum",
+   "name": "Перебор процессов",
+   "category": "native",
+   "severity": 3,
+   "weight": 16,
+   "description": "CreateToolhelp32Snapshot + Process32First/Next — поиск цели.",
+   "all": [
+    {
+     "type": "import",
+     "regex": "(?i)^(CreateToolhelp32Snapshot)$"
+    },
+    {
+     "type": "import",
+     "regex": "(?i)^(Process32First|Process32Next|Module32First|Module32Next)$"
+    }
+   ]
+  },
+  {
+   "id": "native_memory_patch",
+   "name": "Патчинг памяти",
+   "category": "native",
+   "severity": 4,
+   "weight": 22,
+   "description": "VirtualProtect + FlushInstructionCache — модификация кода.",
+   "all": [
+    {
+     "type": "import",
+     "regex": "(?i)^(VirtualProtect|VirtualProtectEx|NtProtectVirtualMemory)$"
+    },
+    {
+     "type": "import",
+     "regex": "(?i)^(FlushInstructionCache|WriteProcessMemory|NtWriteVirtualMemory)$"
+    }
+   ]
+  },
+  {
+   "id": "native_reflective",
+   "name": "Reflective loader",
+   "category": "native",
+   "severity": 5,
+   "weight": 45,
+   "description": "ReflectiveLoader/LoadLibraryA/GetProcAddress/VirtualAlloc — самозагрузка DLL.",
+   "all": [
+    {
+     "type": "dll_string",
+     "regex": "(?i)(ReflectiveLoader|reflective)"
+    },
+    {
+     "type": "import",
+     "regex": "(?i)^(LoadLibraryA|LoadLibraryW|GetProcAddress|VirtualAlloc)$"
+    }
+   ]
+  },
+  {
+   "id": "native_jni",
+   "name": "JNI-библиотека",
+   "category": "native",
+   "severity": 2,
+   "weight": 8,
+   "description": "JNI_OnLoad/Java_* экспорт — нативная библиотека для JVM (сама по себе не чит).",
+   "any": [
+    {
+     "type": "export",
+     "regex": "(?i)^(JNI_OnLoad|Java_.*)$"
+    }
+   ]
+  },
+  {
+   "id": "native_jvm_attach",
+   "name": "Взаимодействие с JVM",
+   "category": "native",
+   "severity": 4,
+   "weight": 25,
+   "description": "JNI_GetCreatedJavaVMs/AttachCurrentThread/jvm.dll — внедрение в Minecraft JVM.",
+   "all": [
+    {
+     "type": "any",
+     "regex": "(?i)(JNI_GetCreatedJavaVMs|AttachCurrentThread|jvm\\.dll|attach\\.dll|JavaVM)"
+    },
+    {
+     "type": "import",
+     "regex": "(?i)^(LoadLibraryA|LoadLibraryW|GetProcAddress|CreateRemoteThread|OpenProcess)$"
+    }
+   ]
+  },
+  {
+   "id": "native_cheat_strings",
+   "name": "Названия чит-клиентов в DLL",
+   "category": "native",
+   "severity": 5,
+   "weight": 40,
+   "description": "Строки Wurst/Meteor/LiquidBounce/Impact/Future/RusherHack и т.п.",
+   "any": [
+    {
+     "type": "dll_string",
+     "regex": "(?i)\\b(wurst|meteor|liquidbounce|impactclient|futureclient|rusherhack|sigmaclient|astolfo|riseclient|tenacity|novoclient|gamesense|konas|salhack|kamiblue|seppuku|bleachhack|trollhack|aristois)\\b"
+    }
+   ]
+  },
+  {
+   "id": "native_cheat_gui",
+   "name": "Чит-модули в строках DLL",
+   "category": "native",
+   "severity": 5,
+   "weight": 35,
+   "description": "KillAura/Aimbot/HitBox/ESP/Scaffold/Nuker/Disabler в строках.",
+   "any": [
+    {
+     "type": "dll_string",
+     "regex": "(?i)\\b(killaura|aimbot|hitbox|reach|scaffold|nuker|disabler|antiaim|backtrack|autocrystal|cheststealer)\\b"
+    }
+   ]
+  },
+  {
+   "id": "native_packed",
+   "name": "Упакованный/шифрованный DLL",
+   "category": "native",
+   "severity": 3,
+   "weight": 18,
+   "description": "Высокая энтропия секций или UPX-подписи.",
+   "any": [
+    {
+     "type": "dll_string",
+     "regex": "(?i)(UPX0|UPX1|UPX!)"
+    },
+    {
+     "type": "path",
+     "regex": "(?i)upx"
+    }
+   ]
+  },
+  {
+   "id": "native_hide_window",
+   "name": "Скрытое окно",
+   "category": "native",
+   "severity": 2,
+   "weight": 8,
+   "description": "ShowWindow(SW_HIDE) + overlay — скрытый процесс.",
+   "all": [
+    {
+     "type": "import",
+     "regex": "(?i)^(ShowWindow|ShowWindowAsync)$"
+    },
+    {
+     "type": "any",
+     "regex": "(?i)(hide|overlay|present|swapbuffers)"
+    }
+   ]
+  },
+  {
+   "id": "native_network",
+   "name": "Сетевая активность DLL",
+   "category": "native",
+   "severity": 3,
+   "weight": 12,
+   "description": "WinINet/WinHTTP/сокеты + URL.",
+   "all": [
+    {
+     "type": "import",
+     "regex": "(?i)^(InternetOpen|InternetConnect|HttpOpenRequest|WSAStartup|connect|send|recv)$"
+    },
+    {
+     "type": "dll_string",
+     "regex": "(?i)https?://"
+    }
+   ]
+  },
+  {
+   "id": "native_kernel_driver",
+   "name": "Драйвер уровня ядра",
+   "category": "native",
+   "severity": 5,
+   "weight": 50,
+   "description": "IoCreateDevice/PsSetCreateProcessNotifyRoutine — kernel-драйвер (чит/AC).",
+   "all": [
+    {
+     "type": "import",
+     "regex": "(?i)^(IoCreateDevice|IoCreateSymbolicLink|PsSetCreateProcessNotifyRoutine|ObRegisterCallbacks)$"
+    },
+    {
+     "type": "dll_string",
+     "regex": "(?i)(\\Device\\\\|\\DosDevices\\\\|ntoskrnl)"
+    }
+   ]
+  },
+  {
+   "id": "native_unsigned",
+   "name": "DLL без цифровой подписи",
+   "category": "native",
+   "severity": 2,
+   "weight": 6,
+   "description": "Отсутствует Authenticode-подпись (само по себе не вредоносно).",
+   "any": [
+    {
+     "type": "meta",
+     "regex": "(?i)unsigned"
+    }
+   ]
+  },
+  {
+   "id": "native_manual_map_strings",
+   "name": "Manual map / payload injector (strings)",
+   "category": "native",
+   "severity": 5,
+   "weight": 70,
+   "description": "Строки ManualMain/WriteProcessMemory/VirtualProtectEx/SetThreadContext вместе с payload/Minecraft PID/inject.",
+   "all": [
+    {
+     "type": "dll_string",
+     "regex": "(?i)(ManualMain|manual.?map|--map-only|WriteProcessMemory|VirtualProtectEx|SetThreadContext|NtCreateThreadEx)"
+    },
+    {
+     "type": "dll_string",
+     "regex": "(?i)(payload|inject|Minecraft PID|net\\.dll|findMinecraftPid)"
+    }
+   ]
+  },
+  {
+   "id": "native_manualmain_export",
+   "name": "Экспорт ManualMain",
+   "category": "native",
+   "severity": 5,
+   "weight": 55,
+   "description": "DLL экспортирует ManualMain и содержит payload/inject-строки — ручной маппинг в процесс.",
+   "all": [
+    {
+     "type": "export",
+     "regex": "(?i)^ManualMain$"
+    }
+   ]
+  }
+ ]
+}
