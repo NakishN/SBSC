@@ -1,0 +1,87 @@
+name: build
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  id-token: write
+  attestations: write
+
+jobs:
+  windows:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: "1.22.x"
+          cache: true
+
+      - name: Dependencies
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Force assets/tools | Out-Null
+          Invoke-WebRequest -UseBasicParsing -Uri "https://repo1.maven.org/maven2/org/benf/cfr/0.152/cfr-0.152.jar" -OutFile "assets/tools/cfr.jar"
+          Invoke-WebRequest -UseBasicParsing -Uri "https://api.adoptium.net/v3/binary/latest/8/ga/windows/x64/jre/hotspot/normal/eclipse" -OutFile "assets/tools/jre8-win64.zip"
+
+      - name: Format
+        shell: pwsh
+        run: |
+          $bad = gofmt -l cmd internal assets
+          if ($bad) {
+            $bad
+            exit 1
+          }
+
+      - name: Vet
+        run: go vet ./...
+
+      - name: Test
+        run: go test ./...
+
+      - name: Build
+        shell: pwsh
+        env:
+          CGO_ENABLED: "0"
+        run: |
+          New-Item -ItemType Directory -Force dist | Out-Null
+          go build -trimpath -ldflags="-s -w -H windowsgui" -o dist/SBSC.exe ./cmd/sbsc
+          go build -trimpath -ldflags="-s -w -H windowsgui" -tags nojre -o dist/SBSC-lite.exe ./cmd/sbsc
+
+      - name: Package
+        shell: pwsh
+        run: |
+          Copy-Item README.md dist/README.md -Force
+          Copy-Item -Recurse licenses dist/licenses -Force
+          Compress-Archive -Path dist/SBSC.exe,dist/README.md,dist/licenses -DestinationPath dist/SBSC-portable.zip -Force
+          Expand-Archive assets/tools/jre8-win64.zip -DestinationPath dist/jre-tmp -Force
+          $jre = Get-ChildItem dist/jre-tmp -Directory | Select-Object -First 1
+          Move-Item $jre.FullName dist/jre8
+          Remove-Item -Recurse dist/jre-tmp
+          Compress-Archive -Path dist/SBSC-lite.exe,dist/jre8,dist/README.md,dist/licenses -DestinationPath dist/SBSC-lite.zip -Force
+          $files = @("dist/SBSC.exe", "dist/SBSC-portable.zip", "dist/SBSC-lite.zip")
+          $lines = foreach ($file in $files) {
+            $hash = (Get-FileHash $file -Algorithm SHA256).Hash.ToLower()
+            "$hash  $(Split-Path $file -Leaf)"
+          }
+          $lines | Set-Content dist/SHA256SUMS.txt -Encoding ascii
+
+      - name: Attest
+        uses: actions/attest-build-provenance@v2
+        with:
+          subject-path: |
+            dist/SBSC.exe
+            dist/SBSC-portable.zip
+            dist/SBSC-lite.zip
+
+      - name: Upload release
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release upload v1.0.0 dist/SBSC.exe dist/SBSC-portable.zip dist/SBSC-lite.zip dist/SHA256SUMS.txt --clobber

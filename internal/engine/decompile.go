@@ -41,6 +41,15 @@ func (d *Decompiler) FindJava(override string) (string, string, error) {
 	if override != "" {
 		candidates = append(candidates, override)
 	}
+	if exe, err := os.Executable(); err == nil {
+		base := filepath.Dir(exe)
+		for _, rel := range []string{"jre8/bin/java.exe", "jre/bin/java.exe"} {
+			p := filepath.Join(base, filepath.FromSlash(rel))
+			if st, err := os.Stat(p); err == nil && !st.IsDir() {
+				candidates = append(candidates, preferWorker(p))
+			}
+		}
+	}
 	if runtime.GOOS == "windows" {
 		if p, err := ensureBundledJRE(); err == nil {
 			candidates = append(candidates, p)
