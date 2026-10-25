@@ -10,8 +10,6 @@ type Options struct {
 	Deep bool
 	// DeepAll decompiles/analyses every jar, not only suspicious ones.
 	DeepAll bool
-	// DecompileAll decompiles every class in suspicious jars (slower).
-	DecompileAll bool
 	// ScanNatives enables PE analysis for DLL/EXE files.
 	ScanNatives bool
 	// AllDLL scans DLLs even if their name is in the trusted allowlist.
@@ -22,7 +20,7 @@ type Options struct {
 	// ScanLibraries also scans plain Java libraries (Maven/module-info jars)
 	// that normally cannot be Minecraft cheat clients.
 	ScanLibraries bool
-	// MaxFileSize skips files larger than this (bytes). Zero means 256 MiB.
+	// MaxFileSize skips files larger than this (bytes). Zero means 512 MiB.
 	MaxFileSize int64
 	// MaxFiles caps how many supported files are collected from a directory.
 	// Zero (or negative) means no limit.

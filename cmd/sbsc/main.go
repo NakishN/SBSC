@@ -24,23 +24,22 @@ func main() {
 		}
 	}()
 	var (
-		cli          = flag.Bool("cli", false, "консольный режим (без GUI)")
-		guiMode      = flag.Bool("gui", false, "запустить GUI (можно передать файлы для предзагрузки)")
-		noDecompile  = flag.Bool("no-decompile", false, "не декомпилировать и не анализировать исходники")
-		decompileAll = flag.Bool("decompile-all", false, "декомпилировать весь jar, а не только подозрительные классы")
-		noDeep       = flag.Bool("no-deep", false, "отключить глубокий анализ декомпилированного кода")
-		deepAll      = flag.Bool("deep-all", false, "глубоко анализировать все jar, включая чистые")
-		noNative     = flag.Bool("no-native", false, "не анализировать DLL/EXE")
-		allDLL       = flag.Bool("all-dll", false, "анализировать DLL даже из белого списка")
-		includeSys   = flag.Bool("include-system", false, "сканировать системные папки Windows/Java runtime")
-		scanLibs     = flag.Bool("scan-libraries", false, "сканировать обычные Java-библиотеки")
-		outDir       = flag.String("out", "", "папка для отчётов и декомпиляции (по умолчанию reports рядом с exe)")
-		javaPath     = flag.String("java", "", "путь к java.exe/java")
-		jsonPath     = flag.String("json", "", "путь к JSON-отчёту")
-		htmlPath     = flag.String("html", "", "путь к HTML-отчёту")
-		showVersion  = flag.Bool("version", false, "показать версию")
-		maxMB        = flag.Int64("max-mb", 512, "максимальный размер файла в МБ")
-		maxFiles     = flag.Int("max-files", 0, "максимум файлов за один скан (0 — без лимита)")
+		cli         = flag.Bool("cli", false, "консольный режим (без GUI)")
+		guiMode     = flag.Bool("gui", false, "запустить GUI (можно передать файлы для предзагрузки)")
+		noDecompile = flag.Bool("no-decompile", false, "не декомпилировать и не анализировать исходники")
+		noDeep      = flag.Bool("no-deep", false, "отключить глубокий анализ декомпилированного кода")
+		deepAll     = flag.Bool("deep-all", false, "глубоко анализировать все jar, включая чистые")
+		noNative    = flag.Bool("no-native", false, "не анализировать DLL/EXE")
+		allDLL      = flag.Bool("all-dll", false, "анализировать DLL даже из белого списка")
+		includeSys  = flag.Bool("include-system", false, "сканировать системные папки Windows/Java runtime")
+		scanLibs    = flag.Bool("scan-libraries", false, "сканировать обычные Java-библиотеки")
+		outDir      = flag.String("out", "", "папка для отчётов и декомпиляции (по умолчанию reports рядом с exe)")
+		javaPath    = flag.String("java", "", "путь к java.exe/java")
+		jsonPath    = flag.String("json", "", "путь к JSON-отчёту")
+		htmlPath    = flag.String("html", "", "путь к HTML-отчёту")
+		showVersion = flag.Bool("version", false, "показать версию")
+		maxMB       = flag.Int64("max-mb", 512, "максимальный размер файла в МБ")
+		maxFiles    = flag.Int("max-files", 0, "максимум файлов за один скан (0 — без лимита)")
 	)
 	flag.Usage = usage
 	flag.Parse()
@@ -51,7 +50,6 @@ func main() {
 	paths := flag.Args()
 	opts := engine.Options{
 		Decompile:     !*noDecompile,
-		DecompileAll:  *decompileAll,
 		Deep:          !*noDeep,
 		DeepAll:       *deepAll,
 		ScanNatives:   !*noNative,
@@ -252,7 +250,6 @@ func usage() {
   --no-decompile     не декомпилировать и не анализировать исходники
   --no-deep          отключить глубокий анализ кода
   --deep-all         глубоко анализировать все jar
-  --decompile-all    декомпилировать jar целиком
   --no-native        не анализировать DLL/EXE
   --all-dll          анализировать DLL из белого списка
   --include-system   сканировать Windows/Java runtime (по умолчанию пропускаются)

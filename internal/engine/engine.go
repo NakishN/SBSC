@@ -6,7 +6,6 @@ import (
 	"fmt"
 	"io/fs"
 	"os"
-	"os/exec"
 	"path/filepath"
 	"sort"
 	"strings"
@@ -360,7 +359,7 @@ func (e *Engine) ScanFile(p string) *ScanResult {
 				res.CodeScore = ja.CodeScore
 				res.ContextScore = ja.ContextScore
 				res.Proof = ja.Proof
-				if e.opts.Decompile && e.shouldDeepAnalyze(res, ja) {
+				if e.opts.Decompile && e.opts.Deep {
 					e.decompileAndAnalyze(res, ja)
 				}
 			}
@@ -496,33 +495,6 @@ func (e *Engine) applyHashResult(res *ScanResult, h *KnownHash) {
 	}
 }
 
-func (e *Engine) shouldDeepAnalyze(res *ScanResult, ja *jarAnalysis) bool {
-	if !e.opts.Deep {
-		return false
-	}
-	if e.opts.DeepAll {
-		return true
-	}
-	// Libraries and system files are filtered before this point. For every
-	// remaining mod we want code evidence, not just a suspicious file name.
-	return true
-}
-
-func jarHasMixin(ja *jarAnalysis) bool {
-	for _, p := range ja.Paths {
-		l := strings.ToLower(p)
-		if strings.Contains(l, "mixin") || strings.Contains(l, ".mixins.json") {
-			return true
-		}
-	}
-	for _, m := range ja.Meta {
-		if strings.Contains(strings.ToLower(m), "mixins") {
-			return true
-		}
-	}
-	return false
-}
-
 func (e *Engine) decompileAndAnalyze(res *ScanResult, ja *jarAnalysis) {
 	out := filepath.Join(e.opts.OutDir, "decompiled", safeName(res.Name)+"-"+shortHash(res.SHA256))
 	filter := ja.Suspects
@@ -555,40 +527,6 @@ func (e *Engine) decompileAndAnalyze(res *ScanResult, ja *jarAnalysis) {
 	res.ContextScore = ja.ContextScore
 	res.Proof = ja.Proof
 	res.Notes = append(res.Notes, fmt.Sprintf("глубокий анализ кода: %d находок", len(findings)))
-}
-
-func (e *Engine) javapFallback(jarPath, outDir string, filter []string) (string, error) {
-	javap, err := exec.LookPath("javap")
-	if err != nil {
-		return "", err
-	}
-	if len(filter) == 0 {
-		return "", fmt.Errorf("javap требует список классов")
-	}
-	var classes []string
-	for _, f := range filter {
-		if len(classes) >= 80 {
-			break
-		}
-		classes = append(classes, strings.ReplaceAll(f, "/", "."))
-	}
-	if len(classes) == 0 {
-		return "", fmt.Errorf("нет классов")
-	}
-	args := append([]string{"-p", "-c", "-classpath", jarPath}, classes...)
-	cmd := exec.Command(javap, args...)
-	out, err := cmd.CombinedOutput()
-	if err != nil && len(out) == 0 {
-		return "", err
-	}
-	if err := os.MkdirAll(outDir, 0o755); err != nil {
-		return "", err
-	}
-	p := filepath.Join(outDir, "javap.txt")
-	if err := os.WriteFile(p, out, 0o644); err != nil {
-		return "", err
-	}
-	return outDir, nil
 }
 
 func safeName(s string) string {
