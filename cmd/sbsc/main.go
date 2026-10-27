@@ -111,9 +111,19 @@ func runCLI(opts engine.Options, paths []string, jsonPath, htmlPath string) {
 		}
 		fmt.Println()
 	}
+	collecting := false
 	results, err := eng.ScanPaths(paths, func(p engine.Progress) {
 		switch p.Stage {
+		case "collect":
+			if p.Message != "" {
+				collecting = true
+				fmt.Printf("\r%s", truncate(p.Message, 120))
+			}
 		case "scan":
+			if collecting {
+				fmt.Println()
+				collecting = false
+			}
 			fmt.Printf("[%d/%d] %s ...\n", p.Index+1, p.Total, filepath.Base(p.Path))
 		case "warning":
 			fmt.Printf("! %s\n", p.Message)

@@ -26,7 +26,7 @@ SBSC анализирует Minecraft-моды и ищет читы по код�
 
 1. Запустить `SBSC.exe`.
 2. Перетащить JAR или DLL в окно.
-3. Нажать `+ Папка` и выбрать папку модов, например `...\.minecraft\mods`.
+3. Нажать `Папка` и выбрать папку модов, например `...\.minecraft\mods`.
 4. Или нажать `+ Диск` и выбрать диски для полного сканирования.
 5. Нажать `Сканировать`.
 
@@ -124,7 +124,7 @@ RAR напрямую не читается. Распакуйте архив и �
 - Сначала обходятся `Downloads`, `Desktop`, `.minecraft`, `Users`, `home`, `Games`, затем остальное.
 - При скане диска пропускаются `Windows`, `Program Files`, `ProgramData`, Java, JRE, JDK, кеши, `node_modules`, `.git` и служебные каталоги.
 - Лимита по количеству файлов нет. При необходимости его можно задать через `--max-files`.
-- Если чит лежит внутри `Program Files`, выберите эту папку вручную через `+ Папка`.
+- Если чит лежит внутри `Program Files`, выберите эту папку вручную через `Папка`.
 
 Полный скан диска может занять много времени. Для быстрого прохода снимите `Глубокий анализ кода` или используйте `--no-deep`.
 
@@ -248,7 +248,7 @@ VirusTotal Reanalyze не заменяет обращение к вендору.
 ```text
 This file is an open-source Minecraft cheat scanner. The detection is a false positive.
 Source: https://github.com/NakishN/SBSC
-Release: https://github.com/NakishN/SBSC/releases/tag/v1.0.2
+Release: https://github.com/NakishN/SBSC/releases/tag/v1.0.3
 Please whitelist the file or update the signature.
 ```
 

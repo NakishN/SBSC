@@ -268,7 +268,7 @@ func (a *app) create() error {
 				Layout: HBox{MarginsZero: true},
 				Children: []Widget{
 					PushButton{AssignTo: &a.btnAddJar, Text: "+ JAR/ZIP", OnClicked: a.addJarDialog},
-					PushButton{AssignTo: &a.btnAddDir, Text: "+ Папка mods", OnClicked: a.addDirDialog},
+					PushButton{AssignTo: &a.btnAddDir, Text: "Папка", OnClicked: a.addDirDialog},
 					PushButton{AssignTo: &a.btnAddDisk, Text: "+ Диск", OnClicked: a.addDiskDialog},
 					PushButton{AssignTo: &a.btnAddDll, Text: "+ DLL/EXE", OnClicked: a.addDllDialog},
 					PushButton{AssignTo: &a.btnScan, Text: "▶ Сканировать", OnClicked: a.scan},
@@ -371,11 +371,14 @@ func (a *app) addDirDialog() {
 func (a *app) addDiskDialog() {
 	drives := listDrives()
 	if len(drives) == 0 {
-		walk.MsgBox(a.mw, "Диски не найдены", "Не удалось получить список дисков. Выбери корень диска через «+ Папка».", walk.MsgBoxIconWarning)
+		walk.MsgBox(a.mw, "Диски не найдены", "Не удалось получить список дисков. Выбери корень диска через «Папка».", walk.MsgBoxIconWarning)
 		return
 	}
 	text := "Найдены диски:\n\n" + strings.Join(drives, "\n") +
-		"\n\nСканировать все? Если нужен только один диск — нажми «+ Папка» и выбери его корень."
+		"\n\nСканировать все? Если нужен только один диск — нажми «Папка» и выбери его корень."
+	if isWine() {
+		text += "\n\nWine: Z:\\ — это корень Linux, он пропущен. Для модов выбери папку кнопкой «Папка»."
+	}
 	if walk.MsgBox(a.mw, "Сканировать диски", text, walk.MsgBoxYesNo|walk.MsgBoxIconQuestion) != walk.DlgCmdYes {
 		return
 	}
@@ -388,12 +391,19 @@ func listDrives() []string {
 	if err != nil {
 		return nil
 	}
+	wine := isWine()
 	var out []string
 	for i := 0; i < 26; i++ {
 		if mask&(1<<uint(i)) == 0 {
 			continue
 		}
 		root := string(rune('A'+i)) + ":\\"
+		// Under Wine, Z: is the entire Linux filesystem. Scanning it walks
+		// /home, /etc and everything else and looks like a hang. The user can
+		// still select a real folder through the Папка dialog.
+		if wine && strings.EqualFold(root, `Z:\`) {
+			continue
+		}
 		p, err := windows.UTF16PtrFromString(root)
 		if err != nil {
 			continue
@@ -406,6 +416,12 @@ func listDrives() []string {
 		}
 	}
 	return out
+}
+
+// isWine reports whether the process runs under Wine. ntdll!wine_get_version
+// exists only in Wine, not in native Windows.
+func isWine() bool {
+	return windows.NewLazySystemDLL("ntdll.dll").NewProc("wine_get_version").Find() == nil
 }
 
 func (a *app) addDllDialog() {
@@ -569,6 +585,14 @@ func (a *app) scan() {
 	go func() {
 		results, scanErr := eng.ScanPaths(paths, func(p engine.Progress) {
 			a.mw.Synchronize(func() {
+				if p.Stage == "collect" {
+					a.progress.SetMarqueeMode(true)
+					if p.Message != "" {
+						a.status.SetText(p.Message)
+					}
+					return
+				}
+				a.progress.SetMarqueeMode(false)
 				if p.Total > 0 {
 					a.progress.SetRange(0, p.Total)
 				}

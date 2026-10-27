@@ -17,7 +17,7 @@ import (
 	"sbsc/assets"
 )
 
-const Version = "1.0.2"
+const Version = "1.0.3"
 
 type Engine struct {
 	opts         Options
@@ -121,7 +121,21 @@ func (e *Engine) ScanPaths(roots []string, progress func(Progress)) ([]*ScanResu
 	// User-selected folders are sniffed for disguised archives. A whole-disk
 	// scan keeps the extension filter unless --all-files is set.
 	sniffUnknown := e.opts.AllFiles || !hasDriveRoot(roots)
-	files, truncated, err := collectFilesOpts(roots, e.opts.IncludeSystem, e.opts.maxFiles(), sniffUnknown)
+	if progress != nil {
+		progress(Progress{Stage: "collect", Message: "Поиск файлов..."})
+	}
+	files, truncated, err := collectFilesProgress(roots, e.opts.IncludeSystem, e.opts.maxFiles(), sniffUnknown, func(visited, found int, dir string) {
+		if progress == nil {
+			return
+		}
+		progress(Progress{
+			Stage:   "collect",
+			Index:   visited,
+			Total:   found,
+			Path:    dir,
+			Message: fmt.Sprintf("Поиск файлов: просмотрено %d, найдено %d", visited, found),
+		})
+	})
 	if err != nil {
 		return nil, err
 	}
@@ -229,8 +243,17 @@ func collectFiles(roots []string, includeSystem bool, maxFiles int) ([]string, b
 // look like ZIP/JAR, PE or a JVM class file. This closes the "rename the cheat
 // to .dat" bypass without walking every file on a full-disk scan.
 func collectFilesOpts(roots []string, includeSystem bool, maxFiles int, sniffUnknown bool) ([]string, bool, error) {
+	return collectFilesProgress(roots, includeSystem, maxFiles, sniffUnknown, nil)
+}
+
+type collectProgress func(visited, found int, dir string)
+
+// collectFilesProgress is collectFilesOpts with a throttled discovery
+// callback. A whole-disk walk can spend minutes before the first scan starts;
+// without this the GUI looks frozen.
+func collectFilesProgress(roots []string, includeSystem bool, maxFiles int, sniffUnknown bool, progress collectProgress) ([]string, bool, error) {
 	limited := maxFiles > 0
-	seen := make(map[string]bool)
+	seenPaths := make(map[string]bool)
 	var out []string
 	add := func(p string) {
 		abs, err := filepath.Abs(p)
@@ -238,11 +261,24 @@ func collectFilesOpts(roots []string, includeSystem bool, maxFiles int, sniffUnk
 			abs = p
 		}
 		key := strings.ToLower(filepath.Clean(abs))
-		if seen[key] {
+		if seenPaths[key] {
 			return
 		}
-		seen[key] = true
+		seenPaths[key] = true
 		out = append(out, abs)
+	}
+	visited := 0
+	lastReport := time.Now()
+	report := func(dir string) {
+		if progress == nil {
+			return
+		}
+		now := time.Now()
+		if now.Sub(lastReport) < 250*time.Millisecond {
+			return
+		}
+		lastReport = now
+		progress(visited, len(out), dir)
 	}
 	supported := func(p string) bool {
 		switch strings.ToLower(filepath.Ext(p)) {
@@ -292,6 +328,8 @@ func collectFilesOpts(roots []string, includeSystem bool, maxFiles int, sniffUnk
 					}
 					return nil
 				}
+				visited++
+				report(p)
 				if d.IsDir() {
 					// Do not walk priority folders twice when their parent
 					// (Users, home, or the drive root) is processed later.
@@ -336,9 +374,13 @@ func collectFilesOpts(roots []string, includeSystem bool, maxFiles int, sniffUnk
 				break
 			}
 		}
+		report(root)
 		if truncated {
 			break
 		}
+	}
+	if progress != nil {
+		progress(visited, len(out), "")
 	}
 	sort.Strings(out)
 	return out, truncated, nil
