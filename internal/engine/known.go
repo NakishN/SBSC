@@ -117,19 +117,25 @@ func strongKnownPath(p string) bool {
 }
 
 func knownPathMatch(e *KnownEntry, haystack []string) (bool, bool, string) {
-	matched := ""
+	paths := make([]string, 0, len(e.Paths))
+	for _, p := range e.Paths {
+		p = strings.ToLower(p)
+		if p == "" || !strongKnownPath(p) {
+			continue
+		}
+		paths = append(paths, p)
+	}
+	if len(paths) == 0 {
+		return false, false, ""
+	}
 	for _, h := range haystack {
-		h = strings.ToLower(h)
-		for _, p := range e.Paths {
-			if p == "" || !strongKnownPath(p) {
-				continue
-			}
+		for _, p := range paths {
 			if strings.Contains(h, p) {
 				return true, true, p
 			}
 		}
 	}
-	return false, false, matched
+	return false, false, ""
 }
 
 func (e *Engine) matchKnownJar(ja *jarAnalysis) []Finding {
@@ -143,6 +149,9 @@ func (e *Engine) matchKnownJar(ja *jarAnalysis) []Finding {
 	haystack = append(haystack, ja.Tokens.Classes...)
 	haystack = append(haystack, ja.Tokens.ClassSimple...)
 	haystack = append(haystack, ja.Tokens.Meta...)
+	for i, h := range haystack {
+		haystack[i] = strings.ToLower(h)
+	}
 
 	type hit struct {
 		f Finding
@@ -263,6 +272,9 @@ func (e *Engine) matchKnownNative(ni *NativeInfo) []Finding {
 	haystack = append(haystack, ni.Exports...)
 	haystack = append(haystack, ni.Strings...)
 	haystack = append(haystack, ni.Name, ni.Path)
+	for i, h := range haystack {
+		haystack[i] = strings.ToLower(h)
+	}
 	var out []Finding
 	for _, ke := range e.rules.Known.Entries {
 		if ke.Kind == "jar" {

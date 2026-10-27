@@ -17,6 +17,12 @@ func isLibraryJar(ja *jarAnalysis) bool {
 	if ja == nil || ja.ClientName != "" || len(ja.Modules) > 0 {
 		return false
 	}
+	// Behavioural/code evidence always wins over a library-looking name.
+	for _, f := range ja.Findings {
+		if f.Source == "source" || (f.Source == "jar" && f.Category != "client") {
+			return false
+		}
+	}
 	root := ja.RootPaths
 	if len(root) == 0 {
 		root = ja.Paths

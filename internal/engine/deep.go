@@ -540,10 +540,17 @@ var srcDetectors = []srcDetector{
 		Description: "shouldDrawSide/isOpaque + список блоков в связке с X-Ray.",
 		Severity:    4, Weight: 22,
 		Fn: func(c *SourceClass, m *SourceMethod) (bool, string) {
-			if !hasCall(m, "shouldDrawSide", "isOpaque", "getBlockState", "getBlock") {
+			// A block-search helper (e.g. Lithium's countBlocksInBoxInSection)
+			// calls getBlockState/getBlock for optimisation, not to reveal ores.
+			// Require a render/visibility hook as well as a block lookup.
+			if !hasCall(m, "getBlockState", "getBlock") {
 				return false, ""
 			}
-			if classNameHas(c, "xray", "search", "blockesp") || hasString(m, "xray", "x-ray", "blockesp", "opaque") {
+			if !hasCall(m, "shouldDrawSide") && !hasCall(m, "isOpaque") {
+				return false, ""
+			}
+			// "search" is a very common package/class word in optimisations.
+			if classNameHas(c, "xray", "x-ray", "blockesp") || hasString(m, "xray", "x-ray", "blockesp") {
 				return true, "block visibility override in " + m.Name + "()"
 			}
 			return false, ""

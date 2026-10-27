@@ -265,17 +265,20 @@
    "any": [
     {
      "type": "string",
-     "regex": "(?i)(C0EPacketClickWindow|C0FPacketConfirmTransaction|C00PacketKeepAlive|C03PacketPlayer|C04PacketPlayerPosition|PacketFly|ServerCrasher|ForceOp|class_2881|class_2883)"
+     "regex": "(?i)(C0EPacketClickWindow|C0FPacketConfirmTransaction|C00PacketKeepAlive|C03PacketPlayer|C04PacketPlayerPosition|PacketFly|ServerCrasher|ForceOp|class_2881|class_2883)",
+     "hints": ["packet", "crasher", "forceop", "class_2881", "class_2883"]
     }
    ],
    "all": [
     {
      "type": "ref",
-     "regex": "(?i)(Packet|sendPacket|C0[0-9]|C1[0-9]|C2[0-9]|C3[0-9])"
+     "regex": "(?i)(Packet|sendPacket|C0[0-9]|C1[0-9]|C2[0-9]|C3[0-9])",
+     "hints": ["packet", "c0", "c1", "c2", "c3"]
     },
     {
      "type": "string",
-     "regex": "(?i)(C0EPacketClickWindow|C0FPacketConfirmTransaction|C00PacketKeepAlive|C03PacketPlayer|C04PacketPlayerPosition|PacketFly|ServerCrasher|ForceOp|class_2881|class_2883)"
+     "regex": "(?i)(C0EPacketClickWindow|C0FPacketConfirmTransaction|C00PacketKeepAlive|C03PacketPlayer|C04PacketPlayerPosition|PacketFly|ServerCrasher|ForceOp|class_2881|class_2883)",
+     "hints": ["packet", "crasher", "forceop", "class_2881", "class_2883"]
     }
    ]
   },
@@ -333,11 +336,13 @@
    "all": [
     {
      "type": "ref",
-     "regex": "(?i)(System\\.load|loadLibrary|Runtime.*load|native)"
+     "regex": "(?i)(System\\.load|loadLibrary|Runtime.*load|native)",
+     "hints": ["system.load", "loadlibrary", "runtime", "native"]
     },
     {
      "type": "path",
-     "regex": "(?i)\\.(dll|so|dylib)$"
+     "regex": "(?i)\\.(dll|so|dylib)$",
+     "hints": [".dll", ".so", ".dylib"]
     }
    ]
   },

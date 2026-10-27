@@ -9,10 +9,13 @@ import (
 )
 
 // quickLibraryJar avoids parsing thousands of classes for obvious launcher
-// dependencies (fabric-api, Kotlin runtime, Maven libs). It only looks at the
-// ZIP entry names.
+// dependencies (fabric-api, Kotlin runtime, Maven libs). It only skips a jar
+// when the archive itself proves it is a library (Maven metadata or
+// module-info). A library-looking file name is not enough: a cheat renamed to
+// guava-x.jar must still be analysed.
 func quickLibraryJar(path string, data []byte) (bool, string) {
 	name := strings.ToLower(strings.TrimSuffix(filepath.Base(path), filepath.Ext(path)))
+	nameHint := ""
 	for _, p := range []string{
 		"fabric-api", "fabric_api", "fabric-language-kotlin", "quilted-fabric-api", "architectury", "cloth-config",
 		"geckolib", "citresewn", "fabric-loader", "mojang", "authlib", "brigadier", "datafixerupper",
@@ -23,7 +26,8 @@ func quickLibraryJar(path string, data []byte) (bool, string) {
 		"byte-buddy", "classgraph", "reflections", "javassist", "paper", "spigot", "bukkit", "purpur",
 	} {
 		if strings.Contains(name, p) {
-			return true, "известный библиотечный мод: " + p
+			nameHint = p
+			break
 		}
 	}
 	zr, err := zip.NewReader(bytes.NewReader(data), int64(len(data)))
@@ -34,7 +38,14 @@ func quickLibraryJar(path string, data []byte) (bool, string) {
 	maven := false
 	moduleInfo := false
 	mainClass := false
+	agent := false
 	maxDLL := uint64(0)
+	suspicious := false
+	terms := []string{
+		"killaura", "kill_aura", "aimbot", "aimassist", "reachhack", "scaffold",
+		"nuker", "cheststealer", "crystalaura", "autototem", "antiknockback",
+		"velocity", "nofall", "xray", "freecam",
+	}
 	for i, f := range zr.File {
 		if i > 5000 {
 			break
@@ -51,20 +62,41 @@ func quickLibraryJar(path string, data []byte) (bool, string) {
 			if rc, err := f.Open(); err == nil {
 				b, _ := io.ReadAll(io.LimitReader(rc, 64<<10))
 				rc.Close()
-				if strings.Contains(strings.ToLower(string(b)), "main-class:") {
+				low := strings.ToLower(string(b))
+				if strings.Contains(low, "main-class:") {
 					mainClass = true
 				}
+				if strings.Contains(low, "premain-class:") || strings.Contains(low, "agent-class:") {
+					agent = true
+				}
+			}
+		}
+		for _, t := range terms {
+			if strings.Contains(n, t) {
+				suspicious = true
+				break
 			}
 		}
 		if strings.HasSuffix(n, ".dll") && f.UncompressedSize64 > maxDLL {
 			maxDLL = f.UncompressedSize64
 		}
 	}
+	// A Minecraft mod (even a library mod) is scanned: metadata is exactly
+	// what a renamed cheat can carry.
+	if hasMod || agent {
+		return false, ""
+	}
 	// A loader that maps a big native payload into Minecraft is not a library.
 	if mainClass && maxDLL > 5<<20 {
 		return false, ""
 	}
-	if !hasMod && (maven || moduleInfo) {
+	if suspicious {
+		return false, ""
+	}
+	if maven || moduleInfo {
+		if nameHint != "" {
+			return true, "Maven/module-info JAR с библиотечным именем: " + nameHint
+		}
 		return true, "Maven/module-info JAR без Minecraft-метаданных"
 	}
 	return false, ""

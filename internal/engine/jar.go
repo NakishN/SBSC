@@ -12,6 +12,7 @@ import (
 	"regexp"
 	"sort"
 	"strings"
+	"sync"
 )
 
 type jarAnalysis struct {
@@ -411,6 +412,9 @@ func classTokenSet(cf *ClassFile) *TokenSet {
 }
 
 func (e *Engine) matchRuntimeRules(ja *jarAnalysis, rules []*CompiledRule) []Finding {
+	if len(rules) == 0 {
+		return nil
+	}
 	best := make(map[string]Finding)
 	merge := func(f Finding) {
 		old, ok := best[f.RuleID]
@@ -426,6 +430,11 @@ func (e *Engine) matchRuntimeRules(ja *jarAnalysis, rules []*CompiledRule) []Fin
 		old.Evidence = dedupeStrings(append(old.Evidence, f.Evidence...), 8)
 		best[f.RuleID] = old
 	}
+
+	// JAR-wide rules are cheap. Class rules are evaluated once per class
+	// below: building a TokenSet for every (rule, class) pair was the dominant
+	// cost on large jars (tens of seconds on a 50 MB client).
+	var classRules []*CompiledRule
 	for _, r := range rules {
 		if ruleMetaOnly(r) {
 			if f, ok := matchRule(r, &ja.Tokens); ok {
@@ -434,15 +443,109 @@ func (e *Engine) matchRuntimeRules(ja *jarAnalysis, rules []*CompiledRule) []Fin
 			}
 			continue
 		}
-		for _, cf := range ja.Classes {
-			ts := classTokenSet(cf)
-			if f, ok := matchRule(r, ts); ok {
-				f.Source = "jar"
-				f.Class = cf.Name
-				merge(f)
+		classRules = append(classRules, r)
+	}
+	if len(classRules) == 0 || len(ja.Classes) == 0 {
+		out := make([]Finding, 0, len(best))
+		for _, f := range best {
+			out = append(out, f)
+		}
+		sortFindings(out)
+		return out
+	}
+
+	// Split rules into ones with a required literal hint and ones without.
+	// A class that contains none of the hints cannot match a hinted rule, so
+	// most ordinary Minecraft/library classes skip the regexp engine entirely.
+	var hintedRules, alwaysRules []*CompiledRule
+	hintSeen := make(map[string]struct{})
+	var hints []string
+	for _, r := range classRules {
+		hasHint := false
+		groups := [][]compiledCond{r.all, r.any}
+		for _, g := range groups {
+			for _, c := range g {
+				if len(c.hints) == 0 {
+					continue
+				}
+				hasHint = true
+				for _, h := range c.hints {
+					if _, ok := hintSeen[h]; ok {
+						continue
+					}
+					hintSeen[h] = struct{}{}
+					hints = append(hints, h)
+				}
 			}
 		}
+		if hasHint {
+			hintedRules = append(hintedRules, r)
+		} else {
+			alwaysRules = append(alwaysRules, r)
+		}
 	}
+
+	var matcher *hintMatcher
+	if len(hintedRules) > 0 && len(hints) > 0 {
+		matcher = newHintMatcher(hints)
+	}
+	hasAnyHint := func(ts *TokenSet) bool {
+		if len(hintedRules) == 0 || matcher == nil {
+			return false
+		}
+		return matcher.Match(ts.joinedLowerFor("any"))
+	}
+	runClass := func(cf *ClassFile, emit func(Finding)) {
+		ts := classTokenSet(cf)
+		run := func(rules []*CompiledRule) {
+			for _, r := range rules {
+				if f, ok := matchRule(r, ts); ok {
+					f.Source = "jar"
+					f.Class = cf.Name
+					emit(f)
+				}
+			}
+		}
+		run(alwaysRules)
+		if hasAnyHint(ts) {
+			run(hintedRules)
+		}
+	}
+
+	if len(ja.Classes) < 32 || len(classRules) < 4 {
+		for _, cf := range ja.Classes {
+			runClass(cf, merge)
+		}
+	} else {
+		workers := e.classWorkers()
+		if workers > len(ja.Classes) {
+			workers = len(ja.Classes)
+		}
+		jobs := make(chan *ClassFile)
+		results := make(chan Finding)
+		var wg sync.WaitGroup
+		wg.Add(workers)
+		for i := 0; i < workers; i++ {
+			go func() {
+				defer wg.Done()
+				for cf := range jobs {
+					runClass(cf, func(f Finding) { results <- f })
+				}
+			}()
+		}
+		go func() {
+			for _, cf := range ja.Classes {
+				jobs <- cf
+			}
+			close(jobs)
+			wg.Wait()
+			close(results)
+		}()
+		for f := range results {
+			merge(f)
+		}
+	}
+
 	out := make([]Finding, 0, len(best))
 	for _, f := range best {
 		out = append(out, f)

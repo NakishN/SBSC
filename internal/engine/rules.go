@@ -10,8 +10,9 @@ import (
 )
 
 type Condition struct {
-	Type  string `json:"type"`
-	Regex string `json:"regex"`
+	Type  string   `json:"type"`
+	Regex string   `json:"regex"`
+	Hints []string `json:"hints,omitempty"`
 }
 
 type Rule struct {
@@ -27,8 +28,10 @@ type Rule struct {
 }
 
 type compiledCond struct {
-	typ string
-	re  *regexp.Regexp
+	typ      string
+	re       *regexp.Regexp
+	hints    []string
+	anchored bool
 }
 
 type CompiledRule struct {
@@ -90,12 +93,35 @@ func compileRule(r Rule) (*CompiledRule, error) {
 		src []Condition
 		dst *[]compiledCond
 	}{{r.All, &cr.all}, {r.Any, &cr.any}, {r.None, &cr.none}} {
+		seenCond := make(map[string]bool, len(group.src))
 		for _, c := range group.src {
+			key := strings.ToLower(c.Type) + "\x00" + c.Regex
+			if seenCond[key] {
+				continue
+			}
+			seenCond[key] = true
 			re, err := regexp.Compile(c.Regex)
 			if err != nil {
 				return nil, fmt.Errorf("rule %s: invalid regex %q: %w", r.ID, c.Regex, err)
 			}
-			*group.dst = append(*group.dst, compiledCond{typ: strings.ToLower(c.Type), re: re})
+			hints := c.Hints
+			if len(hints) == 0 {
+				hints = literalHints(c.Regex)
+			} else {
+				lowered := make([]string, 0, len(hints))
+				for _, h := range hints {
+					if h = strings.ToLower(strings.TrimSpace(h)); h != "" {
+						lowered = append(lowered, h)
+					}
+				}
+				hints = lowered
+			}
+			*group.dst = append(*group.dst, compiledCond{
+				typ:      strings.ToLower(c.Type),
+				re:       re,
+				hints:    hints,
+				anchored: strings.Contains(c.Regex, "^") || strings.Contains(c.Regex, "$"),
+			})
 		}
 	}
 	return cr, nil
@@ -235,6 +261,9 @@ type TokenSet struct {
 	Exports     []string
 	DLLStrings  []string
 	All         []string
+	joined      map[string]string
+	joinedLower map[string]string
+	lower       map[string][]string
 }
 
 func (t *TokenSet) buildAll() {
@@ -255,6 +284,193 @@ func (t *TokenSet) buildAll() {
 		}
 	}
 	add(t.Classes, t.ClassSimple, t.Strings, t.Methods, t.Fields, t.Refs, t.Paths, t.Meta, t.Imports, t.Exports, t.DLLStrings)
+}
+
+// joinedFor returns all tokens of one type as a single newline-separated
+// string. It is used as a cheap prefilter: if the regexp cannot match this
+// text, it cannot match any individual token either.
+func (t *TokenSet) joinedFor(condType string) string {
+	if t.joined == nil {
+		t.joined = make(map[string]string)
+	}
+	if s, ok := t.joined[condType]; ok {
+		return s
+	}
+	s := strings.Join(tokensFor(condType, t), "\n")
+	t.joined[condType] = s
+	return s
+}
+
+// lowerFor returns lowercased copies of one token type. Hints are lowercase,
+// and lowercasing once per class instead of once per rule/class pair removes a
+// large amount of allocation on big jars.
+func (t *TokenSet) lowerFor(condType string) []string {
+	if t.lower == nil {
+		t.lower = make(map[string][]string)
+	}
+	if s, ok := t.lower[condType]; ok {
+		return s
+	}
+	tokens := tokensFor(condType, t)
+	out := make([]string, len(tokens))
+	for i, tok := range tokens {
+		out[i] = strings.ToLower(tok)
+	}
+	t.lower[condType] = out
+	return out
+}
+
+func (t *TokenSet) joinedLowerFor(condType string) string {
+	if t.joinedLower == nil {
+		t.joinedLower = make(map[string]string)
+	}
+	if s, ok := t.joinedLower[condType]; ok {
+		return s
+	}
+	s := strings.ToLower(t.joinedFor(condType))
+	t.joinedLower[condType] = s
+	return s
+}
+
+// hintMatcher is a small Aho-Corasick automaton for literal hints. Scanning a
+// class once for all hints is much cheaper than calling strings.Contains for
+// every hint.
+type hintMatcher struct {
+	next []map[byte]int
+	fail []int
+	out  []bool
+}
+
+func newHintMatcher(hints []string) *hintMatcher {
+	m := &hintMatcher{
+		next: []map[byte]int{{}},
+		fail: []int{0},
+		out:  []bool{false},
+	}
+	for _, h := range hints {
+		if h == "" {
+			continue
+		}
+		state := 0
+		for i := 0; i < len(h); i++ {
+			c := h[i]
+			nxt, ok := m.next[state][c]
+			if !ok {
+				nxt = len(m.next)
+				m.next[state][c] = nxt
+				m.next = append(m.next, map[byte]int{})
+				m.fail = append(m.fail, 0)
+				m.out = append(m.out, false)
+			}
+			state = nxt
+		}
+		m.out[state] = true
+	}
+	queue := make([]int, 0, len(m.next))
+	for _, v := range m.next[0] {
+		queue = append(queue, v)
+	}
+	for len(queue) > 0 {
+		v := queue[0]
+		queue = queue[1:]
+		if m.out[m.fail[v]] {
+			m.out[v] = true
+		}
+		for c, u := range m.next[v] {
+			f := m.fail[v]
+			for f != 0 {
+				if _, ok := m.next[f][c]; ok {
+					break
+				}
+				f = m.fail[f]
+			}
+			if n, ok := m.next[f][c]; ok && n != u {
+				m.fail[u] = n
+			}
+			queue = append(queue, u)
+		}
+	}
+	return m
+}
+
+func (m *hintMatcher) Match(s string) bool {
+	if m == nil {
+		return false
+	}
+	state := 0
+	for i := 0; i < len(s); i++ {
+		c := s[i]
+		if c >= 'A' && c <= 'Z' {
+			c += 'a' - 'A'
+		}
+		for {
+			if n, ok := m.next[state][c]; ok {
+				state = n
+				break
+			}
+			if state == 0 {
+				break
+			}
+			state = m.fail[state]
+		}
+		if m.out[state] {
+			return true
+		}
+	}
+	return false
+}
+
+// literalHints extracts literal alternatives from a simple regexp such as
+// (?i)(killaura|aimbot|reach). It returns nil for patterns with character
+// classes, quantifiers, or mixed alternations, where a literal is not
+// guaranteed to be present in every match.
+func literalHints(expr string) []string {
+	s := expr
+	for _, flag := range []string{"(?i)", "(?m)", "(?s)", "(?U)", "(?-i)", "(?-m)"} {
+		s = strings.ReplaceAll(s, flag, "")
+	}
+	for _, esc := range []struct{ from, to string }{
+		{`\b`, ""}, {`\.`, "."}, {`\-`, "-"}, {`\_`, "_"}, {`\/`, "/"},
+	} {
+		s = strings.ReplaceAll(s, esc.from, esc.to)
+	}
+	if strings.Contains(s, `\`) {
+		return nil
+	}
+	s = strings.TrimSpace(strings.TrimSuffix(strings.TrimPrefix(strings.TrimSpace(s), "^"), "$"))
+	if s == "" {
+		return nil
+	}
+	parts := strings.Split(s, "|")
+	hints := make([]string, 0, len(parts))
+	seen := make(map[string]struct{}, len(parts))
+	for _, p := range parts {
+		p = strings.TrimSpace(p)
+		p = strings.TrimPrefix(p, "(")
+		p = strings.TrimSuffix(p, ")")
+		p = strings.TrimPrefix(p, "?:")
+		p = strings.TrimSpace(p)
+		if len(p) < 3 {
+			return nil
+		}
+		for _, r := range p {
+			ok := (r >= 'a' && r <= 'z') || (r >= 'A' && r <= 'Z') ||
+				(r >= '0' && r <= '9') || r == '-' || r == '_' || r == '.' || r == '/' || r == ' '
+			if !ok {
+				return nil
+			}
+		}
+		h := strings.ToLower(p)
+		if _, ok := seen[h]; ok {
+			continue
+		}
+		seen[h] = struct{}{}
+		hints = append(hints, h)
+	}
+	if len(hints) == 0 {
+		return nil
+	}
+	return hints
 }
 
 func tokensFor(condType string, t *TokenSet) []string {
@@ -288,8 +504,87 @@ func tokensFor(condType string, t *TokenSet) []string {
 	}
 }
 
+// containsFoldASCII is a zero-allocation case-insensitive substring check for
+// ASCII. Hints are stored lowercase, so this avoids strings.ToLower on every
+// token of every class.
+func containsFoldASCII(s, sub string) bool {
+	if sub == "" {
+		return true
+	}
+	n, m := len(s), len(sub)
+	if m > n {
+		return false
+	}
+	for i := 0; i+m <= n; i++ {
+		ok := true
+		for j := 0; j < m; j++ {
+			c := s[i+j]
+			if c >= 'A' && c <= 'Z' {
+				c += 'a' - 'A'
+			}
+			if c != sub[j] {
+				ok = false
+				break
+			}
+		}
+		if ok {
+			return true
+		}
+	}
+	return false
+}
+
 func matchCond(c compiledCond, t *TokenSet) []string {
 	tokens := tokensFor(c.typ, t)
+	if len(tokens) == 0 {
+		return nil
+	}
+	// With literal hints, only tokens containing a required literal can
+	// possibly match. This avoids running a backtracking regexp over every
+	// string constant in every class.
+	if len(c.hints) > 0 {
+		lows := t.lowerFor(c.typ)
+		if len(lows) != len(tokens) {
+			lows = nil
+		}
+		var ev []string
+		for i, tok := range tokens {
+			hinted := false
+			if lows != nil {
+				for _, h := range c.hints {
+					if strings.Contains(lows[i], h) {
+						hinted = true
+						break
+					}
+				}
+			} else {
+				for _, h := range c.hints {
+					if containsFoldASCII(tok, h) {
+						hinted = true
+						break
+					}
+				}
+			}
+			if !hinted {
+				continue
+			}
+			if c.re.MatchString(tok) {
+				ev = append(ev, truncate(tok, 240))
+				if len(ev) >= 6 {
+					break
+				}
+			}
+		}
+		return ev
+	}
+	// No safe literal hint: run one regexp over the joined token stream first.
+	// A miss proves no individual token can match. Anchors (^/$) are unsafe
+	// because they would bind to the joined string, so keep per-token there.
+	if !c.anchored && len(tokens) > 8 {
+		if joined := t.joinedFor(c.typ); joined != "" && !c.re.MatchString(joined) {
+			return nil
+		}
+	}
 	var ev []string
 	for _, tok := range tokens {
 		if c.re.MatchString(tok) {

@@ -20,6 +20,7 @@ import (
 )
 
 type Decompiler struct {
+	mu       sync.Mutex
 	JavaPath string
 	JavaVer  string
 	CFRPath  string
@@ -37,6 +38,8 @@ func NewDecompiler(opts Options) *Decompiler {
 // FindJava locates a Java runtime. Minecraft 1.16.5 ships Java 8, and CFR
 // supports Java 8+, so almost any installed JVM works.
 func (d *Decompiler) FindJava(override string) (string, string, error) {
+	d.mu.Lock()
+	defer d.mu.Unlock()
 	var candidates []string
 	if override != "" {
 		candidates = append(candidates, override)
@@ -276,6 +279,8 @@ func javaVersion(java string) (string, error) {
 }
 
 func (d *Decompiler) ensureCFR() (string, error) {
+	d.mu.Lock()
+	defer d.mu.Unlock()
 	if d.CFRPath != "" {
 		if st, err := os.Stat(d.CFRPath); err == nil && st.Size() > 0 {
 			return d.CFRPath, nil
@@ -300,10 +305,16 @@ func (d *Decompiler) ensureCFR() (string, error) {
 	return p, nil
 }
 
+func (d *Decompiler) currentJava() string {
+	d.mu.Lock()
+	defer d.mu.Unlock()
+	return d.JavaPath
+}
+
 // DecompileJar decompiles a jar. If filter is non-empty, CFR's --jarfilter is
 // used to decompile only matching classes.
 func (d *Decompiler) DecompileJar(jarPath, outDir string, filter []string) error {
-	java := d.JavaPath
+	java := d.currentJava()
 	if java == "" {
 		j, _, err := d.FindJava("")
 		if err != nil {

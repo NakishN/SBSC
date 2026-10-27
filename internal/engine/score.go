@@ -146,6 +146,15 @@ func scoreJar(ja *jarAnalysis) (risk, confidence int, verdict string, cats []Cat
 	default:
 		verdict = "ЧИСТО"
 	}
+	// An archive that resists analysis is itself evidence. Obfuscated code
+	// without readable strings is exactly where a hidden client sits; do not
+	// report it as clean just because the blacklist found nothing.
+	if verdict == "ЧИСТО" && ja.Obfuscation >= 18 {
+		verdict = "ПОДОЗРИТЕЛЬНО"
+		if risk < 30 {
+			risk = 30
+		}
+	}
 
 	// Proof level: exact hash or multiple independent code findings.
 	strong := 0

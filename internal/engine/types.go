@@ -20,6 +20,14 @@ type Options struct {
 	// ScanLibraries also scans plain Java libraries (Maven/module-info jars)
 	// that normally cannot be Minecraft cheat clients.
 	ScanLibraries bool
+	// AllFiles scans files whose extension is not .jar/.zip/.dll/.exe/.class
+	// when their content looks like a ZIP/JAR, PE or class file. It is enabled
+	// automatically for user-selected folders and can be forced for full-disk
+	// scans.
+	AllFiles bool
+	// Workers is the number of files analysed in parallel. Zero means
+	// min(GOMAXPROCS, 8).
+	Workers int
 	// MaxFileSize skips files larger than this (bytes). Zero means 512 MiB.
 	MaxFileSize int64
 	// MaxFiles caps how many supported files are collected from a directory.

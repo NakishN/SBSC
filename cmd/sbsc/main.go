@@ -33,6 +33,8 @@ func main() {
 		allDLL      = flag.Bool("all-dll", false, "анализировать DLL даже из белого списка")
 		includeSys  = flag.Bool("include-system", false, "сканировать системные папки Windows/Java runtime")
 		scanLibs    = flag.Bool("scan-libraries", false, "сканировать обычные Java-библиотеки")
+		allFiles    = flag.Bool("all-files", false, "искать JAR/PE/class по сигнатуре даже с чужим расширением (медленнее на диске)")
+		workers     = flag.Int("workers", 0, "сколько файлов анализировать параллельно (0 — авто)")
 		outDir      = flag.String("out", "", "папка для отчётов и декомпиляции (по умолчанию reports рядом с exe)")
 		javaPath    = flag.String("java", "", "путь к java.exe/java")
 		jsonPath    = flag.String("json", "", "путь к JSON-отчёту")
@@ -56,6 +58,8 @@ func main() {
 		AllDLL:        *allDLL,
 		IncludeSystem: *includeSys,
 		ScanLibraries: *scanLibs,
+		AllFiles:      *allFiles,
+		Workers:       *workers,
 		MaxFileSize:   *maxMB << 20,
 		MaxFiles:      *maxFiles,
 		OutDir:        *outDir,
@@ -254,6 +258,8 @@ func usage() {
   --all-dll          анализировать DLL из белого списка
   --include-system   сканировать Windows/Java runtime (по умолчанию пропускаются)
   --scan-libraries   сканировать обычные Java-библиотеки
+  --all-files        искать JAR/PE/class по сигнатуре даже с чужим расширением
+  --workers <n>      параллельных файлов (0 — авто)
   --out <dir>        папка данных (по умолчанию рядом с exe)
   --java <path>      путь к java
   --json <file>      JSON-отчёт

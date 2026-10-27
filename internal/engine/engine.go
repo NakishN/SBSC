@@ -7,19 +7,24 @@ import (
 	"io/fs"
 	"os"
 	"path/filepath"
+	"runtime"
 	"sort"
 	"strings"
+	"sync"
+	"sync/atomic"
 	"time"
 
 	"sbsc/assets"
 )
 
-const Version = "1.0.0"
+const Version = "1.0.1"
 
 type Engine struct {
-	opts   Options
-	rules  *RuleSet
-	decomp *Decompiler
+	opts         Options
+	rules        *RuleSet
+	decomp       *Decompiler
+	decompileSem chan struct{}
+	fileParallel int32
 }
 
 func New(opts Options) (*Engine, error) {
@@ -30,10 +35,48 @@ func New(opts Options) (*Engine, error) {
 	if opts.OutDir == "" {
 		opts.OutDir = filepath.Join(os.TempDir(), "sbsc")
 	}
-	return &Engine{opts: opts, rules: rules, decomp: NewDecompiler(opts)}, nil
+	return &Engine{
+		opts:         opts,
+		rules:        rules,
+		decomp:       NewDecompiler(opts),
+		decompileSem: make(chan struct{}, 2),
+		fileParallel: 1,
+	}, nil
 }
 
 func (e *Engine) Options() Options { return e.opts }
+
+func (e *Engine) workers() int {
+	w := e.opts.Workers
+	if w <= 0 {
+		w = runtime.GOMAXPROCS(0)
+		if w > 8 {
+			w = 8
+		}
+	}
+	if w < 1 {
+		w = 1
+	}
+	return w
+}
+
+// classWorkers keeps total CPU concurrency near GOMAXPROCS: one large JAR
+// uses several class workers, while a parallel folder scan leaves CPU for the
+// other files.
+func (e *Engine) classWorkers() int {
+	fp := int(atomic.LoadInt32(&e.fileParallel))
+	if fp < 1 {
+		fp = 1
+	}
+	w := runtime.GOMAXPROCS(0) / fp
+	if w < 1 {
+		w = 1
+	}
+	if w > 8 {
+		w = 8
+	}
+	return w
+}
 
 // ScanPaths expands roots into supported files and scans them.
 func (e *Engine) ScanPaths(roots []string, progress func(Progress)) ([]*ScanResult, error) {
@@ -44,27 +87,73 @@ func (e *Engine) ScanPaths(roots []string, progress func(Progress)) ([]*ScanResu
 		}
 		progress(Progress{Stage: "warning", Message: fmt.Sprintf("скан диска: системные папки пропускаются, %s; для быстрого скана используйте --no-deep", limitText)})
 	}
-	files, truncated, err := collectFiles(roots, e.opts.IncludeSystem, e.opts.maxFiles())
+	// User-selected folders are sniffed for disguised archives. A whole-disk
+	// scan keeps the extension filter unless --all-files is set.
+	sniffUnknown := e.opts.AllFiles || !hasDriveRoot(roots)
+	files, truncated, err := collectFilesOpts(roots, e.opts.IncludeSystem, e.opts.maxFiles(), sniffUnknown)
 	if err != nil {
 		return nil, err
 	}
 	if len(files) == 0 {
-		return nil, fmt.Errorf("не найдено файлов .jar/.zip/.dll/.exe/.class; выбери папку с модами или корень диска")
+		return nil, fmt.Errorf("не найдено файлов .jar/.zip/.dll/.exe/.class; выбери папку с модами или корень диска (для файлов с чужим расширением — --all-files)")
 	}
 	if truncated && progress != nil {
 		progress(Progress{Stage: "warning", Total: len(files), Message: fmt.Sprintf("найдено больше %d файлов — взяты первые %d. Увеличь --max-files или выбери папку", e.opts.maxFiles(), len(files))})
 	}
-	results := make([]*ScanResult, 0, len(files))
-	for i, p := range files {
-		if progress != nil {
-			progress(Progress{Index: i, Total: len(files), Path: p, Stage: "scan"})
+	workers := e.workers()
+	if workers <= 1 || len(files) <= 1 {
+		atomic.StoreInt32(&e.fileParallel, 1)
+		results := make([]*ScanResult, 0, len(files))
+		for i, p := range files {
+			if progress != nil {
+				progress(Progress{Index: i, Total: len(files), Path: p, Stage: "scan"})
+			}
+			r := e.ScanFile(p)
+			results = append(results, r)
+			if progress != nil {
+				progress(Progress{Index: i + 1, Total: len(files), Path: p, Stage: "done", Result: r})
+			}
 		}
-		r := e.ScanFile(p)
-		results = append(results, r)
-		if progress != nil {
-			progress(Progress{Index: i + 1, Total: len(files), Path: p, Stage: "done", Result: r})
-		}
+		return results, nil
 	}
+
+	results := make([]*ScanResult, len(files))
+	var completed int64
+	active := workers
+	if active > len(files) {
+		active = len(files)
+	}
+	atomic.StoreInt32(&e.fileParallel, int32(active))
+	var progressMu sync.Mutex
+	emit := func(p Progress) {
+		if progress == nil {
+			return
+		}
+		progressMu.Lock()
+		defer progressMu.Unlock()
+		progress(p)
+	}
+	jobs := make(chan int)
+	var wg sync.WaitGroup
+	wg.Add(workers)
+	for w := 0; w < workers; w++ {
+		go func() {
+			defer wg.Done()
+			for i := range jobs {
+				p := files[i]
+				emit(Progress{Index: i, Total: len(files), Path: p, Stage: "scan"})
+				r := e.ScanFile(p)
+				results[i] = r
+				done := int(atomic.AddInt64(&completed, 1))
+				emit(Progress{Index: done, Total: len(files), Path: p, Stage: "done", Result: r})
+			}
+		}()
+	}
+	for i := range files {
+		jobs <- i
+	}
+	close(jobs)
+	wg.Wait()
 	return results, nil
 }
 
@@ -101,6 +190,14 @@ var skipDirNames = map[string]bool{
 }
 
 func collectFiles(roots []string, includeSystem bool, maxFiles int) ([]string, bool, error) {
+	return collectFilesOpts(roots, includeSystem, maxFiles, false)
+}
+
+// collectFilesOpts expands roots into candidate files. When sniffUnknown is
+// true, files with an unexpected extension are included when their first bytes
+// look like ZIP/JAR, PE or a JVM class file. This closes the "rename the cheat
+// to .dat" bypass without walking every file on a full-disk scan.
+func collectFilesOpts(roots []string, includeSystem bool, maxFiles int, sniffUnknown bool) ([]string, bool, error) {
 	limited := maxFiles > 0
 	seen := make(map[string]bool)
 	var out []string
@@ -135,9 +232,9 @@ func collectFiles(roots []string, includeSystem bool, maxFiles int) ([]string, b
 			return nil, false, err
 		}
 		if !st.IsDir() {
-			if supported(root) {
-				add(root)
-			}
+			// An explicitly selected file is always scanned; ScanFile sniffs
+			// its content and returns ПРОПУЩЕН for unsupported data.
+			add(root)
 			continue
 		}
 		// A drive root is scanned as a disk. User folders are walked first,
@@ -182,8 +279,18 @@ func collectFiles(roots []string, includeSystem bool, maxFiles int) ([]string, b
 					}
 					return nil
 				}
-				if d.Type().IsRegular() && supported(p) && (includeSystem || !isIgnoredPath(p)) {
-					add(p)
+				if d.Type().IsRegular() && (includeSystem || !isIgnoredPath(p)) {
+					if supported(p) {
+						add(p)
+					} else if sniffUnknown {
+						size := int64(0)
+						if info, ierr := d.Info(); ierr == nil {
+							size = info.Size()
+						}
+						if size >= 4 && size <= 512<<20 && sniffFileKind(p) != "" {
+							add(p)
+						}
+					}
 				}
 				if limited && len(out) >= maxFiles {
 					truncated = true
@@ -250,6 +357,48 @@ func samePath(a, b string) bool {
 	return strings.EqualFold(filepath.Clean(a), filepath.Clean(b))
 }
 
+// sniffBytes classifies a buffer by its magic bytes.
+func sniffBytes(b []byte) string {
+	if len(b) >= 4 && b[0] == 'P' && b[1] == 'K' {
+		switch {
+		case b[2] == 3 && b[3] == 4, b[2] == 5 && b[3] == 6, b[2] == 7 && b[3] == 8:
+			return "zip"
+		}
+	}
+	if len(b) >= 2 && b[0] == 'M' && b[1] == 'Z' {
+		return "pe"
+	}
+	if len(b) >= 4 && b[0] == 0xCA && b[1] == 0xFE && b[2] == 0xBA && b[3] == 0xBE {
+		return "class"
+	}
+	return ""
+}
+
+func kindFromExt(ext string) string {
+	switch ext {
+	case ".jar", ".zip":
+		return "zip"
+	case ".dll", ".exe":
+		return "pe"
+	case ".class":
+		return "class"
+	}
+	return ""
+}
+
+// sniffFileKind returns "zip", "pe" or "class" when the file content matches
+// a known container signature, regardless of the file extension.
+func sniffFileKind(p string) string {
+	f, err := os.Open(p)
+	if err != nil {
+		return ""
+	}
+	defer f.Close()
+	var b [8]byte
+	n, _ := f.Read(b[:])
+	return sniffBytes(b[:n])
+}
+
 func isDriveRoot(p string) bool {
 	p = strings.TrimSpace(p)
 	if p == "/" {
@@ -308,6 +457,27 @@ func (e *Engine) ScanFile(p string) *ScanResult {
 	res.Kind = strings.TrimPrefix(ext, ".")
 	if ext == ".zip" {
 		res.Kind = "zip"
+	}
+	// Content wins over extension. A cheat renamed to .dat/.txt/.dll must not
+	// disappear from a screenshare scan.
+	sniffed := sniffBytes(data)
+	kind := kindFromExt(ext)
+	if sniffed != "" && kind != sniffed {
+		switch sniffed {
+		case "zip":
+			ext, res.Kind = ".jar", "jar"
+		case "pe":
+			ext, res.Kind = ".exe", "exe"
+		case "class":
+			ext, res.Kind = ".class", "class"
+		}
+		res.Notes = append(res.Notes, fmt.Sprintf("тип определён по содержимому (%s), расширение %q не совпало", sniffed, filepath.Ext(p)))
+	} else if kind == "" && sniffed == "" {
+		res.Verdict = "ПРОПУЩЕН"
+		res.Proof = "clean"
+		res.Notes = append(res.Notes, "неизвестный формат: нет ZIP/PE/class-сигнатуры")
+		res.DurationMS = time.Since(start).Milliseconds()
+		return res
 	}
 	if h := e.rules.Hashes.Lookup(res.SHA256); h != nil {
 		e.applyHashResult(res, h)
@@ -496,7 +666,7 @@ func (e *Engine) applyHashResult(res *ScanResult, h *KnownHash) {
 }
 
 func (e *Engine) decompileAndAnalyze(res *ScanResult, ja *jarAnalysis) {
-	out := filepath.Join(e.opts.OutDir, "decompiled", safeName(res.Name)+"-"+shortHash(res.SHA256))
+	out := filepath.Join(e.opts.OutDir, "decompiled", safeName(res.Name)+"-"+shortHash(res.SHA256)+"-"+shortHash(pathHash(res.Path)))
 	filter := ja.Suspects
 	// Full decompilation is much more useful for source analysis. Limit it for
 	// enormous jars to keep runtime and disk usage sane.
@@ -507,13 +677,25 @@ func (e *Engine) decompileAndAnalyze(res *ScanResult, ja *jarAnalysis) {
 		res.Notes = append(res.Notes, "jar слишком большой для полной декомпиляции; глубокий анализ пропущен")
 		return
 	}
-	if err := e.decomp.DecompileJar(res.Path, out, filter); err != nil {
-		res.DecompileError = err.Error()
-		res.Notes = append(res.Notes, "глубокая декомпиляция не удалась: "+err.Error())
-		return
+	cached := hasJavaSources(out)
+	if cached {
+		res.Notes = append(res.Notes, "использован кэш декомпиляции")
+	} else {
+		if e.decompileSem != nil {
+			e.decompileSem <- struct{}{}
+		}
+		err := e.decomp.DecompileJar(res.Path, out, filter)
+		if e.decompileSem != nil {
+			<-e.decompileSem
+		}
+		if err != nil {
+			res.DecompileError = err.Error()
+			res.Notes = append(res.Notes, "глубокая декомпиляция не удалась: "+err.Error())
+			return
+		}
 	}
 	res.DecompiledDir = out
-	if e.decomp.JavaPath != "" && strings.Contains(strings.ToLower(e.decomp.JavaPath), "sbsc") {
+	if java := e.decomp.currentJava(); java != "" && strings.Contains(strings.ToLower(java), "sbsc") {
 		res.Notes = append(res.Notes, "используется встроенная Java — дополнительно ничего устанавливать не нужно")
 	}
 	findings, notes := analyzeDecompiledSources(out)
@@ -527,6 +709,28 @@ func (e *Engine) decompileAndAnalyze(res *ScanResult, ja *jarAnalysis) {
 	res.ContextScore = ja.ContextScore
 	res.Proof = ja.Proof
 	res.Notes = append(res.Notes, fmt.Sprintf("глубокий анализ кода: %d находок", len(findings)))
+}
+
+// hasJavaSources reports whether a decompilation directory already contains
+// usable CFR output, so repeated scans can skip the expensive decompiler.
+func hasJavaSources(dir string) bool {
+	found := false
+	_ = filepath.WalkDir(dir, func(p string, d fs.DirEntry, err error) error {
+		if err != nil || d.IsDir() {
+			return nil
+		}
+		if strings.HasSuffix(strings.ToLower(p), ".java") {
+			found = true
+			return filepath.SkipAll
+		}
+		return nil
+	})
+	return found
+}
+
+func pathHash(p string) string {
+	sum := sha256.Sum256([]byte(strings.ToLower(filepath.Clean(p))))
+	return hex.EncodeToString(sum[:])
 }
 
 func safeName(s string) string {
