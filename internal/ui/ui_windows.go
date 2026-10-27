@@ -606,7 +606,7 @@ func (a *app) scan() {
 			})
 			return
 		}
-		rep := engine.BuildReport(paths, opts, results, start)
+		rep := engine.BuildReport(paths, eng.Options(), results, start)
 		jsonPath, htmlPath, werr := engine.WriteReports(rep, filepath.Join(opts.OutDir, "reports"))
 		a.mw.Synchronize(func() {
 			a.scanning = false

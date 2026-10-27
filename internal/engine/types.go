@@ -26,8 +26,10 @@ type Options struct {
 	// scans.
 	AllFiles bool
 	// Workers is the number of files analysed in parallel. Zero means
-	// min(GOMAXPROCS, 8).
+	// automatic tuning from CPU count and available RAM.
 	Workers int
+	// CFRHeapMB overrides the CFR JVM heap. Zero means automatic tuning.
+	CFRHeapMB int
 	// MaxFileSize skips files larger than this (bytes). Zero means 512 MiB.
 	MaxFileSize int64
 	// MaxFiles caps how many supported files are collected from a directory.

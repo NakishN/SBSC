@@ -24,6 +24,7 @@ type Decompiler struct {
 	JavaPath string
 	JavaVer  string
 	CFRPath  string
+	HeapMB   int
 	WorkDir  string
 }
 
@@ -32,7 +33,11 @@ func NewDecompiler(opts Options) *Decompiler {
 	if work == "" {
 		work = filepath.Join(os.TempDir(), "sbsc")
 	}
-	return &Decompiler{WorkDir: work}
+	heap := opts.CFRHeapMB
+	if heap <= 0 {
+		heap = 1024
+	}
+	return &Decompiler{WorkDir: work, HeapMB: heap}
 }
 
 // FindJava locates a Java runtime. Minecraft 1.16.5 ships Java 8, and CFR
@@ -329,7 +334,11 @@ func (d *Decompiler) DecompileJar(jarPath, outDir string, filter []string) error
 	if err := os.MkdirAll(outDir, 0o755); err != nil {
 		return err
 	}
-	args := []string{"-Xmx1G", "-jar", cfr, jarPath, "--outputdir", outDir, "--silent", "true", "--comments", "false", "--hideutf", "false"}
+	heap := d.HeapMB
+	if heap <= 0 {
+		heap = 1024
+	}
+	args := []string{fmt.Sprintf("-Xmx%dM", heap), "-jar", cfr, jarPath, "--outputdir", outDir, "--silent", "true", "--comments", "false", "--hideutf", "false"}
 	if len(filter) > 0 {
 		var parts []string
 		for _, f := range filter {

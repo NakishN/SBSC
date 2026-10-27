@@ -17,13 +17,15 @@ import (
 	"sbsc/assets"
 )
 
-const Version = "1.0.1"
+const Version = "1.0.2"
 
 type Engine struct {
 	opts         Options
 	rules        *RuleSet
 	decomp       *Decompiler
 	decompileSem chan struct{}
+	bigFileSem   chan struct{}
+	tuning       systemTuning
 	fileParallel int32
 }
 
@@ -35,11 +37,27 @@ func New(opts Options) (*Engine, error) {
 	if opts.OutDir == "" {
 		opts.OutDir = filepath.Join(os.TempDir(), "sbsc")
 	}
+	t := detectTuning(opts)
+	opts.Workers = t.workers
+	if opts.CFRHeapMB <= 0 {
+		opts.CFRHeapMB = t.cfrHeapMB
+	}
+	applyTuning(t)
+	decompileLimit := t.decompileLimit
+	if decompileLimit < 1 {
+		decompileLimit = 1
+	}
+	bigFileLimit := t.bigFileLimit
+	if bigFileLimit < 1 {
+		bigFileLimit = 1
+	}
 	return &Engine{
 		opts:         opts,
 		rules:        rules,
 		decomp:       NewDecompiler(opts),
-		decompileSem: make(chan struct{}, 2),
+		decompileSem: make(chan struct{}, decompileLimit),
+		bigFileSem:   make(chan struct{}, bigFileLimit),
+		tuning:       t,
 		fileParallel: 1,
 	}, nil
 }
@@ -78,6 +96,19 @@ func (e *Engine) classWorkers() int {
 	return w
 }
 
+// scanOne serializes only very large files. A 300 MB JAR can allocate far
+// more than a collection of small mods, so letting eight of them start at once
+// is the fastest way to exhaust RAM.
+func (e *Engine) scanOne(p string) *ScanResult {
+	if e.bigFileSem != nil {
+		if st, err := os.Stat(p); err == nil && st.Size() >= bigFileThreshold {
+			e.bigFileSem <- struct{}{}
+			defer func() { <-e.bigFileSem }()
+		}
+	}
+	return e.ScanFile(p)
+}
+
 // ScanPaths expands roots into supported files and scans them.
 func (e *Engine) ScanPaths(roots []string, progress func(Progress)) ([]*ScanResult, error) {
 	if hasDriveRoot(roots) && progress != nil {
@@ -108,7 +139,7 @@ func (e *Engine) ScanPaths(roots []string, progress func(Progress)) ([]*ScanResu
 			if progress != nil {
 				progress(Progress{Index: i, Total: len(files), Path: p, Stage: "scan"})
 			}
-			r := e.ScanFile(p)
+			r := e.scanOne(p)
 			results = append(results, r)
 			if progress != nil {
 				progress(Progress{Index: i + 1, Total: len(files), Path: p, Stage: "done", Result: r})
@@ -142,7 +173,7 @@ func (e *Engine) ScanPaths(roots []string, progress func(Progress)) ([]*ScanResu
 			for i := range jobs {
 				p := files[i]
 				emit(Progress{Index: i, Total: len(files), Path: p, Stage: "scan"})
-				r := e.ScanFile(p)
+				r := e.scanOne(p)
 				results[i] = r
 				done := int(atomic.AddInt64(&completed, 1))
 				emit(Progress{Index: done, Total: len(files), Path: p, Stage: "done", Result: r})

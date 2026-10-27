@@ -92,12 +92,24 @@ func main() {
 
 func runCLI(opts engine.Options, paths []string, jsonPath, htmlPath string) {
 	start := time.Now()
+	auto := opts.Workers == 0
 	fmt.Printf("SBSC %s\n", engine.Version)
 	fmt.Printf("Цели: %s\n\n", strings.Join(paths, ", "))
 	eng, err := engine.New(opts)
 	if err != nil {
 		fmt.Fprintln(os.Stderr, "Ошибка загрузки правил:", err)
 		os.Exit(1)
+	}
+	if auto {
+		t := eng.Tuning()
+		fmt.Printf("Авто: %d потоков", t.Workers)
+		if t.MemoryLimitMB > 0 {
+			fmt.Printf(", лимит памяти %d МБ", t.MemoryLimitMB)
+		}
+		if t.TotalMemoryMB > 0 {
+			fmt.Printf(" (RAM %d МБ, доступно %d МБ)", t.TotalMemoryMB, t.AvailableMemoryMB)
+		}
+		fmt.Println()
 	}
 	results, err := eng.ScanPaths(paths, func(p engine.Progress) {
 		switch p.Stage {
@@ -155,7 +167,7 @@ func runCLI(opts engine.Options, paths []string, jsonPath, htmlPath string) {
 		}
 		os.Exit(1)
 	}
-	rep := engine.BuildReport(paths, opts, results, start)
+	rep := engine.BuildReport(paths, eng.Options(), results, start)
 	if jsonPath == "" || htmlPath == "" {
 		dir := filepath.Join(opts.OutDir, "reports")
 		jp, hp, werr := engine.WriteReports(rep, dir)
@@ -259,7 +271,7 @@ func usage() {
   --include-system   сканировать Windows/Java runtime (по умолчанию пропускаются)
   --scan-libraries   сканировать обычные Java-библиотеки
   --all-files        искать JAR/PE/class по сигнатуре даже с чужим расширением
-  --workers <n>      параллельных файлов (0 — авто)
+  --workers <n>      параллельных файлов (0 — авто по CPU и RAM)
   --out <dir>        папка данных (по умолчанию рядом с exe)
   --java <path>      путь к java
   --json <file>      JSON-отчёт
