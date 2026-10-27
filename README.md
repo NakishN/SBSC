@@ -248,7 +248,7 @@ VirusTotal Reanalyze не заменяет обращение к вендору.
 ```text
 This file is an open-source Minecraft cheat scanner. The detection is a false positive.
 Source: https://github.com/NakishN/SBSC
-Release: https://github.com/NakishN/SBSC/releases/tag/v1.0.3
+Release: https://github.com/NakishN/SBSC/releases/tag/v1.0.2
 Please whitelist the file or update the signature.
 ```
 

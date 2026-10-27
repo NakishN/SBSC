@@ -17,7 +17,7 @@ import (
 	"sbsc/assets"
 )
 
-const Version = "1.0.3"
+const Version = "1.0.2"
 
 type Engine struct {
 	opts         Options
