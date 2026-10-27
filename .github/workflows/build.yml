@@ -2,6 +2,11 @@ name: build
 
 on:
   workflow_dispatch:
+    inputs:
+      tag:
+        description: "Release tag (for example v1.0.1)"
+        required: true
+        default: "v1.0.1"
 
 permissions:
   contents: write
@@ -83,5 +88,10 @@ jobs:
         shell: pwsh
         env:
           GH_TOKEN: ${{ github.token }}
+          TAG: ${{ github.event.inputs.tag }}
         run: |
-          gh release upload v1.0.0 dist/SBSC.exe dist/SBSC-portable.zip dist/SBSC-lite.zip dist/SHA256SUMS.txt --clobber
+          gh release view $env:TAG 2>$null
+          if ($LASTEXITCODE -ne 0) {
+            gh release create $env:TAG --title "SBSC $($env:TAG -replace '^v','')" --generate-notes
+          }
+          gh release upload $env:TAG dist/SBSC.exe dist/SBSC-portable.zip dist/SBSC-lite.zip dist/SHA256SUMS.txt --clobber
